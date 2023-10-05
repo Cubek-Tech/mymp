@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 May, 2014, 11:15:47 AM
+    Author     : ebsuser
+*/
+
+.red {  /* for error messages */
+   color: red;
+}
+ 
+input.error {  /* for the error input text fields */
+   border: 1px red inset;
+   padding: 2px;
+}
+ 
+table {
+   border: 0;
+}
+ 
+td {
+   margin: 0;
+   padding: 3px 10px 3px 3px;
+}

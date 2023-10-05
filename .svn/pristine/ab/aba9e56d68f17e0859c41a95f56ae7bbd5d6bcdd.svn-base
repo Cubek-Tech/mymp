@@ -1,0 +1,196 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using Business;
+using RESTFulWCFService;
+using BussinessEntity;
+using System.Diagnostics;
+
+namespace RESTFulWCFService
+{
+    public partial class signin : System.Web.UI.Page
+    {
+        BussinessSendMail objNotification = new BussinessSendMail();
+        Business.BusinessMPartener objbusinessmpartener = new Business.BusinessMPartener();
+        Business.BusinessSearch objBusinessSearch = new Business.BusinessSearch();
+        RegistrationBusiness objRegistrationBusiness = new RegistrationBusiness();
+        GetSiteURL gestsiteurl = new GetSiteURL();
+        private int seeker_sk { get; set; }
+        private string cities { get; set; }
+        private string countries { get; set; }
+        private string states { get; set; }
+        private string Uip { get; set; }
+        private string Ucountry { get; set; }
+        private string Ustate { get; set; }
+        private string Ucity { get; set; }
+        private string UArea { get; set; }
+        private string Lag { get; set; }
+        private string Lat { get; set; }
+        DataSet ds = new DataSet();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            HtmlGenericControl Divid = (HtmlGenericControl)Page.Master.FindControl("lnk_signin");
+            Divid.Visible = false;
+        }
+
+        #region methods
+        private void fillDropdown()
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+
+
+                string mode = "M";
+                ds = objBusinessSearch.getSpaType(mode);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                   ViewState["country"] = ds.Tables[0];
+                }
+                DataRow[] dr;
+                dr = ds.Tables[0].Select("country_code='" + Uip + "'");
+                int cntry_sk = 0;
+                int stt_sk = 0;
+                int city_sk = 0;
+                foreach (DataRow row in dr)
+                {
+                    ViewState["selected_country"] = row["country_name"].ToString();
+                    ViewState["selected_country_value"] = row["country_sk"].ToString();
+                    //fill state                   
+                    ds = objRegistrationBusiness.getStateProvider(Convert.ToInt32(ViewState["selected_country_value"]));
+                    cntry_sk = Convert.ToInt32(ViewState["selected_country_value"].ToString());
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        ViewState["state"] = ds.Tables[0];
+                        dr = ds.Tables[0].Select("state_name='" + Ustate + "'");
+                        foreach (DataRow sts in dr)
+                        {
+                            ViewState["selected_state_value"] = sts[1].ToString();
+                            ViewState["selected_state"] = sts["state_name"].ToString();
+                            //Fill City
+                            ds = objRegistrationBusiness.getCityProvider(Convert.ToInt32(ViewState["selected_state_value"].ToString()), Convert.ToInt32(ViewState["selected_country_value"].ToString()));
+                            if (ds.Tables[0].Rows.Count > 0)
+                            {
+
+                                ViewState["state"] = ds.Tables[0];
+                                if (Ucity.Contains("'"))
+                                    Ucity = Ucity.Replace("'", "''");
+
+                                dr = ds.Tables[0].Select("city_name='" + Ucity + "'");
+                                foreach (DataRow ct in dr)
+                                {
+                                    ViewState["selected_city_value"] = ct[2].ToString();
+                                    ViewState["selected_city"] = ct["city_name_display"].ToString();
+                                }
+
+                            }
+                        }
+
+                    }
+                    else
+                    {
+
+                    }
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(1);
+                BussinessEntity.ExceptionHandling._lineno = frame.GetFileLineNumber();
+                BussinessEntity.ExceptionHandling._methodname = Convert.ToString(frame.GetMethod());
+                BussinessEntity.ExceptionHandling._pagename = Convert.ToString(frame.GetFileName());
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+
+
+        }
+
+        public void GetIP()
+        {
+            try
+            {
+
+
+                DataTable table_gio_location = new DataTable();
+                table_gio_location = gestsiteurl.GetIP();
+                if (table_gio_location.Rows.Count > 0)
+                {
+                    //Assign reciving ip information to properties
+                    Uip = table_gio_location.Rows[0]["countryCode"].ToString();
+                    Ustate = table_gio_location.Rows[0]["regionName"].ToString();
+                    Ucity = table_gio_location.Rows[0]["city"].ToString();
+                    Ustate = Ustate.Replace("'", "''");
+                    Ucity = Ucity.Replace("'", "''");
+                    Lat = table_gio_location.Rows[0]["lat"].ToString();
+                    Lag = table_gio_location.Rows[0]["lon"].ToString();
+                }
+
+
+
+
+            }
+            catch
+            {
+                return;
+            }
+        }
+        #endregion
+
+        protected void btnlogin_Click(object sender, EventArgs e)
+        {
+
+            check_login(txtEmail1.Text.Trim(), txtPassword1.Text.Trim());
+        }
+        private void check_login(string email, string password)
+        {
+            DataSet ds;
+            ds = objbusinessmpartener.partner_login(email, password);
+            if (ds.Tables.Count > 0)
+            {
+                Session["mp_login_sk"] = ds.Tables[0].Rows[0]["login_sk"].ToString();
+                Session["massage_partner_sk"] = ds.Tables[0].Rows[0]["massage_partner_sk"].ToString();
+                Session["email_id"] = ds.Tables[0].Rows[0]["email_id"].ToString();
+                Session["country_sk"] = ds.Tables[0].Rows[0]["country_sk"].ToString();
+                if (ds.Tables[0].Rows[0]["is_subscribed"].ToString() == "")
+                    Session["seeker_subscribed"] = null;
+                else
+                    Session["seeker_subscribed"] = ds.Tables[0].Rows[0]["is_subscribed"].ToString();
+
+                if (Session["current_url"] != null)
+                {
+                    Response.Redirect(Session["current_url"].ToString());
+                    Session["current_url"] = null;
+                    return;
+                }
+                else
+                {
+                    GetIP();
+                    fillDropdown();
+                    string url = "/" + ViewState["selected_country"].ToString().Replace(' ', '-') + "/" + ViewState["selected_state"].ToString().Replace(' ', '-') + "/" + ViewState["selected_city"].ToString().Replace(' ', '-') + "/All-Area/Any/all-types/all";
+                    Response.Redirect(Constants__.WEB_ROOT + "/massage-partner" + url);
+                    return;
+                }
+
+            }
+            else
+            {
+                lblloginerror.Visible = true;
+                lblloginerror.Text = "invalid email-id or password!";
+
+            }
+        }
+    }
+}

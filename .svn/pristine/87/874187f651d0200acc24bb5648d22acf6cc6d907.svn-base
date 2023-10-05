@@ -1,0 +1,695 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="massagepartener.master.cs" Inherits="RESTFulWCFService.MassagePartener.massagepartener" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="~/Controls/DatePicker.ascx" TagName="uc" TagPrefix="asp" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link id="bootstrap" runat="server" rel="stylesheet" type="text/css" />
+    <link id="bootstrap_min" runat="server" rel="stylesheet" type="text/css" />
+    <link id="bootstraptheme" runat="server" rel="stylesheet" type="text/css" />
+    <link id="bootstraptheme_min" rel="stylesheet" type="text/css" />
+    <link id="css" runat="server" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="<%= Constants__.WEB_ROOT_CDN %>/Controls/jquery-1.4.4.js"></script>
+    <link id="css1" runat="server" rel="stylesheet" type="text/css" />
+    <script src="<%= Constants__.WEB_ROOT_CDN %>/js/jquery.min.js" type="text/javascript"></script>
+    <link runat="server" id="lnk_favicon" rel="icon" type="image/ico" />
+    <script src="<%= Constants__.WEB_ROOT_CDN %>/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script>
+        $.noConflict();
+        // Code that uses other library's $ can follow here.
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <%--<link rel="Stylesheet" runat="server" id="print_css" type="text/css" media="print" />
+    <link rel="stylesheet" type="text/css" runat="server" id="customer_css" />
+    <link rel="stylesheet" type="text/css" runat="server" id="CrebasCSS_css" />
+    <link rel="stylesheet" type="text/css" runat="server" id="style_css" />
+    <link rel="stylesheet" type="text/css" runat="server" id="New_css" />--%>
+
+    <script>
+        $(function () { // DOM ready
+
+            // ::: TAGS BOX
+
+            $("#ctl00_txtemail_friend").on({
+                focusout: function () {
+                    var txt = this.value.replace(' ', '');// allowed characters
+                    if (isEmail(txt)) {
+                        if (txt) $("<span/>", { text: txt.toLowerCase(), insertBefore: this });
+                        this.value = "";
+                        $('#ctl00_lblinvitemsg').hide();
+                        if ($('#ctl00_mailids').val() == '')
+                            $('#ctl00_mailids').val(txt);
+                        else {
+                            $('#ctl00_mailids').val($('#ctl00_mailids').val() + ',' + txt);
+                        }
+                    }
+                    else {
+                        //alert("Invalid Email ID");
+                        $('#ctl00_lblinvitemsg').show();
+                        document.getElementById('ctl00_lblinvitemsg').innerHTML = 'Invalid Email ID';
+                        document.getElementById('ctl00_lblinvitemsg').style.color = "red";
+                        this.value = "";
+                    }
+
+                },
+                keyup: function (ev) {
+                    // if: comma|enter (delimit more keyCodes with | pipe)
+                    if (/(188|13|32)/.test(ev.which)) {
+                        $(this).focusout();
+                    }
+
+                }
+            });
+            $('#multi-email').on('click', 'span', function () {
+                $(this).remove();
+            });
+
+        });
+
+        function isEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+        }
+
+        ////Click Invite Close
+        function click_close_invite() {
+            // $("#tags").innerHTML = '';
+            $('#multi-email').find('span').remove();
+            $("#ctl00_txtemail_user").val('');
+            $("#ctl00_lblinvitemsg").hide();
+        }
+        ////Click Help Close
+        function click_close_help() {
+            // $("#tags").innerHTML = '';
+            //$('.form-group').find('span').remove();
+            $("#ctl00_name").val('');
+            $("#ctl00_email").val('');
+            $("#ctl00_subject").val('');
+            $("#ctl00_comments").val('');
+            $("#ctl00_lblreportmsg").hide();
+        }
+
+    </script>
+    <style>
+          .UpdateProgress_style {
+            color: #FFFFFF;
+            left: 72%;
+            margin-left: -330px;
+            position: fixed;
+            top: 42%;
+            z-index: 9999;
+        }
+        #tags
+        {
+            float: left;
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-family: Arial;
+        }
+
+        #multi-email > span
+        {
+            cursor: pointer;
+            display: block;
+            float: left;
+            color: #fff;
+            background: #f36b22;
+            padding: 5px;
+            padding-right: 25px;
+            margin: 4px;
+        }
+               .modal {
+            overflow-y: auto;
+        }
+
+        body {
+            padding: 0 !important;
+        }
+
+        .modal-open {
+            overflow: auto;
+        }
+            #multi-email > span:hover
+            {
+                opacity: 0.7;
+            }
+
+            #multi-email > span:after
+            {
+                position: absolute;
+                content: "×";
+                border: 1px solid;
+                padding: 2px 5px;
+                margin-left: 3px;
+                font-size: 11px;
+            }
+
+        #multi-email > input
+        {
+            /*background:#eee;
+  border:0;
+  margin:4px;
+  padding:7px;
+  width:auto;*/
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40791793-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-40791793-2');
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <%--<marquee behavior="scroll" scrollamount="3" direction="left" class="scroll-text">Global platform for body massage partners</marquee>--%>
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="https://www.mymassagepartner.com">
+                                    <img src="<%= Constants__.WEB_ROOT_CDN %>/image/mp_logo.png" class="img-responsive header-logo" />
+                                </a>
+                            </div>
+                               <div class="col-sm-5   col-xs-6 text-right">
+                                <ul class="list-inline">
+                                    <li class="login-button login-button-phone"><a href="#" data-toggle="modal" data-target="#login-modal">Sign In</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4  col-xs-12 text-right ">
+                                <ul class="list-inline">
+                                    <li class="login-button login-button-dstp" id="lnk_signin" runat="server" ><a href="#" data-toggle="modal" data-target="#login-modal">Sign In</a>
+                                    </li>
+                                     <li>
+                                       <div >
+                                          <a class="btn btn-info create-acount-btn" href="<%=Constants__.WEB_ROOT %>/signup">Create an account</a>
+                                       </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <a data-toggle="modal" data-target="#help-modal" class="btn btn-gradiant">Get Help 24/7</a>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bottomNavbar">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+
+                                </div>
+                                <div class="collapse navbar-collapse" id="bottomNavbar">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="<%=Constants__.WEB_ROOT %>
+                                            ">Home</a></li>
+                                        <li><asp:LinkButton ID="lnkfindpartner" runat="server" OnClick="lnkfindpartner_Click">Find Your Massage Partner</asp:LinkButton></li>
+                                        <li><a href="#" style="display: none">About Massage Partner</a></li>
+                                        <li><a href="#" style="display: none">Membership Plans</a></li>
+                                        <li><a href="<%=Constants__.WEB_ROOT %>/faq">FAQs</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="mobile-menu-list">
+                                            <a data-toggle="modal" data-target="#invite-modal" href="#">Invite Your Friend(s)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="list-inline text-center page-link">
+                            <li><a href="<%=Constants__.WEB_ROOT %>/privacy">Privacy Policy</a></li>
+                            <li><a href="<%=Constants__.WEB_ROOT %>/terms">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!----24/7 Help Popup------->
+        <div class="modal fade" id="help-modal" role="dialog">
+            <div class="modal-dialog ">
+
+                <!-- Modal content-->
+                <div class="modal-content ">
+                    <div class="modal-header model-header-orange">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center ">24/7 Help</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label><span>*</span>Name: </label>
+                                    <input type="text" value="" runat="server" class="form-control" name="name" id="name"
+                                        maxlength="60" />
+                                    <asp:RequiredFieldValidator ValidationGroup="cnt" CssClass="ErrorMsg" ID="Rqname"
+                                        runat="server" ControlToValidate="name" InitialValue="" ErrorMessage="Required field"
+                                        Display="Dynamic" />
+                                </div>
+                                <div class="form-group">
+                                    <label><span>*</span>Email: </label>
+                                    <input type="text" value="" runat="server" class="form-control" name="email" id="email"
+                                        autocompletetype="Disabled" autocomplete="off" maxlength="100" />
+                                    <asp:RequiredFieldValidator ValidationGroup="cnt" CssClass="ErrorMsg" ID="Rqemail"
+                                        runat="server" ControlToValidate="email" InitialValue="" ErrorMessage="Required field"
+                                        Display="Dynamic" />
+                                    <asp:RegularExpressionValidator ID="regVEmail" runat="server" ControlToValidate="email"
+                                        CssClass="ErrorMsg" ErrorMessage="Invalid" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                </div>
+                                <div class="form-group">
+                                    <label>Subject: </label>
+                                    <input type="text" value="" runat="server" class="form-control" id="subject" name="subject"
+                                        maxlength="150" />
+                                </div>
+                                <div class="form-group" style="display:none">
+                                    <label><span>*</span>User: </label>
+                                    <asp:UpdatePanel ID="update" runat="server">
+                                        <ContentTemplate>
+                                            <asp:DropDownList runat="server" CssClass="form-control" ID="ddluser"
+                                                AutoPostBack="True">
+                                                <asp:ListItem Text="User Type" Value="0"> </asp:ListItem>
+                                                <asp:ListItem Text="I am Massage therapist" Value="MassageSeeker"> </asp:ListItem>
+                                                <asp:ListItem Text="I am Manual Massager" Value="MassageOwner"></asp:ListItem>
+                                            </asp:DropDownList>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                  <%--  <asp:RequiredFieldValidator ID="rfvddluser" runat="server" ControlToValidate="ddluser"
+                                        ValidationGroup="cnt" Display="Dynamic" ErrorMessage="Required field" CssClass="ErrorMsg"
+                                        InitialValue="0">
+                                    </asp:RequiredFieldValidator>--%>
+                                </div>
+                                <div class="form-group">
+                                    <label><span>*</span>Comments: </label>
+                                    <textarea name="comments" runat="server" id="comments" class="form-control" onkeypress="CheckFieldLength();"></textarea>
+                                    <asp:RequiredFieldValidator ValidationGroup="cnt" CssClass="ErrorMsg" ID="Rqcomments"
+                                        runat="server" ControlToValidate="comments" InitialValue="" ErrorMessage="Required field"
+                                        Display="Dynamic" />
+                                </div>
+                                <asp:UpdatePanel ID="UpdatePanel8" runat="server">
+                                    <ContentTemplate>
+                                        <input type="button" onclick="resetcForm()" value="Reset" class="btn btn-gradiant" />
+                                        <asp:Button ID="BtnSubmit" ValidationGroup="cnt" runat="server" CssClass="btn btn-gradiant" OnClick="BtnSubmit_Click" Text="Submit" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnclose" runat="server" Text="Close" OnClientClick="click_close_help();" data-dismiss="modal" CssClass="btn btn-default" />
+                        <br />
+                        <asp:UpdatePanel ID="UpdatePanel9" runat="server">
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="BtnSubmit" />
+                            </Triggers>
+                            <ContentTemplate>
+                                <asp:Label ID="lblreportmsg" runat="server" ForeColor="Green"></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!----24/7 Help Popup------->
+
+        <!----Invite friends Popup------->
+        <div class="modal fade" id="invite-modal" role="dialog">
+            <div class="modal-dialog ">
+
+                <!-- Modal content-->
+                <div class="modal-content ">
+                    <div class="modal-header model-header-orange">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center ">Invite Your Friend(s)</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>Your Email: </label>
+                                    <input type="text" value="" runat="server" class="form-control" name="email" id="txtemail_user"
+                                        autocompletetype="Disabled" autocomplete="off" maxlength="100" />
+                                    <asp:RequiredFieldValidator ValidationGroup="invite" CssClass="ErrorMsg" ID="RequiredFieldValidator2"
+                                        runat="server" ControlToValidate="txtemail_user" InitialValue="" ErrorMessage="Required field"
+                                        Display="Dynamic" />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtemail_user"
+                                        CssClass="ErrorMsg" ErrorMessage="Invalid" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                </div>
+                                <div class="form-group" id="multi-email">
+                                    <label>Friend's Email: </label>
+                                    <br />
+                                    <%--<div id="tags">--%>
+                                    <input type="text" value="" runat="server" class="form-control" name="email" id="txtemail_friend"
+                                        autocompletetype="Disabled" autocomplete="off" maxlength="100" />
+                                    <%--  </div>--%>
+                                    <%--  <asp:RequiredFieldValidator ValidationGroup="invite" CssClass="ErrorMsg" ID="RequiredFieldValidator1"
+                                        runat="server" ControlToValidate="txtemail_friend" InitialValue="" ErrorMessage="Required field"
+                                        Display="Dynamic" />--%>
+                                    <%--  <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtemail_friend"
+                                        CssClass="ErrorMsg" ErrorMessage="Invalid" Display="Dynamic" ValidationExpression="^((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([,])*)*$"></asp:RegularExpressionValidator>--%>
+                                    <%-- <asp:Label ID="lblmsg" runat="server" ForeColor="Red"></asp:Label>--%>
+                                </div>
+                                <asp:HiddenField ID="mailids" runat="server" />
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:Button ID="btninvite" ValidationGroup="invite" runat="server" CssClass="btn btn-gradiant" OnClick="btninvite_Click" Text="Invite" />
+                                <asp:Button ID="Button2" runat="server" Text="Close" OnClientClick="click_close_invite();" data-dismiss="modal" CssClass="btn btn-default" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                        <br />
+                        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="BtnSubmit" />
+                            </Triggers>
+                            <ContentTemplate>
+                                <asp:Label ID="lblinvitemsg" runat="server" ForeColor="Green"></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!----Invite friends Popup------->
+
+        <!----Login Popup------->
+        <div id="login-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header model-header-orange">
+                        <button type="button" id="login_close_cross" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center ">Login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-horizontal">
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-sm-3">Email:</label>
+                                <div class="col-sm-9">
+                                    <asp:UpdatePanel ID="UpdatePanel11" runat="server">
+                                        <ContentTemplate>
+                                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" onblur="getPwd(this.value);"
+                                                onchange="return checkval(this);" onkeypress="return searchKeyPress(event);"
+                                                TabIndex="1" MaxLength="100"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="login" ForeColor="Red" ControlToValidate="txtEmail" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ValidationGroup="login" runat="server" ControlToValidate="txtEmail" ForeColor="Red" SetFocusOnError="true" ValidationExpression="\s*\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*\s*"></asp:RegularExpressionValidator>
+                                            <%--  <input type="email" class="form-control">--%>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label class="control-label col-sm-3">Password:</label>
+                                <div class="col-sm-9">
+                                    <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" CssClass="form-control" onkeypress="return searchKeyPress(event);"
+                                        TabIndex="2" MaxLength="20"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="login" runat="server" ForeColor="Red" ControlToValidate="txtPassword" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label><asp:CheckBox ID="chkremember" runat="server" Checked="true"/>Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-group-sm">
+                                <div class="col-sm-offset-3 col-sm-5">
+                                    <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                                        <ContentTemplate>
+                                            <asp:Button ID="btnlogin" CssClass="btn btn-gradiant" runat="server" ValidationGroup="login" OnClick="btnlogin_Click" Text="Submit" OnClientClick="rememberPwd();" />
+                                             </ContentTemplate>
+                                    </asp:UpdatePanel>
+                               
+                                </div>
+                                <div class="col-sm-4 text-right">
+                                       <a href="<%=Constants__.WEB_ROOT %>/signup">Sign up!</a><br />
+                                    <asp:LinkButton ID="lnkforgot" runat="server" OnClientClick="close_login();" data-toggle="modal" data-target="#forgot-modal">Forgotten password?</asp:LinkButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    <asp:UpdatePanel ID="UpdatePanel7" runat="server">
+                        <ContentTemplate>
+                            <asp:Label ID="lblloginerror" runat="server" Visible="false" ForeColor="Red"></asp:Label>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="btnlogin" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            function close_login()
+            {
+                $('#login_close_cross').click();
+            }
+
+            function searchKeyPress(e) {
+
+                // look for window.event in case event isn't passed in
+                e = e || window.event;
+                if (e.keyCode == 13) {
+                    document.getElementById('<%= btnlogin.ClientID%>').click();
+                      return false;
+                  }
+                  return true;
+            }
+            function forgot_close_button() {
+                $('#ctl00_txtforgotemail').val('');
+                $('#ctl00_Label1').hide();
+                document.getElementById('ctl00_btnforgot').disabled = '';
+                document.getElementById("ctl00_txtforgotemail").disabled = '';
+            }
+              function checkval(th) {
+
+                  document.getElementById('ctl00_txtEmail').value = document.getElementById('<%= txtEmail.ClientID%>').value.trim();
+
+              }
+              function getPwd(c_name) {
+
+                  var i, x, y,
+
+                  ARRcookies = document.cookie.split(";");
+                  for (i = 0; i < ARRcookies.length; i++) {
+                      x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                      y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                      x = x.replace(/^\s+|\s+$/g, "");
+                      if (x == c_name) {
+                          document.getElementById('<%= txtPassword.ClientID%>').value = unescape(y);
+                          document.getElementById('<%= chkremember.ClientID %>').checked = true;
+                      }
+                  }
+              }
+              function rememberPwd() {
+
+                  var emailid = document.getElementById('<%= txtEmail.ClientID%>').value;
+                  var pwd = document.getElementById('<%= txtPassword.ClientID%>').value;
+                  if (document.getElementById('<%= chkremember.ClientID %>').checked == true) {
+
+                      var date = new Date();
+                      date.setTime(date.getTime() + (180 * 24 * 60 * 60 * 1000));
+                      var expires = "; expires=" + date.toGMTString();
+
+                      document.cookie = emailid + '=' + pwd + "; expires=" + expires + ";" + ";";
+                  }
+                  else {
+                      var d = new Date();
+                      document.cookie = emailid + '=' + pwd + "; expires=" + d.toGMTString() + ";" + ";";
+                  }
+              }
+
+              function getPwd(c_name) {
+
+                  var i, x, y,
+
+                  ARRcookies = document.cookie.split(";");
+                  for (i = 0; i < ARRcookies.length; i++) {
+                      x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                      y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                      x = x.replace(/^\s+|\s+$/g, "");
+                      if (x == c_name) {
+                          document.getElementById('<%= txtPassword.ClientID%>').value = unescape(y);
+                    document.getElementById('<%= chkremember.ClientID %>').checked = true;
+                }
+            }
+        }
+
+        function searchKeyPress(e) {
+
+            // look for window.event in case event isn't passed in
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                document.getElementById('<%= btnlogin.ClientID%>').click();
+                return false;
+            }
+            return true;
+        }
+        </script>
+        <!----Login Popup end------->
+          <!-----Forgot Password---->
+    <div class="modal fade" id="forgot-modal" role="dialog">
+        <div class="modal-dialog ">
+
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div class="modal-header model-header-orange">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center ">Forgot Password</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                Please enter your Email-id:
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtforgotemail" ErrorMessage="Required" ForeColor="Red" ValidationGroup="forgot"></asp:RequiredFieldValidator>
+                                <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                                    <Triggers>
+                                        <asp:AsyncPostBackTrigger ControlID="btnforgot" />
+                                    </Triggers>
+                                    <ContentTemplate>
+                                        <asp:TextBox ID="txtforgotemail" runat="server" class="form-control" Rows="2" placeholder="Enter Email Id"></asp:TextBox>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                <ContentTemplate>
+                                    <asp:Button ID="btnforgot" runat="server" Text="Submit" ValidationGroup="forgot" class="btn btn-gradiant" OnClick="btnforgot_Click" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="Button1" runat="server" Text="Close" OnClientClick="forgot_close_button();" data-dismiss="modal" CssClass="btn btn-default" />
+                    <br />
+                    <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="btnforgot" />
+                        </Triggers>
+                        <ContentTemplate>
+                            <asp:Label ID="Label1" runat="server" Text="message sent successfully!!" ForeColor="Green" Visible="false"></asp:Label>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!---End Forgot Password-->
+
+        <script type="text/javascript">
+
+            function resetcForm() {
+
+                document.getElementById('<%= name.ClientID%>').value = "";
+                document.getElementById('<%= email.ClientID%>').value = "";
+           <%-- document.getElementById('<%= country.ClientID%>').value = "";
+            document.getElementById('<%= phone.ClientID%>').value = "";
+            document.getElementById('<%= subject.ClientID%>').value = "";--%>
+                document.getElementById('<%= comments.ClientID%>').value = "";
+
+                document.getElementById('<%= Rqname.ClientID%>').style.display = "none";
+
+                document.getElementById('<%= Rqemail.ClientID%>').style.display = "none";
+
+                document.getElementById('<%= Rqcomments.ClientID%>').style.display = "none";
+                document.getElementById('<%= regVEmail.ClientID%>').style.display = "none";
+
+                document.getElementById('<%= BtnSubmit.ClientID%>').disabled = false;
+                document.getElementById('<%= BtnSubmit.ClientID%>').className = "button_contactus";
+                document.getElementById('<%= lblreportmsg.ClientID%>').value = "";
+
+                  
+
+         <%--   document.getElementById('<%= divSucessMSG.ClientID%>').style.display = "none";
+
+            document.getElementById('<%= regPhone.ClientID%>').style.display = "none";--%>
+
+            }
+
+
+            function CheckFieldLength() {
+
+
+                var fn = document.getElementById('<%= comments.ClientID%>');
+                if (fn != null) {
+                    var len = fn.value.length;
+                    if (len >= 500) {
+                        fn.value = fn.value.substring(0, 500);
+                        len = 500;
+                    }
+
+                }
+            }
+
+
+
+
+
+
+
+        </script>
+
+        <!----Ends Popup--->
+
+    </form>
+</body>
+</html>

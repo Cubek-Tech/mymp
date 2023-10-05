@@ -1,0 +1,1121 @@
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\NQE8503\Laxmikant\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+C:\Laxmikant\D\Applications\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Laxmikant\D\Applications\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Laxmikant\D\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\ResolveAssemblyReference.cache
+C:\Laxmikant\D\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Laxmikant\D\Applications\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\downlaod\RESTFulWCFServicewithJSON\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\downlaod\RESTFulWCFServicewithJSON\RESTFulWCFService\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\downlaod\RESTFulWCFServicewithJSON\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\downlaod\RESTFulWCFServicewithJSON\RESTFulWCFService\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\Narendra\Working projects\mobile\ipaid\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\Narendra\Working projects\mobile\ipaid\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\Narendra\Working projects\mobile\ipaid\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\Narendra\Working projects\mobile\ipaid\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\Narendra\Working projects\mobile\ipaid\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\Narendra\Working projects\mobile\2013-10-17\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\Narendra\Working projects\mobile\2013-10-17\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\Narendra\Working projects\mobile\2013-10-17\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\Narendra\Working projects\mobile\2013-10-17\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\working project\Complete ipad\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\working project\Complete ipad\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\working project\Complete ipad\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\working project\Complete ipad\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\working project\Complete ipad\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\working project\mobile_m2b\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\working project\mobile_m2b\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\working project\mobile_m2b\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\working project\mobile_m2b\RESTFulWCFService\bin\Bussiness.dll
+E:\working project\mobile_m2b\RESTFulWCFService\bin\Bussiness.pdb
+E:\working project\mobile_m2b\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\working project\mobile_m2b\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\Table and Massage2book\m2b App\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\Table and Massage2book\m2b App\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\Table and Massage2book\m2b App\RESTFulWCFService\bin\Bussiness.dll
+E:\Table and Massage2book\m2b App\RESTFulWCFService\bin\Factory.dll
+E:\Table and Massage2book\m2b App\RESTFulWCFService\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\Table and Massage2book\m2b App\RESTFulWCFService\bin\Factory.pdb
+E:\Table and Massage2book\m2b App\RESTFulWCFService\bin\Bussiness.pdb
+E:\Table and Massage2book\m2b App\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\Table and Massage2book\m2b App\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\Table and Massage2book\m2b App\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\AjaxControlToolkit.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\aspsnippets.facebookapi.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\Bussiness.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\BussinessEntity.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\DotNetOpenAuth.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\Factory.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\Google.GData.Client.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\Google.GData.Contacts.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\Google.GData.Extensions.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\log4net.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\System.Net.Http.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\UtilityProject.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\Factory.pdb
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\UtilityProject.pdb
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\AjaxControlToolkit.pdb
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\Bussiness.pdb
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\DotNetOpenAuth.pdb
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\DotNetOpenAuth.xml
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\log4net.xml
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\System.Net.Http.xml
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\ar\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\cs\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\de\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\es\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\fr\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\he\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\hi\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\it\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\ja\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\ko\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\nl\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\pt\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\ru\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\tr-TR\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\zh-CHS\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\bin\zh-CHT\AjaxControlToolkit.resources.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\Narendra\Working projects\mobile\mm2b_26_02\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\obj\Debug\ResolveAssemblyReference.cache
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\obj\Debug\GenerateResource.read.1.tlog
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\obj\Debug\GenerateResource.write.1.tlog
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\Bussiness.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\BussinessEntity.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\Factory.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\UtilityProject.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\Factory.pdb
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\UtilityProject.pdb
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\AjaxControlToolkit.pdb
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\Bussiness.pdb
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\DotNetOpenAuth.pdb
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\DotNetOpenAuth.xml
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\log4net.xml
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\System.Net.Http.xml
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\ar\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\cs\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\de\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\es\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\fr\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\he\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\hi\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\it\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\ja\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\ko\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\nl\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\pt\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\ru\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\DHEERAJ\working project\New folder\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\Bussiness.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\BussinessEntity.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\Factory.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\UtilityProject.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\Factory.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\UtilityProject.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\Bussiness.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\obj\Debug\ResolveAssemblyReference.cache
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\obj\Debug\GenerateResource.read.1.tlog
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\obj\Debug\GenerateResource.write.1.tlog
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\AjaxControlToolkit.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\DotNetOpenAuth.pdb
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\DotNetOpenAuth.xml
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\log4net.xml
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\System.Net.Http.xml
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\ar\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\cs\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\de\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\es\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\fr\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\he\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\hi\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\it\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\ja\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\ko\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\nl\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\pt\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\ru\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\DHEERAJ\working project\M2B\RESTFulWCFService\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\obj\Debug\ResolveAssemblyReference.cache
+D:\working project\massage2book\M2B\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\working project\massage2book\M2B\RESTFulWCFService\obj\Debug\GenerateResource.read.1.tlog
+D:\working project\massage2book\M2B\RESTFulWCFService\obj\Debug\GenerateResource.write.1.tlog
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\Bussiness.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\BussinessEntity.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\Factory.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\System.Diagnostics.Tools.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\UtilityProject.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\Factory.pdb
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\UtilityProject.pdb
+D:\working project\massage2book\M2B\RESTFulWCFService\bin\Bussiness.pdb
+D:\working project\massage2book\M2B\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\working project\massage2book\M2B\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\megha\RESTFulWCFService\obj\Debug\ResolveAssemblyReference.cache
+E:\megha\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\megha\RESTFulWCFService\obj\Debug\GenerateResource.read.1.tlog
+E:\megha\RESTFulWCFService\obj\Debug\GenerateResource.write.1.tlog
+E:\megha\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\megha\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\megha\RESTFulWCFService\bin\Bussiness.dll
+E:\megha\RESTFulWCFService\bin\BussinessEntity.dll
+E:\megha\RESTFulWCFService\bin\Factory.dll
+E:\megha\RESTFulWCFService\bin\Utility.exe
+E:\megha\RESTFulWCFService\bin\UtilityProject.dll
+E:\megha\RESTFulWCFService\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\megha\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\megha\RESTFulWCFService\bin\Factory.pdb
+E:\megha\RESTFulWCFService\bin\UtilityProject.pdb
+E:\megha\RESTFulWCFService\bin\Utility.pdb
+E:\megha\RESTFulWCFService\bin\Bussiness.pdb
+E:\megha\RESTFulWCFService\bin\System.Net.Http.xml
+E:\megha\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\megha\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\Runing Work\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\Runing Work\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\Runing Work\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+E:\Runing Work\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\Runing Work\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\Runing Work\RESTFulWCFService\bin\Bussiness.dll
+E:\Runing Work\RESTFulWCFService\bin\BussinessEntity.dll
+E:\Runing Work\RESTFulWCFService\bin\Factory.dll
+E:\Runing Work\RESTFulWCFService\bin\Utility.exe
+E:\Runing Work\RESTFulWCFService\bin\UtilityProject.dll
+E:\Runing Work\RESTFulWCFService\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\Runing Work\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\Runing Work\RESTFulWCFService\bin\Factory.pdb
+E:\Runing Work\RESTFulWCFService\bin\UtilityProject.pdb
+E:\Runing Work\RESTFulWCFService\bin\Utility.pdb
+E:\Runing Work\RESTFulWCFService\bin\Bussiness.pdb
+E:\Runing Work\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\Runing Work\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\working project\massage2book.com\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\working project\massage2book.com\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\working project\massage2book.com\RESTFulWCFService\bin\Bussiness.dll
+E:\working project\massage2book.com\RESTFulWCFService\bin\BussinessEntity.dll
+E:\working project\massage2book.com\RESTFulWCFService\bin\Factory.dll
+E:\working project\massage2book.com\RESTFulWCFService\bin\Utility.exe
+E:\working project\massage2book.com\RESTFulWCFService\bin\UtilityProject.dll
+E:\working project\massage2book.com\RESTFulWCFService\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\working project\massage2book.com\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\working project\massage2book.com\RESTFulWCFService\bin\Bussiness.pdb
+E:\working project\massage2book.com\RESTFulWCFService\bin\Factory.pdb
+E:\working project\massage2book.com\RESTFulWCFService\bin\UtilityProject.pdb
+E:\working project\massage2book.com\RESTFulWCFService\bin\Utility.pdb
+E:\working project\massage2book.com\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\working project\massage2book.com\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\working project\massage2book.com\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+E:\working project\massage2book.com\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\working project\massage2book.com\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\working project\massage2book.com\RESTFulWCFService\bin\System.Net.Http.xml
+D:\m2b\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\m2b\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\m2b\RESTFulWCFService\bin\Bussiness.dll
+D:\m2b\RESTFulWCFService\bin\BussinessEntity.dll
+D:\m2b\RESTFulWCFService\bin\Factory.dll
+D:\m2b\RESTFulWCFService\bin\UtilityProject.dll
+D:\m2b\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\m2b\RESTFulWCFService\bin\Bussiness.pdb
+D:\m2b\RESTFulWCFService\bin\Factory.pdb
+D:\m2b\RESTFulWCFService\bin\UtilityProject.pdb
+D:\m2b\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+D:\m2b\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\m2b\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+D:\m2b\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\m2b\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\Bussiness.dll
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\BussinessEntity.dll
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\UtilityProject.dll
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\BussinessEntity.pdb
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\UtilityProject.pdb
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\Bussiness.pdb
+C:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\bin\Factory.pdb
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\Admin\Desktop\Pandey\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+F:\projects\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+F:\projects\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+F:\projects\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+F:\projects\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+F:\projects\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+F:\projects\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+F:\projects\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+F:\projects\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+F:\projects\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+F:\projects\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+F:\projects\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+F:\projects\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+F:\projects\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+F:\projects\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+C:\Users\admin\Desktop\MP\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\admin\Desktop\MP\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\admin\Desktop\MP\RESTFulWCFService\bin\Bussiness.dll
+C:\Users\admin\Desktop\MP\RESTFulWCFService\bin\BussinessEntity.dll
+C:\Users\admin\Desktop\MP\RESTFulWCFService\bin\UtilityProject.dll
+C:\Users\admin\Desktop\MP\RESTFulWCFService\bin\BussinessEntity.pdb
+C:\Users\admin\Desktop\MP\RESTFulWCFService\bin\Bussiness.pdb
+C:\Users\admin\Desktop\MP\RESTFulWCFService\bin\UtilityProject.pdb
+C:\Users\admin\Desktop\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\MP\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+C:\Users\admin\Desktop\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\admin\Desktop\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\MP\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\MP\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\MP\RESTFulWCFService\bin\Bussiness.dll
+D:\MP\RESTFulWCFService\bin\BussinessEntity.dll
+D:\MP\RESTFulWCFService\bin\UtilityProject.dll
+D:\MP\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\MP\RESTFulWCFService\bin\Bussiness.pdb
+D:\MP\RESTFulWCFService\bin\UtilityProject.pdb
+D:\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+D:\MP\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+D:\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\Bussiness.dll
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\BussinessEntity.dll
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\UtilityProject.dll
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\BussinessEntity.pdb
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\Bussiness.pdb
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\bin\UtilityProject.pdb
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\harit_000\Desktop\MP\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\bin\Bussiness.dll
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\bin\BussinessEntity.dll
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\bin\UtilityProject.dll
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\bin\BussinessEntity.pdb
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\bin\Bussiness.pdb
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\bin\UtilityProject.pdb
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\Admin\Desktop\H Pandey\MP_14Dec2017\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\bin\Bussiness.dll
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\bin\BussinessEntity.dll
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\bin\UtilityProject.dll
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\bin\BussinessEntity.pdb
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\bin\Bussiness.pdb
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\bin\UtilityProject.pdb
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\Admin\Desktop\H Pandey\MP Befor FB login\MP_14Dec2017\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\Harit Work\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\Harit Work\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\Harit Work\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\Harit Work\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\Harit Work\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\Harit Work\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\Harit Work\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\Harit Work\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\Harit Work\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+D:\Harit Work\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\Harit Work\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+D:\Harit Work\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\Harit Work\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+E:\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+E:\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+E:\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+E:\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+E:\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+E:\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+E:\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Client.dll
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.dll
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Security.dll
+D:\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+D:\MassagePartner\RESTFulWCFService\bin\Owin.dll
+D:\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Client.xml
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.xml
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Security.xml
+D:\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+D:\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+D:\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Client.xml
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.xml
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Security.xml
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\harit_000\Desktop\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Client.xml
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.xml
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Security.xml
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+E:\Harit Development\Prod Backups\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Client.xml
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.xml
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Security.xml
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Client.xml
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Core.xml
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.xml
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Security.xml
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\mymp22jan\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Client.xml
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.xml
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Microsoft.Owin.Security.xml
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csprojAssemblyReference.cache
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.cache
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CopyComplete
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Stripe.net.dll
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Stripe.net.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\RESTFulWCFService\bin\Stripe.net.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.cache
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Factory.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Microsoft.Web.Infrastructure.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Stripe.net.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Http.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\WebGrease.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Factory.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Stripe.net.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Stripe.net.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Http.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.xml
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CopyComplete
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Utility.exe
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\bin\Utility.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.AssemblyReference.cache
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CoreCompileInputs.cache
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Factory.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Microsoft.Web.Infrastructure.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Stripe.net.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Http.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Utility.exe
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\WebGrease.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Factory.pdb
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Utility.pdb
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.pdb
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Stripe.net.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Http.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.AssemblyReference.cache
+D:\Production Sites\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\Production Sites\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.cache
+D:\Production Sites\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CoreCompileInputs.cache
+D:\Production Sites\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CopyComplete
+D:\Production Sites\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Microsoft.Win32.Primitives.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\netstandard.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.AppContext.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Collections.Concurrent.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Collections.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Collections.NonGeneric.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Collections.Specialized.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.ComponentModel.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.ComponentModel.EventBasedAsync.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.ComponentModel.Primitives.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.ComponentModel.TypeConverter.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Console.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Data.Common.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.Contracts.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.Debug.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.FileVersionInfo.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.Process.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.StackTrace.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.TraceSource.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.Tracing.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Drawing.Primitives.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Dynamic.Runtime.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Globalization.Calendars.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Globalization.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Globalization.Extensions.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.Compression.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.Compression.ZipFile.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.FileSystem.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.FileSystem.DriveInfo.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.FileSystem.Primitives.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.FileSystem.Watcher.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.IsolatedStorage.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.MemoryMappedFiles.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.Pipes.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.IO.UnmanagedMemoryStream.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Linq.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Linq.Expressions.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Linq.Parallel.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Linq.Queryable.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.NameResolution.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.NetworkInformation.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.Ping.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.Primitives.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.Requests.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.Security.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.Sockets.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.WebHeaderCollection.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.WebSockets.Client.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Net.WebSockets.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.ObjectModel.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Reflection.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Reflection.Extensions.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Reflection.Primitives.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Resources.Reader.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Resources.ResourceManager.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Resources.Writer.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.Extensions.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.Handles.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.InteropServices.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.Numerics.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.Serialization.Formatters.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.Serialization.Json.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.Serialization.Primitives.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.Serialization.Xml.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Security.Claims.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.Algorithms.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.Csp.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.Encoding.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.Primitives.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Security.Principal.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Security.SecureString.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Text.Encoding.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Text.Encoding.Extensions.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Text.RegularExpressions.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.Overlapped.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Parallel.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.Thread.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.ThreadPool.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.Timer.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.ValueTuple.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Xml.ReaderWriter.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Xml.XDocument.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Xml.XmlDocument.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Xml.XmlSerializer.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Xml.XPath.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Xml.XPath.XDocument.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.dll
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Production Sites\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Microsoft.Win32.Primitives.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\netstandard.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.AppContext.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Collections.Concurrent.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Collections.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Collections.NonGeneric.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Collections.Specialized.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.ComponentModel.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.ComponentModel.EventBasedAsync.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.ComponentModel.Primitives.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.ComponentModel.TypeConverter.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Console.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Data.Common.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.Contracts.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.Debug.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.Process.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.StackTrace.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.TraceSource.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Diagnostics.Tracing.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Drawing.Primitives.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Dynamic.Runtime.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Globalization.Calendars.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Globalization.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Globalization.Extensions.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.Compression.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.Compression.ZipFile.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.FileSystem.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.FileSystem.Watcher.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.IsolatedStorage.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.MemoryMappedFiles.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.Pipes.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.IO.UnmanagedMemoryStream.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Linq.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Linq.Expressions.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Linq.Parallel.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Linq.Queryable.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.NameResolution.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.NetworkInformation.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.Ping.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.Primitives.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.Requests.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.Security.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.Sockets.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.WebHeaderCollection.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.WebSockets.Client.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.WebSockets.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.ObjectModel.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Reflection.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Reflection.Extensions.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Reflection.Primitives.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Resources.Reader.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Resources.ResourceManager.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Resources.Writer.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.Extensions.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.Handles.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.InteropServices.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.Numerics.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.Serialization.Formatters.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.Serialization.Json.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.Serialization.Primitives.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.Serialization.Xml.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Security.Claims.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.Csp.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Security.Principal.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Security.SecureString.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Text.Encoding.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Text.Encoding.Extensions.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Text.RegularExpressions.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.Overlapped.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Parallel.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.Thread.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.ThreadPool.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.Timer.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.ValueTuple.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Xml.ReaderWriter.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Xml.XDocument.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Xml.XmlDocument.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Xml.XmlSerializer.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Xml.XPath.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Xml.XPath.XDocument.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Factory.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Stripe.net.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Http.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Utility.exe
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\WebGrease.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Factory.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Utility.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\Stripe.net.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Http.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.xml
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.AssemblyReference.cache
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.cache
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CoreCompileInputs.cache
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CopyComplete
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Factory.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Web.Infrastructure.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Stripe.net.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Utility.exe
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\WebGrease.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Factory.pdb
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Utility.pdb
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.pdb
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Stripe.net.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.xml
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.AssemblyReference.cache
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.cache
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CoreCompileInputs.cache
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CopyComplete
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\01_July_Backup\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Factory.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Web.Infrastructure.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Stripe.net.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Utility.exe
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\WebGrease.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Factory.pdb
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Utility.pdb
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.pdb
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Stripe.net.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.xml
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.AssemblyReference.cache
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.cache
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CoreCompileInputs.cache
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CopyComplete
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\01_september_2023\07_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Factory.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Web.Infrastructure.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Stripe.net.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Utility.exe
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\WebGrease.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Factory.pdb
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Utility.pdb
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.pdb
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Stripe.net.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.xml
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.AssemblyReference.cache
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.cache
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CoreCompileInputs.cache
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CopyComplete
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+D:\01_september_2023\09_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll.config
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\RESTFulWCFService.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Bussiness.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\BussinessEntity.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Factory.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Web.Infrastructure.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Stripe.net.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Utility.exe
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\UtilityProject.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\WebGrease.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\BussinessEntity.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Bussiness.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Factory.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\UtilityProject.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Utility.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Antlr3.Runtime.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Microsoft.Bcl.AsyncInterfaces.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Newtonsoft.Json.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\Stripe.net.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Net.Http.Formatting.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Threading.Tasks.Extensions.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Helpers.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Http.WebHost.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Mvc.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Optimization.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.Razor.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Deployment.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\bin\System.Web.WebPages.Razor.xml
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.AssemblyReference.cache
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\PayPalIntegration.OrderForm.resources
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.GenerateResource.cache
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CoreCompileInputs.cache
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.csproj.CopyComplete
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\RESTFulWCFService\obj\Debug\RESTFulWCFService.pdb

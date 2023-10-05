@@ -1,0 +1,140 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SearchPartener.Master" AutoEventWireup="true" CodeBehind="profile.aspx.cs" Inherits="RESTFulWCFService.MassagePartener.User.profile" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      <div id="overlay">
+    </div>
+    <section class="wrapper">
+         <asp:HiddenField ID="hdnpartnersubscribed" runat="server" />
+<div class="container wrapper-content ">
+<div class="main-content ">
+    <div class="profile-section">
+        <div class="row ">
+		    <div class="col-sm-12">
+		        <h2 class="title text-center">Profile</h2>
+			</div>
+		</div>
+		<div class="row ">	
+			<div class="col-sm-3 profile-pic">
+                <asp:Image ID="imgprofilpic" runat="server" ImageUrl="~/image/no_image.jpg"  CssClass="img-responsive"/>
+			</div>
+			<div class="col-sm-9">
+			<div class="profile-details">
+			    <div class="details"><div class="details-left">Name :</div><span><asp:Label ID="lblname" runat="server"></asp:Label></span></div>
+		        <div class="details"><div class="details-left">Gender :</div><span><asp:Label ID="lblgender" runat="server"></asp:Label></span></div>
+				<div class="details" id="conatct_no" runat="server"><div class="details-left">Contact no.:</div><span><asp:Label ID="lblcontact" runat="server"></asp:Label></span></div>
+		        <div class="details" style="display:none"><div class="details-left">Date Of Birth :</div><span><asp:Label ID="lbldob" runat="server"></asp:Label></span></div>
+		        <div class="details" id="div_MassageTypes" runat="server"><div class="details-left">Massage Type Can Exchange:</div><span><asp:Label ID="lblmassagetype" runat="server"></asp:Label></span></div>
+		        <div class="details"><div class="details-left">Desired Partner's Gender:</div><span><asp:Label ID="lblpartgender" runat="server"></asp:Label></span></div>
+		        <div class="details"><div class="details-left">Desired Partner Age:</div><span><asp:Label ID="lblpartnerage" runat="server"></asp:Label></span></div>
+		        <div class="details"><div class="details-left">Country:</div><span><asp:Label ID="lblcountry" runat="server"></asp:Label></span></div>
+		        <div class="details"><div class="details-left">State:</div><span><asp:Label ID="lblstate" runat="server"></asp:Label></span></div>
+		        <div class="details"><div class="details-left">City:</div><span><asp:Label ID="lblcity" runat="server"></asp:Label></span></div>
+                <div class="details" id="div_Area" runat="server"><div class="details-left">Area:</div><span><asp:Label ID="lblarea" runat="server"></asp:Label></span></div>
+		        <div class="details" id="div_Postal" runat="server"><div class="details-left">ZIP/PIN Code:</div><span><asp:Label ID="lblpostal" runat="server"></asp:Label></span></div>
+                <div class="details" id="div_Certified" runat="server"><div class="details-left">I am a:</div><span><asp:Label ID="lblcertified" runat="server"></asp:Label></span></div>
+			</div>
+			</div>
+			
+        </div>
+		<div class="row ">	
+			<div class="col-sm-2">
+			<strong>Images</strong>
+			</div>
+			<div class="col-sm-10">
+			    <div class="row">
+				    <div class="col-sm-3">
+					    <div class="upload-imagebox">
+					        <center>
+						        <a>
+							       <asp:Image ID="img1" runat="server" Style="width:100%; height:100px" CssClass="img-responsive" ImageUrl="~/image/no_image.jpg"></asp:Image>
+						        </a>
+					        </center>
+				        </div>
+					</div>
+					<div class="col-sm-3">
+					    <div class="upload-imagebox">
+					        <center>
+              				  <asp:Image ID="img2" runat="server" Style="width:100%; height:100px" CssClass="img-responsive" ImageUrl="~/image/no_image.jpg"></asp:Image>
+						       
+					        </center>
+				        </div>
+					</div>
+					<div class="col-sm-3">
+					    <div class="upload-imagebox">
+					        <center>
+						        <a>
+							         <asp:Image ID="img3" runat="server" Style="width:100%; height:100px" CssClass="img-responsive" ImageUrl="~/image/no_image.jpg"></asp:Image>
+						        </a>
+					        </center>
+				        </div>
+					</div>
+					<div class="col-sm-3">
+					    <div class="upload-imagebox">
+					        <center>
+						        <a>
+							         <asp:Image ID="img4" runat="server" Style="width:100%; height:100px" CssClass="img-responsive" ImageUrl="~/image/no_image.jpg"></asp:Image>
+						        </a>
+					        </center>
+				        </div>
+					</div>
+                    <div class="col-sm-3">
+					    <div class="upload-imagebox">
+					        <center>
+						        <a>
+							         <asp:Image ID="img5" runat="server" Style="width:100%; height:100px" CssClass="img-responsive" ImageUrl="~/image/no_image.jpg"></asp:Image>
+						        </a>
+					        </center>
+				        </div>
+					</div>
+                    <div class="col-sm-3">
+					    <div class="upload-imagebox">
+					        <center>
+						        <a>
+							         <asp:Image ID="img6" runat="server" Style="width:100%; height:100px" CssClass="img-responsive" ImageUrl="~/image/no_image.jpg"></asp:Image>
+						        </a>
+					        </center>
+				        </div>
+					</div>
+				</div>
+			    
+			</div>
+		</div>
+		<div class="description-box" id="div_description" runat="server">	
+		<div class="row">	
+			<div class="col-sm-2">
+			<strong>About</strong>
+			</div>
+			<div class="col-sm-10">
+			<p><asp:Label ID="lbldescription" runat="server"></asp:Label></p>
+			</div>
+		</div>
+		</div>
+		<div class="description-box" id="div_qualification" runat="server">	
+		<div class="row ">	
+			<div class="col-sm-2">
+			<strong>Experience and Qualification</strong>
+			</div>
+			<div class="col-sm-10">
+			<p><asp:Label ID="lblqualification" runat="server"></asp:Label></p>
+			</div>
+		</div>
+		</div>
+		<div class="description-box" id="div_experience" runat="server">	
+		<div class="row ">	
+			<div class="col-sm-2">
+			<strong>Massage Experience </strong>
+			</div>
+			<div class="col-sm-10">
+			<p><asp:Label ID="lblexperience" runat="server"></asp:Label></p>
+			</div>
+		</div>
+		</div>
+		
+		
+   </div>
+
+</div>
+</div>
+</section>
+</asp:Content>

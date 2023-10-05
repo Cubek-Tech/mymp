@@ -1,0 +1,1204 @@
+
+div#m2b-payment-pop-up .payment-row .col-sm-4 .payment-rupee span span {
+    position: relative;
+    top: 2px;
+}
+/*div#m2b-payment-pop-up #Rihanna .pay-via-paytm img.image-responsive {
+    height: auto;
+}
+*/
+/*-=--------------------25-7-23--------------*/
+div#m2b-payment-pop-up #Rihanna .pay-via-paytm img.image-responsive {
+    height: 300px !important;
+}
+
+div#Rihanna {
+    padding: 5px 15px;
+}
+
+div#m2b-payment-pop-up .modal-dialog {
+    width: 800px;
+    background: #fff;
+    box-shadow: 0px 0px 3px #9e9d9c99;
+    max-width: 100%;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    border-top-width: 1px;
+    border-top-color: rgb(204, 204, 204);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-radius: 6px;
+}
+
+div#Pay-Through-Card-tab label {
+    font-size: 12px;
+    display: block;
+    color: #333;
+    font-family: "Open Sans", helvetica, arial;
+    font-weight: normal !important;
+}
+
+div#m2b-payment-pop-up .modal-dialog .after-disc {
+    text-align: center;
+    font-size: 10px;
+}
+
+div#m2b-payment-pop-up .modal-dialog .payment-rupee {
+    text-align: center;
+}
+
+
+
+
+.sexytabs > ul {
+    text-align: center;
+    font-weight: 500;
+    margin: 15px 0 0;
+    padding: 0;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+    .sexytabs > ul > li {
+        display: inline-block;
+        background: #fafafa;
+        padding: 0.6em 0;
+        position: relative;
+        width: 25%;
+        margin: 0 !important;
+    }
+
+        .sexytabs > ul > li:before, .sexytabs > ul > li:after {
+            opacity: 0;
+        }
+
+        .sexytabs > ul > li.ui-tabs-active:before, .sexytabs > ul > li.ui-tabs-active:after, .sexytabs > ul > li.ui-state-hover:before, .sexytabs > ul > li.ui-state-hover:after, .sexytabs > ul > li.ui-state-focus:before, .sexytabs > ul > li.ui-state-focus:after {
+            opacity: 1;
+        }
+
+        .sexytabs > ul > li:before, .sexytabs > ul > li.ui-state-active.ui-state-hover:before, .sexytabs > ul > li.ui-state-active.ui-state-focus:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            box-shadow: 0 2px 3px rgba(22, 195, 255, 0.5);
+            top: 50%;
+            bottom: 0px;
+            left: 5px;
+            right: 5px;
+            border-radius: 100px / 10px;
+        }
+
+        .sexytabs > ul > li:after, .sexytabs > ul > li.ui-state-active.ui-state-hover:after, .sexytabs > ul > li.ui-state-active.ui-state-focus:after {
+            /*content: "";
+  background: #fafafa;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  bottom: -6px;
+  margin-left: -6px;
+  transform: rotate(45deg);
+  box-shadow: inset 3px 3px 3px rgba(22, 195, 255, 0.5), inset 1px 1px 1px rgba(0, 0, 0, 0.3);*/
+            content: "" !important;
+            background: #fafafa !important;
+            position: absolute !important;
+            width: 12px !important;
+            height: 12px !important;
+            left: 50% !important;
+            bottom: -6px !important;
+            margin-left: -6px !important;
+            transform: rotate(45deg) !important;
+            box-shadow: inset 3px 3px 3px rgba(22, 195, 255, 0.5), inset 1px 1px 1px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .sexytabs > ul > li.ui-state-hover:before, .sexytabs > ul > li.ui-state-focus:before {
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .sexytabs > ul > li.ui-state-hover:after, .sexytabs > ul > li.ui-state-focus:after {
+            box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.2), inset 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        .sexytabs > ul > li.ui-state-focus a {
+            text-decoration: underline;
+        }
+
+        .sexytabs > ul > li:focus {
+            outline: none;
+        }
+
+        .sexytabs > ul > li a {
+            color: #444;
+            text-decoration: none;
+        }
+
+            .sexytabs > ul > li a:focus {
+                outline: none;
+            }
+
+            .sexytabs > ul > li a span {
+                position: relative;
+                top: -0.5em;
+            }
+
+.sexytabs.dark > ul {
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+    .sexytabs.dark > ul > li {
+        background: #333;
+    }
+
+        .sexytabs.dark > ul > li:before, .sexytabs.dark > ul > li.ui-state-active.ui-state-hover:before, .sexytabs.dark > ul > li.ui-state-active.ui-state-focus:before {
+            box-shadow: 0 2px 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .sexytabs.dark > ul > li:after, .sexytabs.dark > ul > li.ui-state-active.ui-state-hover:after, .sexytabs.dark > ul > li.ui-state-active.ui-state-focus:after {
+            background: #333;
+            box-shadow: inset 3px 3px 3px rgba(255, 255, 255, 0.3), inset 1px 1px 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .sexytabs.dark > ul > li.ui-state-hover:before, .sexytabs.dark > ul > li.ui-state-focus:before {
+            box-shadow: none;
+        }
+
+        .sexytabs.dark > ul > li.ui-state-hover:after, .sexytabs.dark > ul > li.ui-state-focus:after {
+            box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4);
+        }
+
+        .sexytabs.dark > ul > li a {
+            color: white;
+        }
+
+
+
+.lightpage body {
+    font-size: 1em;
+    background: #fafafa;
+    font-family: Lato;
+    font-weight: 300;
+}
+
+.lightpage h1 {
+    text-align: center;
+    font-size: 20px;
+}
+
+#m2b-payment-pop-up {
+    padding-left: 0px !important;
+}
+
+.lightpage .sexytabs {
+    width: 100%;
+    min-width: 360px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.lightpage .contents {
+    padding: 10px 30px;
+    min-height: 200px;
+    background: #f7f7f7;
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-top: 0px;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0px 5px 6px #c3c2c2d1;
+    box-shadow: 0px 5px 6px #c3c2c282;
+}
+
+.darkpage {
+    background: #333;
+    color: white;
+}
+
+.darkpage,
+.lightpage {
+    padding: 50px 0;
+}
+
+input#ctl00_SubmitStripe, #ctl00_ctl00_SubmitStripe, #SubmitStripe {
+    width: auto !important;
+    display: table;
+    margin: 0px auto 15px;
+    height: auto !important;
+    padding: 2px 20px !important;
+}
+
+div#Pay-Through-Card-tab label {
+    text-align: left;
+}
+
+div#ctl00_UpdatePanel17 {
+    padding-top: 10px;
+}
+
+input#ctl00_btnPayNow1, #ctl00_ctl00_btnPayNow1, #btnPayNow1 {
+    background: #007aa5 !important;
+    border: 1px solid #2e6da4 !important;
+    font-weight: 100 !important;
+    font-size: 17px !important;
+    letter-spacing: .5px;
+    color: white !important
+}
+
+.paypal-discription-pramotion {
+    text-align: center;
+    padding-top: 10px;
+}
+
+    .paypal-discription-pramotion img {
+        height: 116px;
+        object-fit: contain;
+    }
+
+    .paypal-discription-pramotion h3 {
+        font-size: 20px;
+        font-weight: 100 !important;
+        font-family: Arial,sans-serif;
+    }
+
+    .paypal-discription-pramotion p {
+        font-size: 12px;
+        color: #aaa;
+        padding: 0px 20px;
+    }
+
+@media screen and (min-width: 1000px) {
+    .darkpage,
+    .lightpage {
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+}
+
+
+////////////////////////////////////////////////
+div#m2b-payment-pop-up .or-spacer {
+    display: block;
+    height: 400px;
+    position: relative;
+}
+
+div#m2b-payment-pop-up .or-spacer .mask {
+    overflow: hidden;
+    height: 1px;
+    transform: rotate(90deg);
+    width: 300px;
+    margin-left: -140px;
+    margin-top: 149px;
+}
+
+    div#m2b-payment-pop-up .or-spacer .mask:after {
+        content: '';
+        display: block;
+        border: 3px solid #ccc;
+    }
+
+div#m2b-payment-pop-up .or-spacer span {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-bottom: -25px;
+    left: 50%;
+    margin-left: -25px;
+    border-radius: 100%;
+    background: #eee;
+    top: 50%;
+}
+
+    div#m2b-payment-pop-up .or-spacer span i {
+        display: inline-block;
+        border-radius: 100%;
+        text-align: center;
+        width: 100%;
+        line-height: 50px;
+        font-style: normal;
+        color: #999;
+    }
+
+div#m2b-payment-pop-up .form-group.strip-logo {
+    text-align: center;
+}
+
+    div#m2b-payment-pop-up .form-group.strip-logo img {
+        height: 53px;
+        object-fit: contain;
+    }
+
+div#m2b-payment-pop-up .or-spacer {
+    height: 72px;
+}
+
+div#m2b-payment-pop-up button.btn.btn-default.paynow-btn {
+    color: #fff;
+    border-color: #2e6da4;
+    background: #007aa5;
+    padding: 5px 0px;
+    width: 100%;
+    font-size: 20px;
+}
+
+div#m2b-payment-pop-up .payment-by-paypal-btn-image img {
+    height: 45px !important;
+    object-fit: contain;
+    display: table;
+    margin: 0 auto;
+}
+
+div#m2b-payment-pop-up .col-sm-4.payment-by-paypal-btn-image {
+    padding: 0px 15px;
+}
+
+div#m2b-payment-pop-up h4.modal-title.main-title-of-popup-payment {
+    text-align: center;
+}
+
+div#m2b-payment-pop-up h4.sub-title-of-popup-payment {
+    padding: 8px 25px;
+    margin: 0px -15px 20px;
+    background: #5b5e5f;
+    border-radius: 8px 8px 0px 0px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 5px 14px #c3c2c2;
+    box-shadow: 0px 5px 14px #c3c2c2;
+}
+
+div#m2b-payment-pop-up .benefits-of-mem {
+    border: 1px solid #ccc;
+    display: table;
+    border-radius: 20px;
+    width: 90%;
+    min-width: 360px;
+    margin: auto;
+    margin-top: 15px;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    border-top-width: 1px;
+    border-top-color: rgb(204, 204, 204);
+    border-top-style: solid;
+    border-top-width: 1px;
+    font-size: 14px;
+    line-height: 23px;
+}
+
+div#m2b-payment-pop-up .row.payment-row {
+    background: #95908e;
+    color: #fff;
+    / padding: 5px;
+    / -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    border-width: 1px;
+    border-color: rgb(204, 204, 204);
+    border-style: dashed;
+    border-width: 1px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+    div#m2b-payment-pop-up .row.payment-row > .col-sm-4 {
+        background-color: #8e8c8c;
+        transition: all .5s ease-in;
+        padding: 2px 0px;
+    }
+
+        div#m2b-payment-pop-up .row.payment-row > .col-sm-4.active {
+            background-color: #007aa5;
+            box-shadow: 0px 2px 20px #696767c7;
+        }
+
+        div#m2b-payment-pop-up .row.payment-row > .col-sm-4:before {
+            content: "";
+            width: 0%;
+            position: absolute;
+            bottom: -2px;
+            border: 2px solid #ada6a6;
+            left: 0px;
+            transition: all .5s ease-in;
+        }
+
+        div#m2b-payment-pop-up .row.payment-row > .col-sm-4.active:before {
+            width: 100%;
+            border-color: #fff;
+        }
+
+div#m2b-payment-pop-up .lightpage .sexytabs a {
+    text-decoration: none;
+    color: #736e6e;
+    font-weight: 100 !important;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    padding: 5px 0px;
+    font-size: 12px;
+    text-align: center;
+}
+
+div#m2b-payment-pop-up li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active {
+    background: #bf0606;
+    line-height: 25px;
+    color: #fff !important;
+    border-radius: 8px 8px 0px 0px;
+}
+
+div#m2b-payment-pop-up .sexytabs > ul > li {
+    background: #f3f4f5;
+    line-height: 25px;
+    color: #fff !important;
+    border-radius: 8px 8px 0px 0px;
+    border: 1px solid #e2e0e0;
+}
+
+div#m2b-payment-pop-up li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+div#m2b-payment-pop-up .lightpage .sexytabs a {
+    text-decoration: none;
+    color: #333;
+    font-family: "Open Sans", helvetica, arial;
+    font-weight: normal !important;
+}
+
+div#m2b-payment-pop-up .pay-via-paytm img.image-responsive {
+    /* max-width: 100%; */
+    box-shadow: 0px 5px 6px #c3c2c2d1;
+    box-shadow: 0px 5px 6px #c3c2c282;
+    height: 300px;
+    border-radius: 4px;
+}
+
+div#m2b-payment-pop-up .pay-via-paytm p.scan-the-qr {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    text-transform: unset;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 12px;
+    margin: 15px 10px;
+}
+
+
+
+div#m2b-payment-pop-up .pay-via-paytm p.for-help {
+    white-space: nowrap;
+    color: #bf0606;
+}
+
+div#m2b-payment-pop-up .scan-forhelp-info-div a {
+    font-size: 14px;
+}
+
+div#m2b-payment-pop-up .pay-via-paytm {
+    color: #807f7f;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+    div#m2b-payment-pop-up .pay-via-paytm .once-done-ple-div {
+        padding-top: 60px;
+    }
+
+div#m2b-payment-pop-up .once-done-ple-div h5.title {
+    text-align: center;
+    line-height: 25px;
+    margin: 0px -17px 12px;
+    color: #202f66;
+    border-bottom: 1px dotted #ccc;
+}
+
+div#m2b-payment-pop-up .pay-via-paytm .once-done-ple-div .send-btn {
+    color: #fff;
+    background: aliceblue;
+    padding: 5px 0px;
+    width: 100%;
+    font-size: 20px;
+    border-color: #cb202d !important;
+    background: #cb202d linear-gradient(to bottom, #cb202d, #cb202d) repeat scroll 0 0 !important;
+}
+
+div#m2b-payment-pop-up .net-banking-contai-div {
+    padding: 15px 0px;
+    text-align: center;
+}
+
+    div#m2b-payment-pop-up .net-banking-contai-div .send-btn {
+        color: #fff;
+        border-color: #2e6da4;
+        background: #007aa5;
+        padding: 5px 20px;
+        font-size: 20px;
+        display: table;
+        margin: 0 auto;
+    }
+
+div#m2b-payment-pop-up .net-banking-contai-div {
+    padding: 15px 0px;
+    text-align: center;
+}
+
+    div#m2b-payment-pop-up .net-banking-contai-div p {
+        margin-bottom: 30px;
+        text-align: left;
+        color: #736e6e;
+        font-size: 13px;
+        padding: 0px 10px;
+    }
+
+div#m2b-payment-pop-up .pay-via-paytm .once-done-ple-div label {
+    font-weight: 100;
+}
+
+div#m2b-payment-pop-up .col-sm-4.pay-via-paytm {
+    text-align: center;
+    padding-top: 0px;
+    ;
+}
+    /*--------------------25-7-23--------------------*/
+    div#m2b-payment-pop-up .col-sm-4.pay-via-paytm img {
+        width: 210px !important;
+    }
+
+.m2b-payment-pop-up-class .lightpage .sexytabs .ui-corner-all {
+    background: no-repeat;
+    border: none;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.m2b-payment-pop-up-class .lightpage .contents {
+    padding: 10px;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+
+div#m2b-payment-pop-up input[type=submit] {
+    color: #fff;
+    padding: 5px 0px;
+    width: 100%;
+    font-size: 20px;
+    border-color: #cb202d !important;
+    background: #cb202d linear-gradient(to bottom, #cb202d, #cb202d) repeat scroll 0 0 !important;
+}
+
+#m2b-payment-pop-up .payment-rupee input {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+p.scan-the-qr {
+    text-align: center;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    text-transform: unset;
+    margin-bottom: 35px;
+    box-shadow: 0px 5px 6px #c3c2c2d1;
+    box-shadow: 0px 5px 6px #c3c2c282;
+    font-size: 12px;
+    text-align: left;
+}
+
+p.for-help {
+    color: #bf0606;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 12px;
+    text-align: center;
+}
+
+div#Rihanna .payment-icons-upi .col-xs-4 {
+    padding: 5px;
+}
+
+    div#Rihanna .payment-icons-upi .col-xs-4 img {
+        max-width: 100%;
+        border: 1px solid #e7e5e5;
+        padding: 2px;
+        border-radius: 2px;
+    }
+
+.row.payment-icons-upi {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+#m2b-payment-pop-up .pay-via-paytm .scan-forhelp-info-div > img {
+    height: 105px !important;
+    object-fit: cover !important;
+    border-radius: 9px 9px 0px 0px !important;
+    box-shadow: none !important;
+    width: 100%;
+}
+
+#Fergie .scan-forhelp-info-div {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 29px;
+}
+
+div#Pay-Through-Card-tab .form-group {
+    margin-bottom: 5px;
+}
+
+    div#Pay-Through-Card-tab .form-group input {
+        height: 30px;
+        padding: 0px 10px;
+    }
+
+.once-done-ple-div {
+    padding-top: 40px;
+}
+
+div#Pay-Through-Card-tab .form-group input[type="submit"] {
+    height: 40px;
+}
+
+div#m2b-payment-pop-up .divi-seprator {
+    height: 200px;
+    border-right: 1px solid #ccc;
+    position: relative;
+    left: -40px;
+}
+
+    div#m2b-payment-pop-up .divi-seprator img {
+        position: absolute;
+        width: 40px;
+        left: 50%;
+        margin-left: 10px;
+        top: 50%;
+        margin-top: -20px;
+    }
+
+div#Pay-Through-Card-tab .form-horizontal {
+    padding: 10px;
+    margin-top: 10px;
+    padding-bottom: 0px;
+}
+
+.panel-header-for-panel .proper-title {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.panel-header-for-panel h4 {
+    display: inline-block;
+}
+
+.panel-header-for-panel img {
+    height: 40px;
+    float: right;
+}
+
+div#Pay-Through-Card-tab .full-form-data {
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.payment-by-paypal-btn-image .full-form-data {
+    padding: 10px;
+}
+
+.payment-by-paypal-btn-image .panel-header-for-panel .proper-title {
+    padding-top: 10px;
+}
+
+div#m2b-payment-pop-up .payment-by-paypal-btn-image .proper-title img {
+    height: 40px !important;
+}
+
+.m2b-payment-pop-up-class .lightpage .contents {
+    display: table;
+    background: #fff;
+}
+
+div#m2b-payment-pop-up .payment-row .col-sm-4 .payment-rupee span span label {
+    position: relative;
+    top: -2px;
+}
+
+.col-sm-4.payment-by-paypal-btn-image .panel-header-for-panel h4 {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+div#Pay-Through-Card-tab .form-horizontal {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #c3c2c282;
+    box-shadow: 0px 0px 10px #c3c2c282;
+}
+
+.payment-by-paypal-btn-image .bind-dat-paypal-panel {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #c3c2c282;
+    box-shadow: 0px 0px 10px #c3c2c282;
+}
+
+div#m2b-payment-pop-up .pay-via-paytm p.scan-the-qr {
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+/*********************************************/
+
+ul.tabs.mycustom-tab {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+    ul.tabs.mycustom-tab li {
+        background: none;
+        color: #222;
+        display: block;
+        padding: 0px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+        ul.tabs.mycustom-tab li.current {
+            color: #222;
+        }
+
+.mycustom-tab-data .tab-content {
+    display: none;
+    padding: 15px;
+}
+
+    .mycustom-tab-data .tab-content.current {
+        display: inherit;
+    }
+
+.option-full-content [type="radio"]:checked,
+.option-full-content [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+    .option-full-content [type="radio"]:checked + label,
+    .option-full-content [type="radio"]:not(:checked) + label {
+        position: relative;
+        padding-left: 28px;
+        cursor: pointer;
+        line-height: 20px;
+        display: inline-block;
+        color: #666;
+    }
+
+        .option-full-content [type="radio"]:checked + label:before,
+        .option-full-content [type="radio"]:not(:checked) + label:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #aaa;
+            border-radius: 100%;
+            background: #fff;
+        }
+
+        .option-full-content [type="radio"]:checked + label:after,
+        .option-full-content [type="radio"]:not(:checked) + label:after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #dc4848;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            border-radius: 100%;
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        .option-full-content [type="radio"]:not(:checked) + label:after {
+            opacity: 0;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+        }
+
+        .option-full-content [type="radio"]:checked + label:after {
+            opacity: 1;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+.payment-by-paypal-btn-image {
+    padding: 40px 0px;
+}
+
+ul.tabs.mycustom-tab li > p {
+    margin: 0px;
+}
+
+    ul.tabs.mycustom-tab li > p label {
+        margin-bottom: 0px;
+    }
+
+div#ctl00_ctl00_UpdatePanel17 {
+    padding-top: 10px;
+}
+
+div#m2b-payment-pop-up .pay-via-paytm p.for-help a {
+    display: inline;
+    margin-left: 5px;
+    text-decoration: underline;
+    color: #0688fa;
+}
+/*********************************************/
+
+
+
+@media only screen and (max-width: 999px) {
+    .darkpage, .lightpage {
+        padding: 10px 0;
+    }
+}
+
+
+
+@media only screen and (max-width: 844px) {
+    div#m2b-payment-pop-up .once-done-ple-div h5.title {
+        margin: 10px 0px;
+    }
+
+
+    div#m2b-payment-pop-up .modal-dialog {
+        max-width: 98% !important;
+        width: auto;
+    }
+
+    .sexytabs > ul > li {
+        float: none;
+        width: 100%;
+    }
+
+    div#m2b-payment-pop-up .or-spacer span {
+        top: 0%;
+        margin-top: -25px;
+    }
+
+    div#m2b-payment-pop-up .or-spacer {
+        height: 35px;
+    }
+
+    div#m2b-payment-pop-up .pay-via-paytm p.for-help {
+        margin: 0px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    div#m2b-payment-pop-up .lightpage .sexytabs a {
+        text-align: center;
+        font-size: 12px;
+    }
+
+    p.for-help {
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    div#m2b-payment-pop-up .net-banking-contai-div .send-btn {
+        font-size: 16px;
+    }
+
+    div#m2b-payment-pop-up .pay-via-paytm p.scan-the-qr {
+        margin-top: 0px !important;
+    }
+
+    .m2b-payment-pop-up-class .lightpage .contents {
+        border-top: 2px solid #d89999;
+        background: #ffffff;
+        padding: 15px 5px;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .error_msg_strip_label {
+        text-align: center;
+    }
+
+    div#m2b-payment-pop-up .once-done-ple-div h5.title {
+        border: none;
+    }
+
+    div#m2b-payment-pop-up .pay-via-paytm p.scan-the-qr {
+        text-align: center;
+    }
+
+    div#m2b-payment-pop-up .pay-via-paytm p.for-help {
+        border: none;
+    }
+
+    #Fergie .scan-forhelp-info-div {
+        border: none;
+        margin-top: 0px;
+        margin-bottom: 25px;
+    }
+
+    #m2b-payment-pop-up .pay-via-paytm .scan-forhelp-info-div > img {
+        object-fit: cover !important;
+        height: 230px !important;
+        margin-bottom: 10px !important;
+        width: 100%;
+    }
+
+
+    div#m2b-payment-pop-up .pay-via-paytm .once-done-ple-div {
+        padding-top: 20px;
+    }
+
+    .panel-header-for-panel {
+        display: block;
+    }
+
+    div#m2b-payment-pop-up .row.payment-row .col-sm-4 {
+        border-bottom: 1px solid #5a5959;
+        padding: 3px 0px;
+    }
+
+        div#m2b-payment-pop-up .row.payment-row .col-sm-4:last-child {
+            border: none;
+        }
+
+    p.scan-the-qr {
+        margin-top: 0px;
+    }
+
+    .col-sm-4.payment-by-paypal-btn-image {
+        padding: 80px 15px 0px !important;
+    }
+
+    div#m2b-payment-pop-up .divi-seprator {
+        transform: rotate(180deg);
+        border-top: 1px solid #ccc;
+        height: 10px;
+        width: 300px;
+        margin: 0 auto;
+        border-left: none;
+        border-right: 0px;
+        margin-top: 30px;
+        left: 0px;
+        margin-bottom: -35px;
+    }
+
+        div#m2b-payment-pop-up .divi-seprator img {
+            transform: rotate(180deg);
+            margin-top: -25px;
+            margin-left: -25px;
+        }
+
+    .row.payment-icons-upi {
+        padding-top: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+@media only screen and (min-width: 769px) {
+
+
+    a#ctl00_lbtSubscription.btn_mobile, a#ctl00_ctl00_lbtSubscription.btn_mobile {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+
+
+    a#ctl00_lbtSubscription.btn_mobile, a#ctl00_ctl00_lbtSubscription.btn_mobile {
+        display: block !important;
+    }
+
+    li#ctl00_liSubscription1.btn_desktop, li#ctl00_ctl00_liSubscription1.btn_desktop {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .payment-by-paypal-btn-image .bind-dat-paypal-panel {
+        margin: 0px -20px;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 580px) {
+    #m2b-payment-pop-up .pay-via-paytm .scan-forhelp-info-div > img {
+        height: 165px !important;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+
+    a#ctl00_lbtSubscription.btn_mobile, a#ctl00_ctl00_lbtSubscription.btn_mobile {
+        display: block !important;
+    }
+
+    li#ctl00_liSubscription1.btn_desktop, li#ctl00_ctl00_liSubscription1.btn_desktop {
+        display: none;
+    }
+
+
+
+    div#Rihanna .payment-icons-upi .col-xs-4 {
+        padding: 5px 15px;
+    }
+
+    div#m2b-payment-pop-up .divi-seprator {
+        width: 240px;
+    }
+
+    div#m2b-payment-pop-up .benefits-of-mem {
+        display: block;
+        width: 100%;
+        min-width: auto;
+    }
+
+    .lightpage .sexytabs {
+        min-width: auto;
+    }
+
+    div#m2b-payment-pop-up .or-spacer .mask {
+        width: 245px;
+    }
+
+    div#m2b-payment-pop-up .or-spacer .mask {
+        transform: rotate(0deg);
+        margin-left: -26px;
+        margin-top: 35px;
+    }
+
+    .m2b-payment-pop-up-class .lightpage .contents > div {
+        padding: 0px;
+    }
+
+    div#m2b-payment-pop-up .or-spacer .mask {
+        transform: rotate(0deg);
+        margin-left: 55px;
+        margin-top: 35px;
+    }
+
+    div#m2b-payment-pop-up .net-banking-contai-div .send-btn {
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    .m2b-payment-pop-up-class .lightpage .contents {
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .payment-by-paypal-btn-image {
+        padding: 0px 0px 10px !important;
+    }
+
+    input#ctl00_btnPayNow1, #ctl00_ctl00_btnPayNow1, #btnPayNow1 {
+        white-space: unset;
+        height: auto !important;
+        font-size: 12px !important;
+        padding: 5px !important;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 399px) {
+    #m2b-payment-pop-up .pay-via-paytm .scan-forhelp-info-div > img {
+        height: 122px !important;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 360px) {
+    .panel-header-for-panel h4 {
+        display: inline-block;
+        font-size: 15px;
+    }
+
+    div#m2b-payment-pop-up .payment-by-paypal-btn-image .proper-title img {
+        height: 31px !important;
+    }
+
+    .panel-header-for-panel img {
+        height: 38px;
+    }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 340px) {
+
+    div#Pay-Through-Card-tab label {
+        font-size: 11px;
+    }
+}
+
+.ui-tabs-nav li.ui-state-default.ui-corner-top.ui-tabs-active.ui-state-active a {
+    background: #f3f4f5;
+    color: #333 !important;
+}
+
+.lightpage .sexytabs .ui-tabs-nav a {
+    background: #ffffff;
+    color: #707070 !important;
+    border-bottom: 2px solid #ccc;
+}
+
+
+
+
+
+a#ctl00_lbtSubscription.btn_mobile, a#ctl00_ctl00_lbtSubscription.btn_mobile {
+    display: none;
+}
+
+.lightpage .sexytabs .ui-state-active a:after {
+    background: #e40000;
+    width: 100%;
+}
+
+div#m2b-payment-pop-up .lightpage .sexytabs a:after {
+    content: "";
+    background: #ce1313;
+    height: 4px;
+    bottom: 0;
+    transition: .1s;
+    left: 0;
+    position: absolute;
+    right: 0;
+    color: #000;
+    transition: all .4s ease-in;
+    width: 0%;
+}
+
+div#m2b-payment-pop-up .lightpage .sexytabs .ui-tabs-active a:after {
+    width: 100%;
+}

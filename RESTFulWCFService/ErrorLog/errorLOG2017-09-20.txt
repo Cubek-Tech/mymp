@@ -1,0 +1,179 @@
+-------------------START-------------20-Sep-17 10:34:01 AM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 285
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------20-Sep-17 10:35:05 AM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 285
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------20-Sep-17 10:35:13 AM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 285
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------20-Sep-17 10:35:36 AM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 285
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------20-Sep-17 11:16:25 AM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: sSerach_Click
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.dtListSearch_ItemDataBound1(Object sender, DataListItemEventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 4773
+   at System.Web.UI.WebControls.DataList.OnItemDataBound(DataListItemEventArgs e)
+   at System.Web.UI.WebControls.DataList.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.DataList.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.BaseDataList.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.BaseDataList.DataBind()
+   at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2967
+   at RESTFulWCFService.JobSection.SearchJob.sSerach_Click(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 856
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------20-Sep-17 11:46:42 AM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: sSerach_Click
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.dtListSearch_ItemDataBound1(Object sender, DataListItemEventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 4771
+   at System.Web.UI.WebControls.DataList.OnItemDataBound(DataListItemEventArgs e)
+   at System.Web.UI.WebControls.DataList.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.DataList.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.BaseDataList.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.BaseDataList.DataBind()
+   at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2968
+   at RESTFulWCFService.JobSection.SearchJob.sSerach_Click(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 857
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------20-Sep-17 12:22:57 PM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: sSerach_Click
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.dtListSearch_ItemDataBound1(Object sender, DataListItemEventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 4772
+   at System.Web.UI.WebControls.DataList.OnItemDataBound(DataListItemEventArgs e)
+   at System.Web.UI.WebControls.DataList.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.DataList.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.BaseDataList.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.BaseDataList.DataBind()
+   at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2969
+   at RESTFulWCFService.JobSection.SearchJob.sSerach_Click(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 858
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------20-Sep-17 12:27:19 PM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: sSerach_Click
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.dtListSearch_ItemDataBound1(Object sender, DataListItemEventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 4772
+   at System.Web.UI.WebControls.DataList.OnItemDataBound(DataListItemEventArgs e)
+   at System.Web.UI.WebControls.DataList.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.DataList.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.BaseDataList.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.BaseDataList.DataBind()
+   at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2969
+   at RESTFulWCFService.JobSection.SearchJob.sSerach_Click(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 858
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------20-Sep-17 12:27:21 PM
+
+URL: http://localhost:5052/Search-JobSeekers
+
+
+MethodName: sSerach_Click
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.dtListSearch_ItemDataBound1(Object sender, DataListItemEventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 4772
+   at System.Web.UI.WebControls.DataList.OnItemDataBound(DataListItemEventArgs e)
+   at System.Web.UI.WebControls.DataList.CreateItem(Int32 itemIndex, ListItemType itemType, Boolean dataBind, Object dataItem)
+   at System.Web.UI.WebControls.DataList.CreateControlHierarchy(Boolean useDataSource)
+   at System.Web.UI.WebControls.BaseDataList.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.BaseDataList.DataBind()
+   at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2969
+   at RESTFulWCFService.JobSection.SearchJob.sSerach_Click(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 858
+-------------------------------------------------------------------------------------------------------------

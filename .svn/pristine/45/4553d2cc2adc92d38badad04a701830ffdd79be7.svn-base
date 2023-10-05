@@ -1,0 +1,17 @@
+-------------------START-------------19-Aug-17 3:51:13 PM
+
+URL: http://localhost:5052/Search-Job
+
+
+MethodName: sSerach_Click
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.Seach_formeta() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2329
+   at RESTFulWCFService.JobSection.SearchJob.sSerach_Click(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 819
+-------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Disallow: /web_test/
+Disallow: /SupportClasses
+Disallow: /slider
+Disallow: /service
+Disallow: /Properties
+Disallow: /PromotionBanner
+Disallow: /PopupBanner
+Disallow: /Paypal
+Disallow: /logs
+Disallow: /loc_files
+Disallow: /FeedBack
+Disallow: /ErrorLog
+Disallow: /EmailAttechment
+Disallow: /CSVLoad
+Disallow: /Controls
+Disallow: /ChatJs
+Disallow: /ccClasses
+Disallow: /Calander
+Disallow: /bootstrap
+Disallow: /bin
+Disallow: /back for cleanup
+Disallow: /aspnet_client
+Disallow: /App_WebReferences
+Disallow: /App_Data
+Disallow: /Admin

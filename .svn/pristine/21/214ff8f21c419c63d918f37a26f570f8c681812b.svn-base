@@ -1,0 +1,1047 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SearchPartener.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="All_messages.aspx.cs" Inherits="RESTFulWCFService.MassagePartener.User.All_messages" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="Fup" %>
+<%@ Register Src="~/Controls/DatePicker.ascx" TagName="uc" TagPrefix="asp" %>
+<%@ Register Src="~/user control/WebUserControl1.ascx" TagName="UCPager" TagPrefix="uc1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Message | My Massage Partner</title>
+   
+ <meta name="Description" content="Check your inbox and reply to your massage partner  | My Massage Partner">
+<meta name="Keywords" content="body massage nearby | erotic massage near me | happy ending massage near me | need massage | Full Body Massage | Female to Male Massage | Full body Massage | Sensual Massage">
+    
+    
+    <script>
+        function change_design(obj, btnShow) {
+            //var div = document.getElementById(obj);
+            var parentRow = $(btnShow).closest("tr");
+            var div = parentRow.find('div[id=' + obj + ']');
+            div.removeClass('media left-align-box');
+            div.addClass('media right-align-box');
+
+
+        }
+        function change_visibility(wan, btnShow) {
+            // alert();
+
+            var parentRow = $(btnShow).closest("tr");
+            var div = parentRow.find('div[id=reply_box]');
+            //  alert(hiddenField.val());
+
+            //return false;
+            // alert(wan);
+            if (wan == 'hide') {
+                div.style.display = "none";
+                //  alert('x');
+
+            }
+            else {
+                //  alert('y');
+                div.removeClass('hide');
+            }
+        }
+        function funcall(btnShow) {
+
+            var parentRow = $(btnShow).closest("tr");
+            var msg = parentRow.find('textarea[id$=txtreply]');
+            var hdnmsgto = parentRow.find('input[id$=hdnfromsk]');
+            var obj1 = $('#hdnmsg');
+            var obj2 = $('#hdntomsg');
+            obj1.val(msg.val());
+            obj2.val(hdnmsgto.val());
+            // alert(obj1.val());
+            document.getElementById('<%= Button1.ClientID%>').click();
+            return false;
+        }
+        function Refresh_Page() {
+            // alert('reload');
+            location.reload();
+
+        }
+
+        ///Open Mobile nb Box
+        function show_mobile(obj) {
+            var parentRow = $(obj).closest("tr");
+            var hdncontactno = parentRow.find('input[id$=hdncontactno]');
+             $(obj).val(hdncontactno.val());
+        };
+        function show_mobile1(obj) {
+            $(obj).val('Show Contact Number');
+        };
+    </script>
+    <style>
+        .hide
+        {
+            display: none;
+        }
+    </style>
+    <style>
+        .welcome_text_signuppage123
+        {
+            background-color: #FFF;
+            border-radius: 5px 5px 5px 5px;
+            color: #C33;
+            font-family: inherit MS;
+            font-size: 18px;
+            font-weight: 700;
+            height: 11px;
+            margin-top: 37px;
+            text-align: center;
+            width: 344px;
+            padding-bottom: 22px;
+        }
+    </style>
+    <style>
+        #main_popup
+        {
+            border-radius: 5px 5px 5px 5px;
+            height: auto;
+            width: 585px;
+            margin: 35px auto auto;
+        }
+
+        .showno
+        {
+            display: inline-block;
+            padding: 1px 6px;
+            margin-bottom: 0;
+            font-size: 12px;
+            font-weight: 100;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .box_Login2, .box_Login_wellcome_seek
+        {
+            color: #888;
+            height: 425px;
+            left: 100%;
+            position: fixed;
+            display: none;
+            top: 1%;
+            width: 730px;
+            z-index: 1001;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            opacity: 6;
+        }
+
+        .welcome_signup_page
+        {
+            background-color: #FFF;
+            border-radius: 10px 10px 10px 10px;
+            float: right;
+            height: 164px;
+            margin-right: 0;
+            width: 424px;
+            border: 12px solid #F0E68C;
+        }
+
+        .content_signup
+        {
+            background-color: #FFF;
+            font-family: Arial,Helvetica,sans-serif;
+            height: 111px;
+            line-height: 18px;
+            margin-left: 2px;
+            margin-top: 20px;
+            text-align: center;
+            width: 400px;
+            padding: 2px;
+        }
+
+        a.boxcanceel
+        {
+            background: url(/Images/canceel.png) no-repeat scroll left top transparent;
+            cursor: pointer;
+            float: right;
+            height: 22px;
+            left: 0;
+            position: relative;
+            top: 0px;
+            width: 22px;
+        }
+
+        .UpdateProgress_style
+        {
+            color: #FFFFFF;
+            left: 72%;
+            margin-left: -330px;
+            position: fixed;
+            top: 42%;
+            z-index: 9999;
+        }
+
+        .change_pasd124
+        {
+            height: auto !important;
+            font-size: 12px;
+            width: auto !important;
+        }
+
+        .yearcheckdiv
+        {
+            width: 33%;
+            position: relative;
+            float: left;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:UpdateProgress ID="UpdateProgress2" runat="server">
+        <ProgressTemplate>
+            <div class="overlay">
+            </div>
+            <div class="UpdateProgress_style">
+                <img src="<%#Constants__.WEB_ROOT%>/Images/ajax-loader1.gif" alt="ajax" />
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+    <div id="overlay">
+    </div>
+    <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
+    <asp:HiddenField ID="hdncountry" runat="server" />
+    <asp:HiddenField ID="hdnpartnersubscribed" runat="server" />
+    <section class="wrapper">
+
+        <div class="container wrapper-content ">
+            <div class="main-content ">
+
+                <div class="row ">
+                    <div class="col-sm-12">
+                        <h2 class="title text-center">Messages</h2>
+                        <div class="message-box-section">
+                            <div class="row">
+                                <%--    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Always">
+                                                <ContentTemplate>--%>
+                                <asp:DataList ID="DataList1" runat="server" OnItemDataBound="DataList1_ItemDataBound" OnItemCommand="DataList1_ItemCommand">
+                                    <ItemStyle Width="1098" />
+                                    <ItemTemplate>
+
+                                        <div class="col-sm-2" id="image_bx" runat="server">
+                                            <div class="image-box">
+                                                <center>
+                                           <asp:Image id="image1" runat="server" CssClass="img-responsive" ></asp:Image>
+			                              <%--<image src="image/askpicture.jpg"  class="img-responsive"/>--%>
+			            </center>
+
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <div class="col-sm-8 message-box">
+                                            <!-- left-aligned media object -->
+                                            <div id="main_message_div" runat="server" class="media left-align-box">
+                                                <div class="media-body">
+                                                    <h4 class="media-heading sender-name"><%#Eval("from_name") %></h4>
+                                                    <p><%#Eval("message_text") %></p>
+                                                    <span class="text-primary"><%#Eval("message_datetime") %></span>
+
+                                                    <%--<span style="margin-left: 9px" class="media-heading sender-name">--%>
+                                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Always">
+                                                        <ContentTemplate>
+                                                            <asp:LinkButton ID="lnkbtnreply" runat="server" CommandName="reply" CommandArgument='<%#Eval("to_massage_partner_sk") %>' OnClientClick="change_visibility('show',this);">Reply</asp:LinkButton><%--</span>--%>
+                                                        </ContentTemplate>
+
+                                                    </asp:UpdatePanel>
+                                                    <asp:HiddenField ID="hdnfromsk" Value='<%#Eval("from_massage_partner_sk") %>' runat="server" ClientIDMode="Static" />
+                                                </div>
+                                            </div>
+                                            <div id="reply_box" class="hide">
+                                                <br />
+
+                                                <asp:TextBox ID="txtreply" runat="server" TextMode="MultiLine" ClientIDMode="Static" class="form-control" Rows="3" placeholder="Type Your Message Here"></asp:TextBox>
+                                                <span style="margin-left: 715px; margin-top: -51px; position: absolute;">
+                                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                                        <Triggers>
+                                                            <asp:PostBackTrigger ControlID="btnsend" />
+                                                        </Triggers>
+                                                        <ContentTemplate>
+                                                            <asp:LinkButton ID="btnsend" runat="server" CssClass="btn btn-gradiant" CommandName="send_reply" CommandArgument='<%#Eval("from_massage_partner_sk") %>' OnClientClick="funcall(this);">Send</asp:LinkButton>
+                                                            <asp:LinkButton ID="btnsend1" runat="server" CssClass="btn btn-gradiant" CommandArgument='<%#Eval("to_massage_partner_sk") %>' OnClientClick="openpopuppaypal(); return false;">Send</asp:LinkButton>
+                                                            </span>
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                            </div>
+
+                                            <!-- Right-aligned media object -->
+                                            <%--      <div class="media right-align-box">
+                                        <div class="media-body">
+                                            <h4 class="media-heading sender-name">Right-aligned</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            <span class="text-primary">31/08/2017 10:00pm</span>
+                                        </div>
+
+                                    </div>--%>
+
+
+                                            <hr />
+                                        </div>
+                                        <div class="col-sm-2 text-center " id="divcontact" runat="server">
+                                            <asp:Button ID="btnshowcontact" runat="server" CssClass="btn btn-gradiant" Text="Show Contact Number" OnClientClick="openpopuppaypal(); return false;" />
+                                            <asp:Button ID="lblcontact" runat="server" CssClass="btn btn-gradiant" onmouseover="show_mobile(this)" onmouseout="show_mobile1(this)" OnClientClick="return false;" Text="Show Contact Number" />
+                                            <%--<button type="submit" class="btn btn-gradiant ">Show Contact Number</button>--%>
+                                        </div>
+                                        <asp:HiddenField ID="hdncontactno" runat="server" Value='<%#Eval("contact_no") %>' ClientIDMode="Static" />
+                                    </ItemTemplate>
+                                </asp:DataList>
+                                <%-- </ContentTemplate>
+                                     
+                                      </asp:UpdatePanel>--%>
+                            </div>
+                        </div>
+                        <asp:HiddenField ID="hdnmsg" runat="server" ClientIDMode="Static" />
+                        <asp:HiddenField ID="hdntomsg" runat="server" ClientIDMode="Static" />
+                        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                            <ContentTemplate>
+                                <asp:Button ID="Button1" runat="server" Text="Button" CssClass="hide" OnClick="Button1_Click" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <center>
+			    <ul class="pagination">
+                    <uc1:UCPager ID="UCPager1" runat="server" />
+                </ul>
+			</center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <asp:HiddenField ID="Merchant_Id" runat="server" />
+    <asp:HiddenField ID="encRequest" runat="server" />
+    <div id="main_popup" class="box_Login2" style="display: none;">
+        <div style="width: 23px; height: 23px; float: right;">
+            <a class="boxcanceel" onclick="closeOffersDialog('main_popup');" style="top: -6px; left: -20px;"></a>
+        </div>
+        <div class="welcome_signup_page">
+            <div class="welcome_text_signuppage123" id="span_changtext1">
+                <div id="divm2b1" runat="server" class="welcome_text_signuppage123">
+                    Welcome to MyMassagePartner!
+                </div>
+                <div class="content_signup123">
+                    <div class="css_search89">
+                        Payment Successfully Done!
+                    </div>
+                </div>
+            </div>
+            <lable id="lblpaymentinfo" runat="server" style="display: none"></lable>
+        </div>
+    </div>
+    <%-- For Paypal subscription--%>
+    <%-- For Paypal subscription--%>
+    <div id="popuppaypal" class="change_pasd change_pasd124" style="left: 10% !important; right: 10%;">
+
+
+
+        <a class="boxclose" style="top: 0" onclick="closeDialogPaypal('popuppaypal');"></a>
+        <div class="head_up_ChangeEmailId head_up_ChangeEmailId122" style="width: 99% !important;">
+           MyMassagePartner Membership
+        </div>
+        <div id="Div5" runat="server" style="padding-top: 22px; text-align: center; margin-left: 10px; width: 98%;">
+            <div style="width: 100%; font-size: 14px; font-weight: bolder;">
+                MyMassagePartner's <b>
+                    <lable runat="server" id="lblyearsub" class="lblyearsub">1 Year </lable>
+                </b>Membership In Just <b>
+                    <lable runat="server" id="price" class="price_pr"></lable>
+                </b>
+            </div>
+            <br>
+            <br>
+            <div style="width: 100%; font-size: 14px; font-weight: bolder;">
+                <div class='yearcheckdiv'>
+                    <p class="">
+                        1 Year
+                            <asp:CheckBox CssClass="checkboxoucallCM_provider" runat="server" ID="checkboxOneYear_provider"
+                                Checked="True" Text="" />
+                    </p>
+                </div>
+                <div class='yearcheckdiv'>
+                    <p class="">
+                        2 Year
+                            <asp:CheckBox CssClass="checkboxoucallCM_provider" runat="server" ID="checkboxTwoYear_provider"
+                                Checked="false" Text="" />
+                    </p>
+                </div>
+                <div class='yearcheckdiv'>
+                    <p class="">
+                        3 Year
+                            <asp:CheckBox CssClass="checkboxoucallCM_provider" runat="server" ID="checkboxThreeYear_provider"
+                                Checked="false" Text="" />
+                    </p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <asp:UpdatePanel ID="UpdatePanel24" runat="server">
+                <ContentTemplate>
+                    <asp:Button ID="btnPayNow" CssClass="btn345 btn-lg btn-info fontsize_25px" OnClick="paypal_Click"
+                        Style="margin-right: 15px; padding: 7px 13px; margin-right: 15px;" runat="server"
+                        Text="Pay Now" CausesValidation="false" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            <script type="text/javascript">
+
+                $(".checkboxoucallCM_provider input:checkbox").live('change', function () {
+                    var group = ".checkboxoucallCM_provider< :checkbox";
+                    if ($(this).is(':checked')) {
+                        $(group).not($(this)).attr("checked", false);
+
+                        $('.price_pr').text($(this).next().text());
+
+                        if ($("#ctl00_ContentPlaceHolder1_checkboxOneYear_provider").is(':checked'))
+                        { $('.lblyearsub').text("1 Year"); }
+                        else if ($("#ctl00_ContentPlaceHolder1_checkboxTwoYear_provider").is(':checked'))
+                        { $('.lblyearsub').text("2 Year"); }
+                        else if ($("#ctl00_ContentPlaceHolder1_checkboxThreeYear_provider").is(':checked'))
+                        { $('.lblyearsub').text("3 Year"); } else
+                        { $('.lblyearsub').text("1 Year"); }
+
+                    }
+
+                }); </script>
+        </div>
+        <div id="divpaypalccavanue_1" runat="server" style="width: 700px; margin-top: 25px;">
+            <table width="99%" align="center">
+                <tr>
+                    <td>
+                        <a style="" id="Tab_1" class="Btn Clicked">Pay via Credit Card
+                                <p class="smallhinttext" style="color: white;">
+                                    temp
+                                </p>
+                        </a><a style="" id="Tab_2" class="Initial">Pay via Debit Card
+                                <p class="smallhinttext" style="color: white;">
+                                    temp
+                                </p>
+                        </a><a id="Tab_3" class="Initial">Pay via Internet Banking
+                                <p class="smallhinttext" style="color: white;">
+                                    (Except ICICI Bank)
+                                </p>
+                        </a><a style="" id="Tab_4" class="Initial">Pay via Other Methods
+                                <p class="smallhinttext">
+                                    (Wallet, Cash Card, UPI, Mobile Payment)
+                                </p>
+                        </a>
+                        <div id="MainView" class="MainViewcss">
+                            <div id="View_1">
+                                <table class="tabsdiv">
+                                    <tr>
+                                        <td style="height: 50px; vertical-align: TOP;">
+                                            <asp:DropDownList ID="ddlCreditCartBankNames" runat="server" TabIndex="5" CssClass="Dropdown_main Dropdown_sub_width">
+                                            </asp:DropDownList>
+                                            <asp:UpdatePanel runat="server" ID="UpdatePanel25">
+                                                <ContentTemplate>
+                                                    <asp:Label ID="lblddlCreditCartBankNames" class="ErrorMsg" runat="server"></asp:Label>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </td>
+                                        <td style="height: 50px; vertical-align: TOP;">
+                                            <asp:DropDownList ID="ddlCreditCartTypes" runat="server" TabIndex="5" CssClass="Dropdown_main Dropdown_sub_width">
+                                            </asp:DropDownList>
+                                            <asp:UpdatePanel runat="server" ID="UpdatePanel26">
+                                                <ContentTemplate>
+                                                    <asp:Label ID="lblddlCreditCartTypes" class="ErrorMsg" runat="server"></asp:Label>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </td>
+                                        <td style="height: 50px; vertical-align: TOP;">
+                                            <asp:UpdatePanel runat="server" ID="UpdatePanel30">
+                                                <ContentTemplate>
+                                                    <asp:Button ID="PaymentCreditcard" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                                        Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="CreditCard_Payment_Click"
+                                                        runat="server" Text="Go to Payment Screen" CausesValidation="false" />
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="View_2" style="display: none;">
+                                <table class="tabsdiv">
+                                    <tr>
+                                        <td style="height: 50px; vertical-align: TOP;">
+                                            <asp:DropDownList ID="ddlDebitCartBankNames" runat="server" TabIndex="5" CssClass="Dropdown_main Dropdown_sub_width">
+                                            </asp:DropDownList>
+                                            <asp:UpdatePanel runat="server" ID="UpdatePanel27">
+                                                <ContentTemplate>
+                                                    <asp:Label ID="lblddlDebitCartBankNames" class="ErrorMsg" runat="server"></asp:Label>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </td>
+                                        <td style="height: 50px; vertical-align: TOP;">
+                                            <asp:DropDownList ID="ddlDebitCartTypes" runat="server" TabIndex="5" CssClass="Dropdown_main Dropdown_sub_width">
+                                            </asp:DropDownList>
+                                            <asp:UpdatePanel runat="server" ID="UpdatePanel28">
+                                                <ContentTemplate>
+                                                    <asp:Label ID="lblddlDebitCartTypes" class="ErrorMsg" runat="server"></asp:Label>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </td>
+                                        <td style="height: 50px; vertical-align: TOP;">
+                                            <asp:UpdatePanel runat="server" ID="UpdatePanel29">
+                                                <ContentTemplate>
+                                                    <asp:Button ID="PaymentDebitcard" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                                        Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="DebitCard_Payment_Click"
+                                                        runat="server" Text="Go to Payment Screen" CausesValidation="false" />
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="View_3" style="display: none;">
+                                <table class="tabsdiv">
+                                    <tr>
+                                        <td>
+                                            <div style="margin-left: 34%; margin-top: 0px;">
+                                                <asp:UpdatePanel runat="server" ID="UpdatePanel31">
+                                                    <ContentTemplate>
+                                                        <asp:Button ID="PaymentNetbanking" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                                            Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="paypal_Click_CCAVANUE_Netbanking"
+                                                            runat="server" Text="Go to Payment Screen" CausesValidation="false" />
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="View_4" style="display: none;">
+                                <table class="tabsdiv">
+                                    <tr>
+                                        <td>
+                                            <div style="margin-left: 34%; margin-top: 0px;">
+                                                <asp:UpdatePanel runat="server" ID="UpdatePanel33">
+                                                    <ContentTemplate>
+                                                        <asp:Button ID="PaymentOtherPayment" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                                            Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="paypal_Click_CCAVANUE_OtherPayment"
+                                                            runat="server" Text="Go to Payment Screen" CausesValidation="false" />
+                                                    </ContentTemplate>
+                                                </asp:UpdatePanel>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="divpaypalStripe_1" runat="server" style="width: 100%; margin-left: 10px;">
+            <table width="68%" align="center">
+
+                <tr>
+                    <td style="width: 222px;">Card Name</td>
+                    <td style="width: 88px;">
+                        <asp:TextBox runat="server" MaxLength="20" CssClass="search_text__main566 form-control"
+                            TabIndex="2" ID="txtCardName_1" placeholder="">
+                        </asp:TextBox>
+                    </td>
+                    <td style="width: 134px;">
+                        <asp:RequiredFieldValidator CssClass="ErrorMsg" ID="RequiredFieldValidator10_1" runat="server"
+                            ValidationGroup="regStripe_1" ControlToValidate="txtCardName_1" ErrorMessage="Required field"
+                            Display="Dynamic" />
+                    </td>
+                    <td rowspan="6" style="vertical-align: top;">
+                        <img src="<%# Constants__.WEB_ROOT_CDN%>/img/Stripelogo.png" style="width: 150px;" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Card Number</td>
+                    <td>
+                        <asp:TextBox runat="server" MaxLength="20" CssClass="search_text__main566 form-control"
+                            TabIndex="2" ID="txtCardNumber_1" placeholder="XXXXXXXXXXXXXXXX">
+                        </asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator CssClass="ErrorMsg" ID="RequiredFieldValidator12_1" runat="server"
+                            ValidationGroup="regStripe_1" ControlToValidate="txtCardNumber_1" ErrorMessage="Required field"
+                            Display="Dynamic" />
+                        <Fup:FilteredTextBoxExtender ID="FilteredTextBoxExtendertxtCardNumber" TargetControlID="txtCardNumber_1"
+                            FilterMode="ValidChars" runat="server" FilterType="Numbers"></Fup:FilteredTextBoxExtender>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Card Exp. Month</td>
+                    <td>
+                        <asp:TextBox runat="server" MaxLength="20" CssClass="search_text__main566 form-control"
+                            TabIndex="2" ID="txtCardExpirationMonth_1" placeholder="MM">
+                        </asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator CssClass="ErrorMsg" ID="RequiredFieldValidator13_1" runat="server"
+                            ValidationGroup="regStripe_1" ControlToValidate="txtCardExpirationMonth_1" ErrorMessage="Required field"
+                            Display="Dynamic" />
+                        <Fup:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" TargetControlID="txtCardExpirationMonth_1"
+                            FilterMode="ValidChars" runat="server" FilterType="Numbers"></Fup:FilteredTextBoxExtender>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Card Exp. Year</td>
+                    <td>
+                        <asp:TextBox runat="server" MaxLength="20" CssClass="search_text__main566 form-control "
+                            TabIndex="2" ID="txtCardExpirationYear_1" placeholder="YYYY">
+                        </asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator CssClass="ErrorMsg" ID="RequiredFieldValidator14_1" runat="server"
+                            ValidationGroup="regStripe_1" ControlToValidate="txtCardExpirationYear_1" ErrorMessage="Required field" />
+                        <Fup:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" TargetControlID="txtCardExpirationYear_1"
+                            FilterMode="ValidChars" runat="server" FilterType="Numbers"></Fup:FilteredTextBoxExtender>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <%--   <asp:UpdatePanel runat="server" ID="UpdatePanel17">
+                                <ContentTemplate>
+                                    <asp:Button runat="server" ID="SubmitStripe" Style="margin-right: 15px; padding: 7px 13px;"
+                                        CssClass="btn345 btn-lg btn-info fontsize_25px" Text="Pay Now" OnClick="SubmitStripe_Click" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>--%>
+
+
+                        <asp:UpdatePanel runat="server" ID="UpdatePanel34">
+                            <ContentTemplate>
+                                <asp:Button ID="SubmitStripe_1" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                    Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="SubmitStripe_1_Click"
+                                    runat="server" Text="Pay Now" ValidationGroup="regStripe_1" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td>
+
+                        <asp:UpdatePanel runat="server" ID="UpdatePanel35">
+                            <ContentTemplate>
+                                <asp:Label ID="lblmassage_1" runat="server" Text=""></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+
+
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div style="padding: 15px;">
+             Benefits of <b>MyMassagePartner's</b> Membership.
+                <ul style="margin-left: -22px">
+                    <li>You will be able to chat with female and male body massage partner.</li>
+                    <li>You will be able to see contact details of female or male body massage partner.</li>
+                    <li>You will find best female and male massage partner nearby you.</li>
+                    <li>You will get support from MyMassagePartner team members i.e. Rose, Jasmine, and others 24/7.</li>
+                    <li>You will get the female and male body massage partner details in premium way.</li>
+                    <li>You can find free body massage in your location.</li>
+                </ul>
+        </div>
+        <style type="text/css">
+            .search_text__main566
+            {
+                color: #424449;
+                float: left;
+                font-size: 12px;
+                width: 141px;
+                resize: none;
+            }
+
+            .change_pasd123
+            {
+                height: auto !important;
+                font-size: 12px;
+                width: auto !important;
+            }
+
+            .Initial
+            {
+                display: block;
+                float: left;
+                background: white;
+                color: Black;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                font-size: 13px;
+                padding: 2px 12px;
+            }
+
+                .Initial:hover
+                {
+                    color: black;
+                    background: white;
+                    border: none;
+                }
+
+            .Clicked
+            {
+                float: left;
+                display: block;
+                background: white;
+                padding: 4px 10px 4px 10px;
+                color: Black;
+                font-weight: bold;
+                color: #555;
+                cursor: default;
+                border: 1px solid #F4F1F1;
+                border-bottom-color: transparent;
+            }
+
+            .Btn
+            {
+                margin-right: 2px;
+                line-height: 1.428571429;
+                border-radius: 10px 10px 0 0;
+                position: relative;
+                display: block;
+                padding: 2px 13px;
+                border: 4px solid #c1c1c1;
+                border-bottom: transparent;
+                padding-bottom: -1px;
+                margin-bottom: -4px;
+                font-size: 12px;
+            }
+
+            .tabsdiv
+            {
+                width: 100%;
+                border: none;
+                border-top: 4px solid #c1c1c1;
+                padding-top: 25px;
+                padding-bottom: 38px;
+                border-bottom: 2px solid #bf7c07;
+            }
+
+            .MainViewcss
+            {
+                width: 100%;
+            }
+
+            .smallhinttext
+            {
+                font-size: 9px;
+                margin-left: 10px;
+                margin: 0px;
+                width: auto;
+                padding: 0px;
+                margin: 0px;
+                font-weight: 100;
+            }
+
+            .Dropdown_sub_width
+            {
+                cursor: pointer;
+            }
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+
+                $('[id$=View_1]').css("display", "block");
+                $('#Tab_1').removeClass("Initial");
+                $('#Tab_1').addClass("Btn Clicked");
+                ////////////////////
+                $('[id$=View_2]').css("display", "none");
+                $('#Tab_2').removeClass("Btn Clicked");
+                $('#Tab_2').addClass("Initial");
+                ///////////////////
+                $('[id$=View_3]').css("display", "none");
+                $('#Tab_3').removeClass("Btn Clicked");
+                $('#Tab_3').addClass("Initial");
+                $('[id$=View_4]').css("display", "none");
+                $('#Tab_4').removeClass("Btn Clicked");
+                $('#Tab_4').addClass("Initial");
+
+                var variable = "101"
+                // $("select option:contains('Value " + variable + "')").attr("disabled", "disabled");
+                $("select option[value='" + variable + "']").attr('disabled', true);
+
+                //////////////////////////////////
+                $('#Tab_1').live('click', function () {
+
+                    $('[id$=View_1]').css("display", "block");
+                    $('#Tab_1').removeClass("Initial");
+                    $('#Tab_1').addClass("Btn Clicked");
+
+                    ////////////////////
+
+                    $('[id$=View_2]').css("display", "none");
+                    $('#Tab_2').removeClass("Btn Clicked");
+                    $('#Tab_2').addClass("Initial");
+
+                    ///////////////////
+
+                    $('[id$=View_3]').css("display", "none");
+                    $('#Tab_3').removeClass("Btn Clicked");
+                    $('#Tab_3').addClass("Initial");
+
+                    ///////////////////
+
+                    $('[id$=View_4]').css("display", "none");
+                    $('#Tab_4').removeClass("Btn Clicked");
+                    $('#Tab_4').addClass("Initial");
+
+
+                });
+
+
+                $('#Tab_2').live('click', function () {
+
+                    $('[id$=View_1]').css("display", "none");
+                    $('#Tab_1').removeClass("Btn Clicked");
+                    $('#Tab_1').addClass("Initial");
+
+
+                    ///////////////////
+
+                    $('[id$=View_2]').css("display", "block");
+                    $('#Tab_2').removeClass("Initial");
+                    $('#Tab_2').addClass("Btn Clicked");
+
+
+                    ///////////////////
+
+
+                    $('[id$=View_3]').css("display", "none");
+                    $('#Tab_3').removeClass("Btn Clicked");
+                    $('#Tab_3').addClass("Initial");
+
+                    ///////////////////
+
+                    $('[id$=View_4]').css("display", "none");
+                    $('#Tab_4').removeClass("Btn Clicked");
+                    $('#Tab_4').addClass("Initial");
+
+                });
+
+
+                $('#Tab_3').live('click', function () {
+
+                    $('[id$=View_1]').css("display", "none");
+                    $('#Tab_1').removeClass("Btn Clicked");
+                    $('#Tab_1').addClass("Initial");
+
+                    ///////////////////
+
+                    $('[id$=View_2]').css("display", "none");
+                    $('#Tab_2').removeClass("Btn Clicked");
+                    $('#Tab_2').addClass("Initial");
+
+                    ///////////////////
+
+                    $('[id$=View_3]').css("display", "block");
+                    $('#Tab_3').removeClass("Initial");
+                    $('#Tab_3').addClass("Btn Clicked");
+
+                    ///////////////////
+
+                    $('[id$=View_4]').css("display", "none");
+                    $('#Tab_4').removeClass("Btn Clicked");
+                    $('#Tab_4').addClass("Initial");
+
+                });
+
+
+
+                $('#Tab_4').live('click', function () {
+
+                    $('[id$=View_1]').css("display", "none");
+                    $('#Tab_1').removeClass("Btn Clicked");
+                    $('#Tab_1').addClass("Initial");
+
+                    ///////////////////
+
+                    $('[id$=View_2]').css("display", "none");
+                    $('#Tab_2').removeClass("Btn Clicked");
+                    $('#Tab_2').addClass("Initial");
+
+                    ///////////////////
+
+                    $('[id$=View_3]').css("display", "none");
+                    $('#Tab_3').removeClass("Btn Clicked");
+                    $('#Tab_3').addClass("Initial");
+
+                    ///////////////////
+
+                    $('[id$=View_4]').css("display", "block");
+                    $('#Tab_4').removeClass("Initial");
+                    $('#Tab_4').addClass("Btn Clicked");
+
+                });
+
+
+            });
+
+
+
+
+
+        </script>
+    </div>
+    <script type="text/javascript">
+
+
+        function closeDialogPaypal(prospectElementID) {
+
+            $(function ($) {
+
+                $(document).ready(function () {
+                    $('#' + prospectElementID).css('position', 'absolute');
+                    // $('#' + prospectElementID).animate({ 'left': '-100%' }, 1200, function() {
+                    $('#' + prospectElementID).css('position', 'fixed');
+                    $('#' + prospectElementID).css('display', 'none');
+                    $('#' + prospectElementID).css('left', '100%');
+                    $('#overlay').fadeOut('fast');
+                    // $('#overlay3').fadeOut('fast');
+
+                });
+                // });
+            });
+            //ResetChangePsw();
+            // openOffersDialog();
+        }
+
+        function openpopuppaypal() {
+
+            document.getElementById('overlay').className = 'overlay';
+            $('#overlay').fadeIn('fast', function () {
+                $('#popuppaypal').css('display', 'block');
+                $('#popuppaypal').animate({ 'left': '26%' }, 500);
+            });
+
+
+
+            $('[id$=View_1]').css("display", "block");
+            $('#Tab_1').removeClass("Initial");
+            $('#Tab_1').addClass("Btn Clicked");
+            ////////////////////
+            $('[id$=View_2]').css("display", "none");
+            $('#Tab_2').removeClass("Btn Clicked");
+            $('#Tab_2').addClass("Initial");
+            ///////////////////
+            $('[id$=View_3]').css("display", "none");
+            $('#Tab_3').removeClass("Btn Clicked");
+            $('#Tab_3').addClass("Initial");
+            $('[id$=View_4]').css("display", "none");
+            $('#Tab_4').removeClass("Btn Clicked");
+            $('#Tab_4').addClass("Initial");
+
+            var variable = "101"
+            // $("select option:contains('Value " + variable + "')").attr("disabled", "disabled");
+            $("select option[value='" + variable + "']").attr('disabled', true);
+        }
+        function openOffersDialog() {
+            document.getElementById('overlay').className = 'overlay';
+            $('#overlay').fadeIn('fast', function () {
+                $('#main_popup').css('display', 'block');
+                $('#main_popup').animate({ 'left': '26%' }, 500);
+
+            });
+        }
+
+        function open_already_exist_popup(msg) {
+            document.getElementById('overlay2').className = 'overlay';
+            document.getElementById('msg_container').innerHTML = msg;
+            $('#overlay2').fadeIn('fast', function () {
+
+                $('#box_email_id_exist_popup').css('display', 'block');
+                $('#box_email_id_exist_popup').animate({ 'left': '50%', 'margin-left': '-250px' }, 100);
+            });
+
+        }
+
+        function email_already_exist_container_multi(msg) {
+            document.getElementById('overlay2').className = 'overlay';
+            document.getElementById('msg_container_multi').innerHTML = msg;
+            $('#overlay2').fadeIn('fast', function () {
+
+                $('#email_already_exist_container_multi').css('display', 'block');
+                $('#email_already_exist_container_multi').animate({ 'left': '50%', 'margin-left': '-250px' }, 100);
+            });
+
+        }
+
+
+
+        function popup_success_multi(msg) {
+            document.getElementById('overlay2').className = 'overlay';
+            document.getElementById('popup_success_contain').innerHTML = msg;
+            $('#overlay2').fadeIn('fast', function () {
+                $('#popup_success_multi').css('display', 'block');
+                $('#popup_success_multi').animate({ 'left': '50%', 'margin-left': '-250px' }, 100);
+            });
+        }
+
+
+        function closeDialog(prospectElementID) {
+            $(function ($) {
+                $(document).ready(function () {
+                    $('#' + prospectElementID).css('position', 'absolute');
+                    $('#' + prospectElementID).css('display', 'none');
+                    $('#' + prospectElementID).css('position', 'fixed');
+                    $('#' + prospectElementID).css('left', '100%');
+                    $('#overlay2').fadeOut('fast');
+                });
+
+            });
+        }
+
+
+        function closeOffersDialog11(prospectElementID) {
+            $(function ($) {
+                $(document).ready(function () {
+                    window.close();
+                    window.opener.location.reload(true);
+                    window.opener.reload();
+
+                });
+            });
+        }
+
+
+        function closeOffersDialog(prospectElementID) {
+            // clearData();
+            $(function ($) {
+                $(document).ready(function () {
+                    $('#main_popup').css('display', 'none');
+                    $('#' + prospectElementID).css('position', 'absolute');
+                    $('#' + prospectElementID).css('position', 'fixed');
+                    $('#' + prospectElementID).css('left', '100%');
+                    $('#overlay').fadeOut('fast');
+                    document.location.reload();
+
+                });
+                // });
+            });
+        }
+
+    </script>
+</asp:Content>

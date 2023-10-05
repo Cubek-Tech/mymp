@@ -1,0 +1,1101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5156C72-BC42-4F02-82ED-9E408D1185FE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RESTFulWCFService</RootNamespace>
+    <AssemblyName>RESTFulWCFService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.50731.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="aspsnippets.facebookapi">
+      <HintPath>..\..\..\Massage2book\13-11-2013\WebRoot\Bin\aspsnippets.facebookapi.dll</HintPath>
+    </Reference>
+    <Reference Include="ASPSnippets.GoogleAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ASPSnippets.GoogleAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="CCA.Util, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1b7c8dff04d8e786, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CCA.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="ccavutil, Version=0.0.0.0, Culture=neutral, PublicKeyToken=8234b99f8b577042, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ccavutil.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth">
+      <HintPath>..\..\..\Massage2book\13-11-2013\WebRoot\Bin\DotNetOpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Factory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Factory\bin\Debug\Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Client">
+      <HintPath>..\..\..\Massage2book\13-11-2013\WebRoot\Bin\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Contacts">
+      <HintPath>..\..\..\Massage2book\13-11-2013\WebRoot\Bin\Google.GData.Contacts.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions">
+      <HintPath>..\..\..\Massage2book\13-11-2013\WebRoot\Bin\Google.GData.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=7.0.4335.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\Massage2book\13-11-2013\WebRoot\Bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Stripe">
+      <HintPath>..\..\..\..\Downloads\Stripe\Stripe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>..\..\Backup\new09-06m2b\RESTFulWCFService\bin\System.Diagnostics.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Massage2book\13-11-2013\WebRoot\Bin\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TimePicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d25e9f59e49c4d2f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\TimePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>bin\Utility.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="403.aspx" />
+    <Content Include="404Error.aspx" />
+    <Content Include="Admin\Admin_home.aspx" />
+    <Content Include="Admin\assets\css\animate.min.css" />
+    <Content Include="Admin\assets\css\bootstrap.min.css" />
+    <Content Include="Admin\assets\css\demo.css" />
+    <Content Include="Admin\assets\css\light-bootstrap-dashboard.css" />
+    <Content Include="Admin\assets\css\pe-icon-7-stroke.css" />
+    <Content Include="Admin\assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Admin\assets\img\default-avatar.png" />
+    <Content Include="Admin\assets\img\faces\face-0.jpg" />
+    <Content Include="Admin\assets\img\faces\face-1.jpg" />
+    <Content Include="Admin\assets\img\faces\face-2.jpg" />
+    <Content Include="Admin\assets\img\faces\face-3.jpg" />
+    <Content Include="Admin\assets\img\faces\face-4.jpg" />
+    <Content Include="Admin\assets\img\faces\face-5.jpg" />
+    <Content Include="Admin\assets\img\faces\face-6.jpg" />
+    <Content Include="Admin\assets\img\faces\face-7.jpg" />
+    <Content Include="Admin\assets\img\faces\tim_vector.jpe" />
+    <Content Include="Admin\assets\img\favicon.ico" />
+    <Content Include="Admin\assets\img\full-screen-image-3.jpg" />
+    <Content Include="Admin\assets\img\loading-bubbles.svg" />
+    <Content Include="Admin\assets\img\mask.png" />
+    <Content Include="Admin\assets\img\new_logo.png" />
+    <Content Include="Admin\assets\img\sidebar-1.jpg" />
+    <Content Include="Admin\assets\img\sidebar-2.jpg" />
+    <Content Include="Admin\assets\img\sidebar-3.jpg" />
+    <Content Include="Admin\assets\img\sidebar-4.jpg" />
+    <Content Include="Admin\assets\img\sidebar-5.jpg" />
+    <Content Include="Admin\assets\img\tim_80x80.png" />
+    <Content Include="Admin\assets\js\bootstrap-notify.js" />
+    <Content Include="Admin\assets\js\bootstrap-select.js" />
+    <Content Include="Admin\assets\js\bootstrap.min.js" />
+    <Content Include="Admin\assets\js\chartist.min.js" />
+    <Content Include="Admin\assets\js\demo.js" />
+    <Content Include="Admin\assets\js\jquery.3.2.1.min.js" />
+    <Content Include="Admin\assets\js\light-bootstrap-dashboard.js" />
+    <Content Include="Admin\EditReview.aspx" />
+    <Content Include="Admin\login.aspx" />
+    <Content Include="Admin\Review.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\aspsnippets.facebookapi.dll" />
+    <Content Include="bin\ASPSnippets.GoogleAPI.dll" />
+    <Content Include="bin\Bussiness.dll" />
+    <Content Include="bin\Bussiness.pdb" />
+    <Content Include="bin\BussinessEntity.dll" />
+    <Content Include="bin\BussinessEntity.pdb" />
+    <Content Include="bin\CCA.IntegrationKit.dll" />
+    <Content Include="bin\CCA.Util.dll" />
+    <Content Include="bin\ccavutil.dll" />
+    <Content Include="bin\DotNetOpenAuth.dll" />
+    <Content Include="bin\Factory.dll" />
+    <Content Include="bin\Factory.pdb" />
+    <Content Include="bin\Google.GData.Client.dll" />
+    <Content Include="bin\Google.GData.Contacts.dll" />
+    <Content Include="bin\Google.GData.Extensions.dll" />
+    <Content Include="bin\IKVM.AWT.WinForms.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Beans.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Charsets.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Corba.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Core.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Management.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Media.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Misc.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Naming.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Remoting.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Security.dll" />
+    <Content Include="bin\IKVM.OpenJDK.SwingAWT.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Text.dll" />
+    <Content Include="bin\IKVM.OpenJDK.Util.dll" />
+    <Content Include="bin\IKVM.OpenJDK.XML.API.dll" />
+    <Content Include="bin\IKVM.Runtime.dll" />
+    <Content Include="bin\IKVM.Runtime.JNI.dll" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="bin\MultiDropDown.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\RESTFulWCFService.dll" />
+    <Content Include="bin\RESTFulWCFService.pdb" />
+    <Content Include="bin\Stripe.dll" />
+    <Content Include="bin\System.Diagnostics.Tools.dll" />
+    <Content Include="bin\System.Net.Http.dll" />
+    <Content Include="bin\TimePicker.dll" />
+    <Content Include="bin\Utility.exe" />
+    <Content Include="bin\Utility.pdb" />
+    <Content Include="bin\UtilityProject.dll" />
+    <Content Include="bin\UtilityProject.pdb" />
+    <Content Include="Controls\DatePicker2.ascx" />
+    <Content Include="Controls\DatePicker.ascx" />
+    <Content Include="Controls\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Controls\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Controls\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Controls\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Controls\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Controls\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Controls\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Controls\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Controls\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Controls\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Controls\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Controls\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Controls\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Controls\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Controls\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Controls\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Controls\images\ui-icons_222222_256x240.png" />
+    <Content Include="Controls\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Controls\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Controls\images\ui-icons_454545_256x240.png" />
+    <Content Include="Controls\images\ui-icons_888888_256x240.png" />
+    <Content Include="Controls\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Controls\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Controls\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Controls\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Controls\jquery-1.4.4.js" />
+    <Content Include="Controls\jquery-1.5.1.js" />
+    <Content Include="Controls\jquery-ui.css" />
+    <Content Include="Controls\jquery-ui.min.js" />
+    <Content Include="Controls\jquery.timepicker.css" />
+    <Content Include="Controls\jquery.timepicker.js" />
+    <Content Include="Controls\jquery.timepicker.min.js" />
+    <Content Include="Controls\TimePicker.ascx" />
+    <Content Include="bootstrap\css\bootstrap-theme.css" />
+    <Content Include="bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="css\style.css" />
+    <Content Include="faq.aspx" />
+    <Content Include="Images\ajax-loader1.gif" />
+    <Content Include="Images\close.png" />
+    <Content Include="image\ajax-loader1.gif" />
+    <Content Include="image\askpicture.jpg" />
+    <Content Include="image\banner3.jpg" />
+    <Content Include="image\captcha.png" />
+    <Content Include="image\cb6.jpg" />
+    <Content Include="image\cb7.jpg" />
+    <Content Include="image\check-icon.png" />
+    <Content Include="image\cross.png" />
+    <Content Include="image\dotted-bg_all_site.png" />
+    <Content Include="image\dummy-image.jpg" />
+    <Content Include="image\facebook.png" />
+    <Content Include="image\google-plus.png" />
+    <Content Include="image\home_slider-bottom.png" />
+    <Content Include="image\img_avatar.png" />
+    <Content Include="image\m2b_logo.PNG" />
+    <Content Include="image\m2b_logo1.png" />
+    <Content Include="image\m2b_logo2.png" />
+    <Content Include="image\m2b_logo3.png" />
+    <Content Include="image\medical-advice.png" />
+    <Content Include="image\mp-logo2.jpg" />
+    <Content Include="image\mp_logo.png" />
+    <Content Include="image\mp_logo2.png" />
+    <Content Include="image\MyMassageParter.jpg" />
+    <Content Include="image\no_image.jpg" />
+    <Content Include="image\paytm.png" />
+    <Content Include="image\pinterest.png" />
+    <Content Include="image\ptm.jpg" />
+    <Content Include="image\question.png" />
+    <Content Include="image\Star-on.png" />
+    <Content Include="image\Stripelogo.png" />
+    <Content Include="image\top_bg.png" />
+    <Content Include="image\twitter.png" />
+    <Content Include="image\upload-image.png" />
+    <Content Include="image\upload_img.png" />
+    <Content Include="image\video_shadow.png" />
+    <Content Include="image\you-tube.png" />
+    <Content Include="img\11.jpg" />
+    <Content Include="img\1_facebook.gif" />
+    <Content Include="img\2_twitter.png" />
+    <Content Include="img\404_icon.png" />
+    <Content Include="img\add_button.png" />
+    <Content Include="img\add_img.PNG" />
+    <Content Include="img\aero.png" />
+    <Content Include="img\aero_bg.png" />
+    <Content Include="img\arrow-top.png" />
+    <Content Include="img\asp-net.png" />
+    <Content Include="img\background.gif" />
+    <Content Include="img\back_img.PNG" />
+    <Content Include="img\back_img_popup.png" />
+    <Content Include="img\bcg.png" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\bg_1.png" />
+    <Content Include="img\bg_C.jpg" />
+    <Content Include="img\biograpy.gif" />
+    <Content Include="img\blog.png" />
+    <Content Include="img\box_img.PNG" />
+    <Content Include="img\Bullet_12.PNG" />
+    <Content Include="img\cancel-off-big.png" />
+    <Content Include="img\cancel-off.png" />
+    <Content Include="img\cancel-on-big.png" />
+    <Content Include="img\cancel-on.png" />
+    <Content Include="img\check.png" />
+    <Content Include="img\CHKED_CHECKBOX.png" />
+    <Content Include="img\click _here.png" />
+    <Content Include="img\click_here.PNG" />
+    <Content Include="img\coffee.png" />
+    <Content Include="img\controls.png" />
+    <Content Include="img\cutomer_img.png" />
+    <Content Include="img\delete.PNG" />
+    <Content Include="img\delete_1.png" />
+    <Content Include="img\edit_icon_addressbook.PNG" />
+    <Content Include="img\edit_img.PNG" />
+    <Content Include="img\email_send.gif" />
+    <Content Include="img\embed_calander.PNG" />
+    <Content Include="img\face-a-off.png" />
+    <Content Include="img\face-a.png" />
+    <Content Include="img\face-b-off.png" />
+    <Content Include="img\face-b.png" />
+    <Content Include="img\face-c-off.png" />
+    <Content Include="img\face-c.png" />
+    <Content Include="img\face-d-off.png" />
+    <Content Include="img\face-d.png" />
+    <Content Include="img\face-off.png" />
+    <Content Include="img\facebook.png" />
+    <Content Include="img\facebookx2.png" />
+    <Content Include="img\facebook_table2book.png" />
+    <Content Include="img\face_follow.PNG" />
+    <Content Include="img\favicon.ico" />
+    <Content Include="img\fork.jpg" />
+    <Content Include="img\forum.png" />
+    <Content Include="img\general_user_error_icon.png" />
+    <Content Include="img\globe.png" />
+    <Content Include="img\gmail_img.png" />
+    <Content Include="img\google-plus.png" />
+    <Content Include="img\googleplusx2.png" />
+    <Content Include="img\googleplus_button_m2b.png" />
+    <Content Include="img\greater_than.PNG" />
+    <Content Include="img\ground.PNG" />
+    <Content Include="img\header.jpg" />
+    <Content Include="img\head_img.png" />
+    <Content Include="img\head_imgg.PNG" />
+    <Content Include="img\help_navigation_massage2book.png" />
+    <Content Include="img\home.png" />
+    <Content Include="img\img.png" />
+    <Content Include="img\jhjhjhjh.png" />
+    <Content Include="img\knowledge-base.png" />
+    <Content Include="img\left.png" />
+    <Content Include="img\less_than.PNG" />
+    <Content Include="img\lgoinFB.png" />
+    <Content Include="img\loader.png" />
+    <Content Include="img\login.gif" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logo1.png" />
+    <Content Include="img\logo_bg.png" />
+    <Content Include="img\m2bpaymentprocessing.gif" />
+    <Content Include="img\man.jpg" />
+    <Content Include="img\massage2book.png" />
+    <Content Include="img\medal-off.png" />
+    <Content Include="img\medal-on.png" />
+    <Content Include="img\mp.png" />
+    <Content Include="img\new_image_for_owner.PNG" />
+    <Content Include="img\no_comments.png" />
+    <Content Include="img\no_comments_popup.png" />
+    <Content Include="img\ok.png" />
+    <Content Include="img\paypal_massage2book.png" />
+    <Content Include="img\pdf.jpg" />
+    <Content Include="img\perl.png" />
+    <Content Include="img\phone_search.PNG" />
+    <Content Include="img\php.png" />
+    <Content Include="img\pinterestx2.png" />
+    <Content Include="img\pinterest_table2book.png" />
+    <Content Include="img\python.png" />
+    <Content Include="img\restaurant\NoImage.jpg" />
+    <Content Include="img\restaurant\NoImage.png" />
+    <Content Include="img\restaurant\no_pramotion.jpg" />
+    <Content Include="img\restaurant\promotion.jpg" />
+    <Content Include="img\restaurant\promotion_1_table2book.jpg" />
+    <Content Include="img\restaurant\promotion_2_table2book.jpg" />
+    <Content Include="img\restaurant\promotion_3_table2book.JPG" />
+    <Content Include="img\restaurant\promotion_4_table2book.jpg" />
+    <Content Include="img\restaurant\promotion_5_table2book.jpg" />
+    <Content Include="img\restaurant\promotion_6_table2book.jpg" />
+    <Content Include="img\restaurant\promotion_7_table2book.jpg" />
+    <Content Include="img\restaurant\promotion_8_table2book.jpg" />
+    <Content Include="img\restaurant\restaurant_0_table2book.png" />
+    <Content Include="img\restaurant\restaurant_10_table2book.PNG" />
+    <Content Include="img\restaurant\restaurant_1_table2book.png" />
+    <Content Include="img\restaurant\restaurant_2_table2book.PNG" />
+    <Content Include="img\restaurant\restaurant_3_table2book.png" />
+    <Content Include="img\restaurant\restaurant_4_table2book.png" />
+    <Content Include="img\restaurant\restaurant_5_table2book.png" />
+    <Content Include="img\restaurant\restaurant_6_table2book.png" />
+    <Content Include="img\restaurant\restaurant_7_table2book.png" />
+    <Content Include="img\restaurant\restaurant_8_table2book.png" />
+    <Content Include="img\restaurant\restaurant_9_table2book.PNG" />
+    <Content Include="img\res_name.PNG" />
+    <Content Include="img\res_owner_img-3.png" />
+    <Content Include="img\res_owner_img-4.PNG" />
+    <Content Include="img\right.png" />
+    <Content Include="img\scissors.jpg" />
+    <Content Include="img\scroll_top.png" />
+    <Content Include="img\secure_lock.png" />
+    <Content Include="img\social_img.PNG" />
+    <Content Include="img\star-half-big.png" />
+    <Content Include="img\star-half.png" />
+    <Content Include="img\star-off-big.png" />
+    <Content Include="img\star-off.png" />
+    <Content Include="img\star-on-big.png" />
+    <Content Include="img\star-on.png" />
+    <Content Include="img\star.png" />
+    <Content Include="img\star_img.PNG" />
+    <Content Include="img\Stripelogo.jpg" />
+    <Content Include="img\Stripelogo.png" />
+    <Content Include="img\s_offer.png" />
+    <Content Include="img\taans_img.PNG" />
+    <Content Include="img\top_back.png" />
+    <Content Include="img\tree-collaps.png" />
+    <Content Include="img\tree-down.png" />
+    <Content Include="img\twitter.png" />
+    <Content Include="img\twitterx2.png" />
+    <Content Include="img\twitter_follow.PNG" />
+    <Content Include="img\twitter_table2book.png" />
+    <Content Include="img\UNCKED_CHECKBOX.png" />
+    <Content Include="img\up-arrow-icon.png" />
+    <Content Include="img\Update_icon.PNG" />
+    <Content Include="img\Update_icon_addressbookpage.PNG" />
+    <Content Include="img\update_img.PNG" />
+    <Content Include="img\vv.png" />
+    <Content Include="img\vvv.png" />
+    <Content Include="img\warning.png" />
+    <Content Include="img\welcome_img.PNG" />
+    <Content Include="img\windows-live_img.PNG" />
+    <Content Include="img\yahoo_img%27.png" />
+    <Content Include="img\youtubex2.png" />
+    <Content Include="img\youtube_table2book.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\jquery-1.4.4.js" />
+    <Content Include="js\jquery-1.7.1.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\ScriptResource.js" />
+    <Content Include="js\ScriptResource_2.js" />
+    <Content Include="js\ScriptResource_3.js" />
+    <Content Include="js\Validate.js" />
+    <Content Include="js\WebResource.js" />
+    <Content Include="massagepartener.Master" />
+    <Content Include="Privacy.aspx" />
+    <Content Include="SearchPartener.aspx" />
+    <Content Include="SearchPartener.Master" />
+    <Content Include="signin.aspx" />
+    <Content Include="signup.aspx" />
+    <Content Include="TermsNDconditions.aspx" />
+    <Content Include="user control\WebUserControl1.ascx" />
+    <Content Include="User\All_messages.aspx" />
+    <Content Include="User\CCAvanueFailPArtner.aspx" />
+    <Content Include="User\CCAvanuePassPartner.aspx" />
+    <Content Include="User\EditDetails.aspx" />
+    <Content Include="User\Favourite_Partner.aspx" />
+    <Content Include="User\Images\2017-09-2703-49-4069.jpg" />
+    <Content Include="User\Images\2017-09-2703-49-4189.jpg" />
+    <Content Include="User\Images\2017-09-2703-49-4258.jpg" />
+    <Content Include="User\Images\2017-09-2703-49-4327.jpg" />
+    <Content Include="User\Images\2017-09-2703-49-4396.png" />
+    <Content Include="User\Images\2017-09-2703-59-1490.jpg" />
+    <Content Include="User\Images\2017-09-2704-01-3251.jpg" />
+    <Content Include="User\Images\2017-09-2704-09-2150.jpg" />
+    <Content Include="User\Images\2017-09-2704-16-0961.jpg" />
+    <Content Include="User\membership.aspx" />
+    <Content Include="User\messages.aspx" />
+    <Content Include="User\profile.aspx" />
+    <Content Include="PrivacyPolicy.aspx" />
+    <Content Include="CSVLoad\script_1.sql" />
+    <Content Include="Editor\editorblog.js" />
+    <Content Include="Editor\nicEdit.js" />
+    <Content Include="Editor\nicEditorIcons.gif" />
+    <Content Include="equipment_img\NoImage0.jpg" />
+    <Content Include="equipment_img\NoImage1.jpg" />
+    <Content Include="equipment_img\NoImage10.jpg" />
+    <Content Include="equipment_img\NoImage2.jpg" />
+    <Content Include="equipment_img\NoImage3.jpg" />
+    <Content Include="equipment_img\NoImage4.jpg" />
+    <Content Include="equipment_img\NoImage5.jpg" />
+    <Content Include="equipment_img\NoImage6.jpg" />
+    <Content Include="equipment_img\NoImage7.jpg" />
+    <Content Include="equipment_img\NoImage8.jpg" />
+    <Content Include="equipment_img\NoImage9.jpg" />
+    <Content Include="ErrorMessage.aspx" />
+    <Content Include="Formvalidation.css" />
+    <Content Include="FormValidation.js" />
+    <Content Include="Global.asax" />
+    <Content Include="hash.aspx" />
+    <Content Include="ma.ico" />
+    <Content Include="obj\Debug\RESTFulWCFService.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\RESTFulWCFService.dll" />
+    <Content Include="obj\Debug\RESTFulWCFService.pdb" />
+    <Content Include="Pay.aspx" />
+    <Content Include="Paypal\Confirmation.aspx" />
+    <Content Include="Paypal\Default.aspx" />
+    <Content Include="Paypal\orderform.aspx" />
+    <Content Include="Paypal\PayPalIPNConfirmation.aspx" />
+    <Content Include="Paypal\Success.aspx" />
+    <Content Include="Paypal\wwWebstore.css" />
+    <Content Include="Paypal\_WebConfiguration.exe" />
+    <Content Include="Paypal\_WebConfiguration.xml" />
+    <Content Include="ReplayInvitation.aspx" />
+    <Content Include="Response.aspx" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="service\CountryProvinceWCFService.svc" />
+    <Content Include="service\CountryProvinceWebService.asmx" />
+    <Content Include="User\service_subscription.aspx" />
+    <Content Include="User\_membership.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="403.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="404Error.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>404Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="404Error.aspx.designer.cs">
+      <DependentUpon>404Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin_home.aspx.cs">
+      <DependentUpon>Admin_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin_home.aspx.designer.cs">
+      <DependentUpon>Admin_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditReview.aspx.cs">
+      <DependentUpon>EditReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditReview.aspx.designer.cs">
+      <DependentUpon>EditReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Review.aspx.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Review.aspx.designer.cs">
+      <DependentUpon>Review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ccAccessPoint.cs" />
+    <Compile Include="Classes\ccAuthorizeNet.cs" />
+    <Compile Include="Classes\ccBluePay.cs" />
+    <Compile Include="Classes\ccLinkPoint.cs" />
+    <Compile Include="Classes\ccPayFlowPro.cs" />
+    <Compile Include="Classes\ccProcessing.cs" />
+    <Compile Include="Classes\PayPalHelper.cs" />
+    <Compile Include="Classes\ChatManager.cs" />
+    <Compile Include="Classes\BusinessEquipments.cs" />
+    <Compile Include="Classes\FactoryEquipments.cs" />
+    <Compile Include="Classes\Configuration.cs" />
+    <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Classes\Constants.cs" />
+    <Compile Include="Controls\DatePicker2.ascx.cs">
+      <DependentUpon>DatePicker2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatePicker2.ascx.designer.cs">
+      <DependentUpon>DatePicker2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DatePicker.ascx.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DatePicker.ascx.designer.cs">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimePicker.ascx.cs">
+      <DependentUpon>TimePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TimePicker.ascx.designer.cs">
+      <DependentUpon>TimePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="faq.aspx.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faq.aspx.designer.cs">
+      <DependentUpon>faq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="massagepartener.Master.cs">
+      <DependentUpon>massagepartener.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="massagepartener.Master.designer.cs">
+      <DependentUpon>massagepartener.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Privacy.aspx.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privacy.aspx.designer.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPartener.aspx.cs">
+      <DependentUpon>SearchPartener.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchPartener.aspx.designer.cs">
+      <DependentUpon>SearchPartener.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPartener.Master.cs">
+      <DependentUpon>SearchPartener.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchPartener.Master.designer.cs">
+      <DependentUpon>SearchPartener.Master</DependentUpon>
+    </Compile>
+    <Compile Include="signin.aspx.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signin.aspx.designer.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SP.Master.cs">
+      <DependentUpon>SP.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SP.Master.designer.cs">
+      <DependentUpon>SP.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TermsNDconditions.aspx.cs">
+      <DependentUpon>TermsNDconditions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermsNDconditions.aspx.designer.cs">
+      <DependentUpon>TermsNDconditions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="user control\WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user control\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User\All_messages.aspx.cs">
+      <DependentUpon>All_messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\All_messages.aspx.designer.cs">
+      <DependentUpon>All_messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\CCAvanueFailPArtner.aspx.cs">
+      <DependentUpon>CCAvanueFailPArtner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\CCAvanueFailPArtner.aspx.designer.cs">
+      <DependentUpon>CCAvanueFailPArtner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\CCAvanuePassPartner.aspx.cs">
+      <DependentUpon>CCAvanuePassPartner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\CCAvanuePassPartner.aspx.designer.cs">
+      <DependentUpon>CCAvanuePassPartner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\EditDetails.aspx.cs">
+      <DependentUpon>EditDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\EditDetails.aspx.designer.cs">
+      <DependentUpon>EditDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Favourite_Partner.aspx.cs">
+      <DependentUpon>Favourite_Partner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Favourite_Partner.aspx.designer.cs">
+      <DependentUpon>Favourite_Partner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\membership.aspx.cs">
+      <DependentUpon>membership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\membership.aspx.designer.cs">
+      <DependentUpon>membership.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\messages.aspx.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\messages.aspx.designer.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PrivacyPolicy.aspx.designer.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CountryProvinceWebService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\CreateTable.cs" />
+    <Compile Include="Classes\Cryptology.cs" />
+    <Compile Include="Classes\CustomRouteHandler.cs" />
+    <Compile Include="ErrorMessage.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ErrorMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessage.aspx.designer.cs">
+      <DependentUpon>ErrorMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Generic.cs" />
+    <Compile Include="Classes\GetSiteURL.cs" />
+    <Compile Include="hash.aspx.cs">
+      <DependentUpon>hash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hash.aspx.designer.cs">
+      <DependentUpon>hash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ImageUploader.cs" />
+    <Compile Include="Classes\importGmailConatact.cs" />
+    <Compile Include="Keyword.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Mailsettings.cs" />
+    <Compile Include="Pay.aspx.cs">
+      <DependentUpon>Pay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pay.aspx.designer.cs">
+      <DependentUpon>Pay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\paypalfunctions.cs" />
+    <Compile Include="Paypal\Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paypal\Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paypal\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paypal\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paypal\orderform.aspx.cs">
+      <DependentUpon>orderform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paypal\orderform.aspx.designer.cs">
+      <DependentUpon>orderform.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paypal\PayPalIPNConfirmation.aspx.cs">
+      <DependentUpon>PayPalIPNConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paypal\PayPalIPNConfirmation.aspx.designer.cs">
+      <DependentUpon>PayPalIPNConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paypal\Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paypal\Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Comman.cs" />
+    <Compile Include="Classes\ReadWriteXML.cs" />
+    <Compile Include="ReplayInvitation.aspx.cs">
+      <DependentUpon>ReplayInvitation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReplayInvitation.aspx.designer.cs">
+      <DependentUpon>ReplayInvitation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Response.aspx.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Response.aspx.designer.cs">
+      <DependentUpon>Response.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SupportClasses\wwHTTP.cs" />
+    <Compile Include="SupportClasses\wwHttpUtils.cs" />
+    <Compile Include="SupportClasses\wwUtils.cs" />
+    <Compile Include="User\service_subscription.aspx.cs">
+      <DependentUpon>service_subscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\service_subscription.aspx.designer.cs">
+      <DependentUpon>service_subscription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\_membership.aspx.cs">
+      <DependentUpon>_membership.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\_membership.aspx.designer.cs">
+      <DependentUpon>_membership.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Mails.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\ar\" />
+    <Folder Include="bin\cs\" />
+    <Folder Include="bin\de\" />
+    <Folder Include="bin\es\" />
+    <Folder Include="bin\fr\" />
+    <Folder Include="bin\he\" />
+    <Folder Include="bin\hi\" />
+    <Folder Include="bin\it\" />
+    <Folder Include="bin\ja\" />
+    <Folder Include="bin\ko\" />
+    <Folder Include="bin\nl\" />
+    <Folder Include="bin\pt\" />
+    <Folder Include="bin\ru\" />
+    <Folder Include="bin\tr-TR\" />
+    <Folder Include="bin\zh-CHS\" />
+    <Folder Include="bin\zh-CHT\" />
+    <Folder Include="EmailAttechment\" />
+    <Folder Include="ErrorLog\" />
+    <Folder Include="obj\Debug\Package\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="_\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\admin.Master" />
+    <Content Include="Admin\assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Admin\assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Admin\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_buttons.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_cards.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_chartist.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_icons.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_inputs.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_labels.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_morphing-buttons.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_navbars.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_social-buttons.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_tabs.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_transparency.scss" />
+    <Content Include="Admin\assets\sass\lbd\mixins\_vendor-prefixes.scss" />
+    <Content Include="Admin\assets\sass\lbd\_alerts.scss" />
+    <Content Include="Admin\assets\sass\lbd\_buttons.scss" />
+    <Content Include="Admin\assets\sass\lbd\_cards.scss" />
+    <Content Include="Admin\assets\sass\lbd\_chartist.scss" />
+    <Content Include="Admin\assets\sass\lbd\_checkbox-radio-switch.scss" />
+    <Content Include="Admin\assets\sass\lbd\_dropdown.scss" />
+    <Content Include="Admin\assets\sass\lbd\_footers.scss" />
+    <Content Include="Admin\assets\sass\lbd\_inputs.scss" />
+    <Content Include="Admin\assets\sass\lbd\_misc.scss" />
+    <Content Include="Admin\assets\sass\lbd\_mixins.scss" />
+    <Content Include="Admin\assets\sass\lbd\_navbars.scss" />
+    <Content Include="Admin\assets\sass\lbd\_responsive.scss" />
+    <Content Include="Admin\assets\sass\lbd\_sidebar-and-main-panel.scss" />
+    <Content Include="Admin\assets\sass\lbd\_tables.scss" />
+    <Content Include="Admin\assets\sass\lbd\_typography.scss" />
+    <Content Include="Admin\assets\sass\lbd\_variables.scss" />
+    <Content Include="Admin\assets\sass\light-bootstrap-dashboard.scss" />
+    <None Include="bin\LibInstaller.bat" />
+    <None Include="bin\Newtonsoft.Json.dll.refresh" />
+    <None Include="CSVLoad\.htaccess" />
+    <None Include="CSVLoad\sample.xls" />
+    <None Include="Editor\CSVLoad\sample.xls" />
+    <Content Include="Handler.ashx" />
+    <Content Include="Handler2.ashx" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\GenerateResource.read.1.tlog" />
+    <None Include="obj\Debug\GenerateResource.write.1.tlog" />
+    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\RESTFulWCFService.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\RESTFulWCFService.csprojResolveAssemblyReference.cache" />
+    <Content Include="packages.config" />
+    <Content Include="Web.sitemap" />
+    <Content Include="SP.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="obj\Debug\PayPalIntegration.OrderForm.resources" />
+    <EmbeddedResource Include="Paypal\orderform.aspx.resx">
+      <DependentUpon>orderform.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessEntity\BussinessEntity.csproj">
+      <Project>{03300da2-7a99-4057-ae29-daaea9898835}</Project>
+      <Name>BussinessEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bussiness\Bussiness.csproj">
+      <Project>{595fadc8-86fd-400e-b702-caf6021a3991}</Project>
+      <Name>Bussiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityProject\UtilityProject.csproj">
+      <Project>{3104f689-c3dd-4a85-bfb4-7e873756e562}</Project>
+      <Name>UtilityProject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6509</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

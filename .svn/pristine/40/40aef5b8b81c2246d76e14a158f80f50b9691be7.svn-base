@@ -1,0 +1,1500 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using Business;
+using System.IO;
+using BussinessEntity;
+using System.Drawing;
+using System.Data.SqlClient;
+using RESTFulWCFService;
+using System.Diagnostics;
+using PayPalIntegration;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using CCA.Util;
+using Stripe;
+using System.Net;
+
+namespace RESTFulWCFService.User
+{
+    public partial class multipayment_partner : System.Web.UI.Page
+    {
+        private bool PayPalReturnRequest = false;
+        protected decimal OrderAmount = 0.00M;
+        BusinessMPartener objbusinessmpartener = new BusinessMPartener();
+        BussinessPaypal obj = new BussinessPaypal();
+        RegistrationBusiness objRegistrationBusiness = new RegistrationBusiness();
+        Business.BusinessLogin objBusinessLogin = new BusinessLogin();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                lnkBack.PostBackUrl = Constants__.WEB_ROOT;
+                if (!IsPostBack)
+                {
+
+                    if (Session["3dpaymentSeeker"] != null && Session["3dpaymentSeeker"].ToString() == "Yes")
+                    {
+                        getPaypalBAnkDetails();
+                        paypalReturnscreen.Visible = true;
+                        paypalGonescrren.Visible = false;
+                        divpaymentMode.Visible = true;
+
+                        if (Session["country_sk"] != null && Session["country_sk"].ToString() == "100")
+                        {
+
+
+                            lbl_1_year.Text = "Rs. " + ConfigurationManager.AppSettings["Partner_sub_india_1_year"].ToString();
+                            lbl_2_year.Text = "Rs. " + ConfigurationManager.AppSettings["Partner_sub_india_2_year"].ToString();
+                            lbl_3_year.Text = "Rs. " + ConfigurationManager.AppSettings["Partner_sub_india_3_year"].ToString();
+
+                            txtregisteredmail_id.Text = Session["email_id"].ToString();
+                        }
+                        else
+                        {
+                            paytmsection.Visible = false;
+                            nonpaytmoption.Visible = false;
+                        }
+
+                    }
+                    else
+                    {
+                        divpaymentMode.Visible = false;
+
+
+
+                        if (Session["country_sk"] != null && Session["country_sk"].ToString() == "100")
+                        {
+
+
+                            lbl_1_year.Text = "Rs. " + ConfigurationManager.AppSettings["Partner_sub_india_1_year"].ToString();
+                            lbl_2_year.Text = "Rs. " + ConfigurationManager.AppSettings["Partner_sub_india_2_year"].ToString();
+                            lbl_3_year.Text = "Rs. " + ConfigurationManager.AppSettings["Partner_sub_india_3_year"].ToString();
+                            txtregisteredmail_id.Text = Session["email_id"].ToString();
+                        }
+                        else
+                        {
+                            paytmsection.Visible = false;
+                            nonpaytmoption.Visible = false;
+                        }
+
+
+                        if (Session["mp_login_sk"] != null)
+                        {
+                            if ((Request.QueryString["PayPal"] != null && Request.QueryString["PayPal"].ToString() == "Info2468Cubek"))
+                            {// Paypal successfully payment
+                                paypalReturnscreen.Visible = true; paypalGonescrren.Visible = false;
+                                SavePromotion_AfterPaypal();
+
+                            }
+                            else if ((Request.QueryString["PayPal"] != null && Request.QueryString["PayPal"].ToString() == "Cubek2468Tech"))
+                            {// ccavanue successfully payment
+                                paypalReturnscreen.Visible = true; paypalGonescrren.Visible = false;
+                                SavePromotion_AfterPaypal_CCAvanue();
+
+                            }
+                            else if ((Request.QueryString["PayPal"] != null && Request.QueryString["PayPal"].ToString() == "Sub_Cancel"))
+                            {
+                                paypalReturnscreen.Visible = true; paypalGonescrren.Visible = false;
+                                lblSuccess.Text = "Payment not done due to some technical issue."; lblSuccess.Visible = true;
+                                lblSuccess.Style.Add("color", "red");
+                                DataSet ds = new DataSet();
+                                divpaymentMode.Visible = true;
+
+                            }
+                            else
+                            {
+                                Session["seeker_subscribed"] = null;
+
+                                int login_sk = Convert.ToInt32(Session["mp_login_sk"].ToString());
+
+                                int i = 0;
+                                string Subscription_price = "0";
+
+                                System.Data.DataSet ds = new DataSet();
+                                Business.BusinessLogin objBusinessLogin = new BusinessLogin();
+                                ds = objbusinessmpartener.getPartnerSubsciption_record(Convert.ToInt32(Session["pay_partner"].ToString()));
+                                if (ds.Tables[0].Rows.Count > 0)
+                                {
+                                    Session["UserFirstName"] = ds.Tables[0].Rows[0]["massage_partner_name"].ToString();
+                                    ViewState["country_sk"] = ds.Tables[0].Rows[0]["country_sk"].ToString();
+                                    if (ds.Tables[3].Rows.Count > 0) { Session["seeker_subscribed"] = "Yes"; }
+                                    else
+                                    {
+                                        decimal Two_year_per = 0;
+                                        decimal Three_year_per = 0;
+
+                                        if (ViewState["country_sk"].ToString() == "100")
+                                        {
+                                            Two_year_per = (Convert.ToDecimal(ConfigurationManager.AppSettings["Provider_india_2_year_per_partner"].ToString()));
+                                            Three_year_per = (Convert.ToDecimal(ConfigurationManager.AppSettings["Provider_india_3_year_per_partner"].ToString()));
+                                        }
+                                        else
+                                        {
+                                            Two_year_per = (Convert.ToDecimal(ConfigurationManager.AppSettings["Provider_foreign_2_year_per_partner"].ToString()));
+                                            Three_year_per = (Convert.ToDecimal(ConfigurationManager.AppSettings["Provider_foreign_3_year_per_partner"].ToString()));
+                                        }
+
+                                        if (ds.Tables[4].Rows.Count > 0)
+                                        {
+                                            if (Session["Provider_payment"] != null && Session["Provider_payment"].ToString() != "")
+                                            {
+
+                                                string paymentInfo = Session["Provider_payment"].ToString();
+                                                List<string> infoarray = paymentInfo.Split('|').ToList();
+                                                int paymentforyear = Convert.ToInt16(infoarray[1]);
+                                                if (paymentforyear == 1)
+                                                {
+                                                    ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[4].Rows[0]["basic_unit_price"].ToString(), 0);
+                                                }
+                                                else if (paymentforyear == 2)
+                                                {
+                                                    ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[4].Rows[0]["basic_unit_price"].ToString(), Two_year_per);
+                                                }
+                                                else if (paymentforyear == 3)
+                                                {
+                                                    ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[4].Rows[0]["basic_unit_price"].ToString(), Three_year_per);
+                                                }
+                                                else
+                                                {
+                                                    ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[4].Rows[0]["basic_unit_price"].ToString(), 0);
+
+                                                }
+                                            }
+
+                                            else
+                                            {
+                                                // price.InnerText = ds.Tables[4].Rows[0]["currency_short_name"].ToString() + " " + (Math.Round(decimal.Parse(ds.Tables[4].Rows[0]["basic_unit_price"].ToString()), 2)).ToString();
+                                                ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[4].Rows[0]["basic_unit_price"].ToString(), 0);
+
+                                            }
+
+                                            if (ds.Tables[4].Rows[0]["currency_short_name"].ToString() == "INR")
+                                            {
+                                                ViewState["currency_short_name"] = ds.Tables[4].Rows[0]["currency_short_name"];
+                                            }
+                                            else
+                                            {
+                                                ViewState["currency_short_name"] = "USD";
+
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            if (ds.Tables[5].Rows.Count > 0)
+                                            {
+                                                if (Session["Provider_payment"] != null && Session["Provider_payment"].ToString() != "")
+                                                {
+                                                    string paymentInfo = Session["Provider_payment"].ToString();
+                                                    List<string> infoarray = paymentInfo.Split('|').ToList();
+                                                    int paymentforyear = Convert.ToInt16(infoarray[1]);
+                                                    if (paymentforyear == 1)
+                                                    {
+                                                        ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[5].Rows[0]["basic_unit_price"].ToString(), 0);
+
+                                                    }
+                                                    else if (paymentforyear == 2)
+                                                    {
+                                                        ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[5].Rows[0]["basic_unit_price"].ToString(), Convert.ToDecimal(Two_year_per));
+                                                    }
+                                                    else if (paymentforyear == 3)
+                                                    {
+                                                        ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[5].Rows[0]["basic_unit_price"].ToString(), Convert.ToDecimal(Three_year_per));
+
+                                                    }
+
+                                                    else
+                                                    {
+                                                        //  price.InnerText = "USD " + ds.Tables[5].Rows[0]["basic_unit_price"].ToString();
+                                                        ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[5].Rows[0]["basic_unit_price"].ToString(), 0);
+                                                    }
+                                                }
+
+                                                else
+                                                {
+                                                    //  price.InnerText = "USD " + ds.Tables[5].Rows[0]["basic_unit_price"].ToString();
+                                                    ViewState["Seeker_subscrition_price"] = Get_Listing_Price(ds.Tables[5].Rows[0]["basic_unit_price"].ToString(), 0);
+
+                                                }
+                                                if (ds.Tables[5].Rows[0]["currency_short_name"].ToString() == "INR")
+                                                {
+                                                    ViewState["currency_short_name"] = ds.Tables[5].Rows[0]["currency_short_name"];
+                                                }
+                                                else
+                                                {
+                                                    ViewState["currency_short_name"] = "USD";
+                                                }
+
+                                            }
+                                        }
+
+
+                                    }
+                                }
+                                if (ds.Tables[0].Rows.Count >= 1)
+                                {
+                                    int ProviderId = Convert.ToInt32(ds.Tables[0].Rows[0]["massage_partner_sk"]);
+
+                                    DataTable dt = new DataTable();
+                                    DataColumn dc;
+                                    dc = new DataColumn("massage_partner_sk");
+                                    dc.DataType = System.Type.GetType("System.Int32");
+                                    dt.Columns.Add(dc);
+                                    dc = new DataColumn("country_sk");
+                                    dc.DataType = System.Type.GetType("System.Int32");
+                                    dt.Columns.Add(dc);
+
+                                    dc = new DataColumn("subscription_start_date");
+                                    dc.DataType = System.Type.GetType("System.String");
+                                    dt.Columns.Add(dc);
+
+                                    dc = new DataColumn("subscription_end_date");
+                                    dc.DataType = System.Type.GetType("System.String");
+                                    dt.Columns.Add(dc);
+
+
+                                    dc = new DataColumn("one_time_price");
+                                    dc.DataType = System.Type.GetType("System.String");
+                                    dt.Columns.Add(dc);
+
+                                    dc = new DataColumn("is_subscribed");
+                                    dc.DataType = System.Type.GetType("System.String");
+                                    dt.Columns.Add(dc);
+
+                                    dc = new DataColumn("is_paid");
+                                    dc.DataType = System.Type.GetType("System.String");
+                                    dt.Columns.Add(dc);
+
+                                    dc = new DataColumn("PaymentGateway");
+                                    dc.DataType = System.Type.GetType("System.String");
+                                    dt.Columns.Add(dc);
+
+                                    DateTime dsfrom = System.DateTime.Now;
+                                    DateTime dsto = dsfrom.AddYears(1);
+                                    if (Session["Provider_payment"] != null && Session["Provider_payment"].ToString() != "")
+                                    {
+                                        string paymentInfo = Session["Provider_payment"].ToString();
+                                        List<string> infoarray = paymentInfo.Split('|').ToList();
+                                        int paymentforyear = Convert.ToInt16(infoarray[1]);
+                                        if (paymentforyear == 1)
+                                        {
+                                            dsto = dsfrom.AddYears(1);
+                                        }
+                                        else if (paymentforyear == 2) { dsto = dsfrom.AddYears(2); }
+                                        else if (paymentforyear == 3) { dsto = dsfrom.AddYears(3); }
+                                    }
+                                    else
+                                    {
+                                        dsto = dsfrom.AddYears(1);
+                                    }
+                                    Subscription_price = ViewState["Seeker_subscrition_price"].ToString();
+                                    int country_sk = Convert.ToInt32(ViewState["country_sk"]);
+                                    // ViewState["currency_short_name"] = "USD";
+                                    dt.Rows.Add(ProviderId, country_sk, dsfrom, dsto, Subscription_price, "N", "N", "");
+                                    Session["ServiceProvider_subscription"] = dt;
+                                    BussinessSendMail objmail = new BussinessSendMail();
+                                    bool MobileDevice2 = false;
+                                    string strUserAgent = "";
+                                    string IS_Mobile_Device = "by using Desktop.";
+
+                                    try
+                                    {
+                                        if (Request.UserAgent != null && Request.UserAgent.ToString() != "")            //nilesh
+                                        {
+                                            strUserAgent = Request.UserAgent.ToString().ToLower();
+                                        }
+                                    }
+                                    catch (System.Exception ex)
+                                    {
+                                        BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message + "strUserAgent=" + Request.UserAgent;
+                                        var str = new System.Diagnostics.StackTrace(ex, true);
+                                        StackFrame[] stackFrames = str.GetFrames();
+                                        foreach (StackFrame stackFrame in stackFrames)
+                                        {
+                                            Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                                            BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                                            BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                                            BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                                        }
+
+                                        //Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+                                        return;
+                                    }
+
+                                    if (Request.Browser.IsMobileDevice != false)
+                                    {
+                                        MobileDevice2 = Request.Browser.IsMobileDevice;
+                                    }
+
+
+                                    if (Request.Cookies["MobileDevice"] != null)
+                                    {
+                                        if (Request.Cookies["MobileDevice"].Value == "IgnoreMobile") { MobileDevice2 = false; }
+                                    }
+                                    else
+                                    {
+
+
+
+                                        if (strUserAgent != null && strUserAgent != "")
+                                        {
+
+                                            if (MobileDevice2 == true || strUserAgent.Contains("iphone") || strUserAgent.Contains("blackberry") || strUserAgent.Contains("mobile") ||
+                                            strUserAgent.Contains("android") || strUserAgent.Contains("windows ce") || strUserAgent.Contains("opera mini") || strUserAgent.Contains("palm"))
+                                            {
+
+                                                IS_Mobile_Device = "by using Mobile device.";
+                                                // Response.Redirect(Constants__.WEB_ROOT + "/m-home", false);
+                                                // return;
+                                            }
+                                        }
+                                    }
+                                    i = objmail.sendMail(login_sk, "Massage Partner Pay Now Click event", "user (Massage Partner SK= " + Session["massage_partner_sk"].ToString() + ") is clicked for paypal for partner (partner_sk = " + Session["pay_partner"].ToString() + ") registration subscription " + IS_Mobile_Device, null);
+                                    //   i = objmail.sendSubscriptionMail(login_sk);
+
+                                }
+                                string replaced_str = "";
+                                string curr1 = "";
+                                string payable_amt = Subscription_price;
+                                int is_paypal = obj.is_paypal();
+
+                                if (is_paypal == 1)
+                                {
+                                    if (Subscription_price != "0.00")
+                                    {
+
+
+                                        if (payable_amt != "0.00")
+                                        {
+                                            int country_sk = 0;
+                                            string str = "";
+                                            if (ViewState["currency_short_name"] != null)
+                                            {
+                                                curr1 = Convert.ToString(ViewState["currency_short_name"]);
+                                            }
+                                            try
+                                            {
+                                                if (ViewState["country_sk"] != null)
+                                                    country_sk = Convert.ToInt32(ViewState["country_sk"]);
+
+                                                ReadWriteWebservice objs = new ReadWriteWebservice();
+                                                if (ViewState["currency_short_name"].ToString() == "USD" && Session["StripepaymentGatway"] == null)
+                                                {
+                                                    str = objs.CurrencyConversion(payable_amt, "USD", "USD");
+                                                }
+                                                else if (Convert.ToString(ViewState["currency_short_name"]) == "INR" && Session["ccAvanue"] != null && Session["ccAvanue"].ToString() == "Y")
+                                                {
+                                                    Session.Remove("ccAvanue");
+                                                    SavePromotion_BeforePaypal();
+                                                    Go_for_payment(ds, payable_amt);
+                                                }
+                                                else if (Session["StripepaymentGatway"] != null && Session["StripepaymentGatway"].ToString() != "")
+                                                {
+                                                    string stripecarddetails = Session["StripepaymentGatway"].ToString();
+                                                    Session.Remove("StripepaymentGatway");
+                                                    SavePromotion_BeforePaypal();
+                                                    string result_ = Go_for_Stripe_payment(ds, payable_amt, Convert.ToString(ViewState["currency_short_name"]), stripecarddetails);
+
+                                                    if (result_ == "Paid")
+                                                    {
+                                                        SavePromotion_AfterPaypal_Stripe();
+
+                                                    }
+                                                    else
+                                                    {
+                                                        if (result_ == "NotPaid")
+                                                        { lblSuccess.Text = "NotPaid"; }
+                                                        else
+                                                        {
+                                                            lblSuccess.Text = result_;
+                                                            lblSuccess.Visible = true;
+                                                            lblSuccess.Style.Add("color", "red");
+                                                        }
+                                                        lblSuccess.Style.Add("color", "red");
+                                                        Session["seeker_subscription"] = null;
+                                                        paypalReturnscreen.Visible = true; paypalGonescrren.Visible = false;
+                                                        divpaymentMode.Visible = true;
+
+
+
+                                                        return;
+                                                    }
+                                                }
+
+                                                else
+                                                {
+                                                    str = objs.CurrencyConversion(payable_amt, ViewState["currency_short_name"].ToString(), "USD");
+                                                     SavePromotion_BeforePaypal();
+                                                }
+                                                str = str.Normalize();
+                                                replaced_str = str.Replace(" USD", "");
+                                                if (replaced_str != "" && replaced_str != null)
+                                                {
+                                                    string str_amt_2 = objs.CurrencyConversion(replaced_str, "USD", curr1);
+                                                }
+                                            }
+                                            catch (System.Exception ex)
+                                            {
+                                                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                                                Business.BussinessSendMail send = new BussinessSendMail();
+                                                //   send.SendMail("info@massage2book.com", "support@massage2book.com", "Exception occured with webservice", ex.Message + " " + " On Subscription Page M2B, currency conversion api from  USD to '" + curr1 + "'", null);
+                                            }
+                                            Session["Converted_Doller_amount"] = replaced_str;
+                                            SubmitToPaypal(replaced_str);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+
+
+                            Response.Redirect(Constants__.WEB_ROOT, false);
+                            return;
+                        }
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+        /// <summary>
+        /// Stripe Payment Methods
+        /// </summary>
+        /// <param name="ds"></param>
+        /// <param name="payable_amt"></param>
+        protected string Go_for_Stripe_payment(DataSet ds, string payable_amt, string SeekerCurrency, string carddetails)
+        {
+
+            try
+            {
+                StripeCustomer current = GetCustomer(carddetails);
+                int chargetotal = Convert.ToInt32(Double.Parse(payable_amt)) * 100;//Convert.ToInt32((3.33*Convert.ToInt32(days)*100));
+                var mycharge = new StripeChargeCreateOptions();
+                mycharge.AmountInCents = chargetotal;
+                mycharge.Currency = (SeekerCurrency).Trim();
+                mycharge.CustomerId = current.Id;
+                string key = ConfigurationManager.AppSettings["StripeApiKey"].ToString();
+                var chargeservice = new StripeChargeService(key);
+                StripeCharge currentcharge = chargeservice.Create(mycharge);
+                if (currentcharge.Paid == true) { return "Paid"; } else { return "NotPaid"; }
+            }
+            catch (System.Exception ex)
+            {
+                return ex.Message;
+                //   send.SendMail("info@massage2book.com", "support@massage2book.com", "Exception occured with webservice", ex.Message + " " + " On Subscription Page M2B, currency conversion api from  USD to '" + curr1 + "'", null);
+            }
+
+        }
+
+        private void getPaypalBAnkDetails()
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                ds = objRegistrationBusiness.getbank_card_details();
+
+                // credit bank names
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ddlCreditCartBankNames.DataSource = ds.Tables[0];
+                    ddlCreditCartBankNames.DataValueField = "bank_sk";
+                    ddlCreditCartBankNames.DataTextField = "bank_name";
+                    ddlCreditCartBankNames.DataBind();
+                    ddlCreditCartBankNames.Items.Insert(0, new ListItem("----Select Bank---", "0"));
+                    ddlCreditCartBankNames.Items.Insert(ds.Tables[0].Rows.Count + 1, new ListItem("==============", "101"));
+
+                    ddlCreditCartBankNames.Items.Insert(ds.Tables[0].Rows.Count + 2, new ListItem("Other Banks", "-1"));
+
+
+
+                }
+
+                if (ds.Tables[1].Rows.Count > 0)
+                {
+                    //debit BankNames 
+                    ddlDebitCartBankNames.DataSource = ds.Tables[1];
+                    ddlDebitCartBankNames.DataValueField = "bank_sk";
+                    ddlDebitCartBankNames.DataTextField = "bank_name";
+                    ddlDebitCartBankNames.DataBind();
+                    ddlDebitCartBankNames.Items.Insert(0, new ListItem("----Select Bank---", "0"));
+                    ddlDebitCartBankNames.Items.Insert(ds.Tables[1].Rows.Count + 1, new ListItem("==============", "101"));
+
+                    ddlDebitCartBankNames.Items.Insert(ds.Tables[1].Rows.Count + 2, new ListItem("Other Banks", "-1"));
+
+
+
+                }
+                if (ds.Tables[2].Rows.Count > 0)
+                {
+                    // debit card types
+                    ddlDebitCartTypes.DataSource = ds.Tables[2];
+                    ddlDebitCartTypes.DataValueField = "card_type_sk";
+                    ddlDebitCartTypes.DataTextField = "card_type_name";
+                    ddlDebitCartTypes.DataBind();
+                    ddlDebitCartTypes.Items.Insert(0, new ListItem("---Select Card Type---", "0"));
+                    ddlDebitCartTypes.Items.Insert(ds.Tables[2].Rows.Count + 1, new ListItem("==============", "101"));
+
+                    ddlDebitCartTypes.Items.Insert(ds.Tables[2].Rows.Count + 2, new ListItem("All Other Cards", "-1"));
+
+
+                    // Credit card types
+
+                    ddlCreditCartTypes.DataSource = ds.Tables[2];
+                    ddlCreditCartTypes.DataValueField = "card_type_sk";
+                    ddlCreditCartTypes.DataTextField = "card_type_name";
+                    ddlCreditCartTypes.DataBind();
+                    ddlCreditCartTypes.Items.Insert(0, new ListItem("---Select Card Type---", "0"));
+                    ddlCreditCartTypes.Items.Insert(ds.Tables[2].Rows.Count + 1, new ListItem("==============", "101"));
+
+                    ddlCreditCartTypes.Items.Insert(ds.Tables[2].Rows.Count + 2, new ListItem("All Other Cards", "-1"));
+
+
+
+
+                    // Credit card types
+
+
+                }
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+
+        private StripeCustomer GetCustomer(string carddetails)
+        {
+
+            string[] carddetails_ = carddetails.Split('|');
+            var mycust = new StripeCustomerCreateOptions();
+            mycust.Email = "";
+            mycust.Description = "";
+            mycust.CardNumber = carddetails_[0].Trim();
+            mycust.CardExpirationMonth = carddetails_[1].Trim();
+            mycust.CardExpirationYear = carddetails_[2].Trim();
+            // mycust.PlanId = "100";
+            mycust.CardName = carddetails_[3].Trim();
+            mycust.CardAddressCity = "";
+            mycust.CardAddressCountry = "";
+            mycust.CardAddressLine1 = "";
+            //mycust.TrialEnd = getrialend();
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+
+            var customerservice = new StripeCustomerService(ConfigurationManager.AppSettings["StripeApiKey"].ToString());
+            return customerservice.Create(mycust);
+        }
+
+        protected void Go_for_payment(DataSet ds, string payable_amt)
+        {
+            try
+            {
+                CCACrypto chkSum = new CCACrypto();
+                string WorkingKey = ConfigurationManager.AppSettings["CCAVAnueWorkingKey"].ToString();
+                Random rnd = new Random();
+                int rnd_no = rnd.Next(100, 100000);
+                string lblOrderId = ds.Tables[0].Rows[0]["massage_partner_sk"].ToString() + "_" + rnd_no;
+
+                OrderID.Value = ds.Tables[0].Rows[0]["massage_partner_sk"].ToString() + "_" + rnd_no; ;
+                Name.Value = ds.Tables[0].Rows[0]["massage_partner_name"].ToString();
+                Address.Value = ds.Tables[0].Rows[0]["address_text"].ToString();
+                Amount.Value = payable_amt;
+                Mobile.Value = ds.Tables[0].Rows[0]["mobile_no"].ToString();
+                Email.Value = ds.Tables[0].Rows[0]["email_id"].ToString();
+                Zipcode.Value = ds.Tables[0].Rows[0]["postal_code"].ToString();
+                City.Value = "";
+                State.Value = "";
+                Country.Value = "India"; ;
+                SuccessURL.Value = Constants__.WEB_ROOT + "/User/CCAvanuePassPartner.aspx";
+                CancelURL.Value = Constants__.WEB_ROOT + "/User/CCAvanueFailPArtner.aspx";
+                frmpayment.Attributes.Add("method", "post");
+                frmpayment.Attributes.Add("action", "http://shadimaker.com/payment/pay.php");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "scriptsa", " postbackurl();", true);
+                return;
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                Business.BussinessSendMail send = new BussinessSendMail();
+                Response.Redirect(Constants__.WEB_ROOT, false);
+                return;
+                //   send.SendMail("info@massage2book.com", "support@massage2book.com", "Exception occured with webservice", ex.Message + " " + " On Subscription Page M2B, currency conversion api from  USD to '" + curr1 + "'", null);
+            }
+
+        }
+        protected void SavePromotion_AfterPaypal_CCAvanue()
+        {
+            ///
+            if (Session["ServiceProvider_subscription"] != null)
+            {
+
+                DataTable dt = new DataTable();
+                DataColumn dc;
+                dc = new DataColumn("massage_partner_sk");
+                dc.DataType = System.Type.GetType("System.Int32");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("country_sk");
+                dc.DataType = System.Type.GetType("System.Int32");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("subscription_start_date");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("subscription_end_date");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("one_time_price");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("is_subscribed");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+                dc = new DataColumn("is_paid");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("PaymentGateway");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+
+                dt = (DataTable)(Session["ServiceProvider_subscription"]);
+
+
+                dt.Rows[0]["is_subscribed"] = "Y";
+                dt.Rows[0]["is_paid"] = "Y";
+                dt.Rows[0]["PaymentGateway"] = "CCAvanue";
+                BussinessSubscription objSubscription = new BussinessSubscription();
+                objbusinessmpartener.InsertmassagePartnerSubscriptionDetails(dt);
+                lblSuccess.Text = "Information saved successfully";
+                //  lblSuccess.Style.Add("color", "green");
+                //  Session["ServiceProvider_subscription"] = null;
+                //  ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "openOffersDialog();", true);
+                Session["seeker_subscribed"] = "Y";
+                if (Session["CurrentURL"] != null)
+                    Response.Redirect(Session["CurrentURL"].ToString(), false);
+                return;
+                // Session["exists_promotion"] = "PromotionExists";
+                //  ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp23", "<script type='text/javascript'>fun_noData_popup('Promotion Successfully Paid, Now upload promotion.');</script>", false);
+
+            }
+            else
+            {
+                lblSuccess.Text = "Payment not done";
+                lblSuccess.Style.Add("color", "red");
+                Session["ServiceProvider_subscription"] = null;
+
+            }
+        }
+
+        protected void SavePromotion_AfterPaypal_Stripe()
+        {
+            ///
+            if (Session["ServiceProvider_subscription"] != null)
+            {
+
+                DataTable dt = new DataTable();
+                DataColumn dc;
+                dc = new DataColumn("massage_partner_sk");
+                dc.DataType = System.Type.GetType("System.Int32");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("country_sk");
+                dc.DataType = System.Type.GetType("System.Int32");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("subscription_start_date");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("subscription_end_date");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("one_time_price");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("is_subscribed");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+                dc = new DataColumn("is_paid");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("PaymentGateway");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+
+                dt = (DataTable)(Session["ServiceProvider_subscription"]);
+
+
+                dt.Rows[0]["is_subscribed"] = "Y";
+                dt.Rows[0]["is_paid"] = "Y";
+                dt.Rows[0]["PaymentGateway"] = "Stripe";
+                BussinessSubscription objSubscription = new BussinessSubscription();
+                objbusinessmpartener.InsertmassagePartnerSubscriptionDetails(dt);
+                lblSuccess.Text = "Information saved successfully";
+                //  lblSuccess.Style.Add("color", "green");
+                //  Session["ServiceProvider_subscription"] = null;
+                //  ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "openOffersDialog();", true);
+                Session["seeker_subscribed"] = "Y";
+
+                if (Session["CurrentURL"] != null)
+                    Response.Redirect(Session["CurrentURL"].ToString(), false);
+                return;
+                // Session["exists_promotion"] = "PromotionExists";
+                //  ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp23", "<script type='text/javascript'>fun_noData_popup('Promotion Successfully Paid, Now upload promotion.');</script>", false);
+
+            }
+            else
+            {
+                lblSuccess.Text = "Payment not done";
+                lblSuccess.Style.Add("color", "red");
+                Session["ServiceProvider_subscription"] = null;
+
+            }
+        }
+        protected void SavePromotion_AfterPaypal()
+        {
+            if (Session["ServiceProvider_subscription"] != null)
+            {
+
+                DataTable dt = new DataTable();
+                DataColumn dc;
+                dc = new DataColumn("massage_partner_sk");
+                dc.DataType = System.Type.GetType("System.Int32");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("country_sk");
+                dc.DataType = System.Type.GetType("System.Int32");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("subscription_start_date");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("subscription_end_date");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("one_time_price");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("is_subscribed");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("is_paid");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("PaymentGateway");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dt = (DataTable)(Session["ServiceProvider_subscription"]);
+
+                dt.Rows[0]["is_subscribed"] = "Y";
+                dt.Rows[0]["is_paid"] = "Y";
+                dt.Rows[0]["PaymentGateway"] = "Paypal";
+                BussinessSubscription objSubscription = new BussinessSubscription();
+                objbusinessmpartener.InsertmassagePartnerSubscriptionDetails(dt);
+                lblSuccess.Text = "Information saved successfully";
+                //  lblSuccess.Style.Add("color", "green");
+                //  Session["ServiceProvider_subscription"] = null;
+                //  ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "openOffersDialog();", true);
+                Session["seeker_subscribed"] = "Y";
+                if (Session["CurrentURL"] != null)
+                    Response.Redirect(Session["CurrentURL"].ToString(), false);
+
+                return;
+
+
+
+                // Session["exists_promotion"] = "PromotionExists";
+                //  ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "tmp23", "<script type='text/javascript'>fun_noData_popup('Promotion Successfully Paid, Now upload promotion.');</script>", false);
+
+            }
+            else
+            {
+                lblSuccess.Text = "Payment not done";
+                lblSuccess.Style.Add("color", "red");
+                Session["ServiceProvider_subscription"] = null;
+
+            }
+        }
+
+
+        protected void SavePromotion_BeforePaypal()
+        {
+            ///
+            if (Session["ServiceProvider_subscription"] != null)
+            {
+
+                DataTable dt = new DataTable();
+                DataColumn dc;
+                dc = new DataColumn("massage_partner_sk");
+                dc.DataType = System.Type.GetType("System.Int32");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("country_sk");
+                dc.DataType = System.Type.GetType("System.Int32");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("subscription_start_date");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("subscription_end_date");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+
+                dc = new DataColumn("one_time_price");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("is_subscribed");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+                //  dt = (DataTable)(Session["ServiceProvider_subscription"]);
+
+
+                dc = new DataColumn("is_paid");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+                dc = new DataColumn("PaymentGateway");
+                dc.DataType = System.Type.GetType("System.String");
+                dt.Columns.Add(dc);
+
+
+
+                dt = (DataTable)(Session["ServiceProvider_subscription"]);
+
+
+                dt.Rows[0]["is_subscribed"] = "N";
+                dt.Rows[0]["is_paid"] = "N";
+                dt.Rows[0]["PaymentGateway"] = "";
+                BussinessSubscription objSubscription = new BussinessSubscription();
+                objbusinessmpartener.InsertmassagePartnerSubscriptionDetails(dt);
+
+            }
+            else
+            {
+                lblSuccess.Text = "Payment not done";
+                lblSuccess.Style.Add("color", "red");
+                Session["ServiceProvider_subscription"] = null;
+
+            }
+        }
+        protected string Get_Listing_Price(string payment, decimal for_year)
+        {
+
+
+            string amount = "00";
+            if (Convert.ToDouble(payment) > 100)
+            {
+                amount = (Math.Round(Convert.ToDouble(Convert.ToDecimal(payment) + (Convert.ToDecimal(payment) * for_year)) / 100d, 0) * 100).ToString("000.00");
+            }
+            else
+            {
+                amount = (Math.Round(Convert.ToDouble(Convert.ToDecimal(payment) + (Convert.ToDecimal(payment) * for_year)) / 10d, 1) * 10).ToString("00.00");
+
+            }
+
+            return amount;
+        }
+        public void ShowError(string ErrorMessage)
+        {
+            try
+            {
+                this.lblSuccess.Text = ErrorMessage + "<p>";
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+
+        private void HandlePayPalRedirection()
+        {
+            try
+            {
+                // *** Set a flag so we know we redirected
+                Session["PayPal_Redirected"] = "True";
+
+                // *** Save any values you might need when you return here
+                Session["PayPal_OrderAmount"] = OrderAmount;  // already saved above
+
+                //			Session["PayPal_HeardFrom"] = this.txtHeardFrom.Text;
+                //			Session["PayPal_ToolUsed"] = this.txtToolUsed.Text;
+
+                PayPalHelper PayPal = new PayPalHelper();
+                PayPal.PayPalBaseUrl = App.Configuration.PayPalUrl;
+                PayPal.AccountEmail = App.Configuration.AccountEmail;
+
+
+                decimal us_doller_amount = Convert.ToDecimal(Session["Converted_Doller_amount"]);
+                PayPal.Amount = us_doller_amount;
+
+
+                PayPal.LogoUrl = "https://www.mymassagepartner.com/image/mp_logo.png";
+
+                PayPal.ItemName = "Subscription Amount #" + new Guid().GetHashCode().ToString("x");
+
+                // *** Have paypal return back to this URL
+
+
+                string url_ = (Request.Url).ToString();
+                url_ = url_.Replace("?PayPal=Sub_Cancel", "");
+                url_ = url_.Replace("?PayPal=Info2468Cubek", "");
+                PayPal.SuccessUrl = url_ + "?PayPal=Info2468Cubek";
+                PayPal.CancelUrl = url_ + "?PayPal=Sub_Cancel";
+                //append currecy code  //it is comming form table.
+                int country_sk = 0;
+                if (ViewState["country_sk"] != null)
+                    country_sk = Convert.ToInt32(ViewState["country_sk"]);
+
+
+                PayPal.Currency_code = obj.Get_Currency_Code(country_sk).ToString();
+                string url = PayPal.GetSubmitUrl();
+                Response.Redirect(url, false);
+                return;
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+
+
+        public bool ProcessCreditCard()
+        {
+            // bool Result = false;
+
+            //    ccProcessing CC = null;
+            //    ccProcessors CCType = App.Configuration.CCProcessor;
+
+            //    try
+            //    {
+            //        // *** Figure out which type to use
+            //        if (CCType == ccProcessors.AccessPoint)
+            //        {
+            //            CC = new ccAccessPoint();
+            //        }
+            //        else if (CCType == ccProcessors.AuthorizeNet)
+            //        {
+            //            CC = new ccAuthorizeNet();
+            //            CC.MerchantPassword = App.Configuration.CCMerchantPassword;
+            //        }
+            //        else if (CCType == ccProcessors.PayFlowPro)
+            //        {
+            //            CC = new ccPayFlowPro();
+            //            CC.MerchantPassword = App.Configuration.CCMerchantPassword;
+            //        }
+            //        else if (CCType == ccProcessors.LinkPoint)
+            //        {
+            //            CC = new ccLinkPoint();
+            //            CC.MerchantPassword = App.Configuration.CCMerchantId;
+            //            CC.CertificatePath = App.Configuration.CCCertificatePath;   // "d:\app\MyCert.pem"
+            //        }
+
+
+            //        //CC.UseTestTransaction = true;
+
+            //        // *** Tell whether we do SALE or Pre-Auth
+            //        CC.ProcessType = App.Configuration.CCProcessType;
+
+            //        // *** Disable this for testing to get provider response
+            //        CC.UseMod10Check = true;
+
+            //        CC.Timeout = App.Configuration.CCConnectionTimeout;  // In Seconds
+            //        CC.HttpLink = App.Configuration.CCHostUrl;			 // The host Url format will vary with provider
+            //        CC.MerchantId = App.Configuration.CCMerchantId;
+
+            //        CC.LogFile = App.Configuration.CCLogFile;
+            //        CC.ReferringUrl = App.Configuration.CCReferingOrderUrl;
+
+            //        // *** Name can be provided as a single string or as firstname and lastname
+            //        CC.Name = this.txtName.Text;
+            //        //CC.Firstname = Cust.Firstname.TrimEnd();
+            //        //CC.Lastname = Cust.Lastname.TrimEnd();
+            //        // CC.Company = Cust.Company.TrimEnd();
+
+            //        CC.Address = this.txtAddress.Text;
+            //        CC.State = this.txtState.Text;
+            //        CC.City = this.txtCity.Text;
+            //        CC.Zip = this.txtZip.Text;
+            //        CC.Country = this.txtCountryId.SelectedValue;	// 2 Character Country ID
+            //        CC.Phone = this.txtPhone.Text;
+            //        CC.Email = this.txtEmail.Text;
+
+            //        CC.OrderAmount = decimal.Parse(this.txtOrderAmount.Text);
+
+            //        //CC.TaxAmount = Inv.Tax;					// Optional
+
+            //        CC.CreditCardNumber = this.txtCC.Text;
+            //        CC.CreditCardExpiration = this.txtCCMonth.SelectedValue + "/" + this.txtCCYear.SelectedValue;
+
+            //        CC.SecurityCode = this.txtSecurity.Text;
+
+            //        // *** Make this Unique
+            //        //CC.OrderId = Inv.Invno.TrimEnd() + "_" + DateTime.Now.ToString();
+            //        CC.Comment = "Subscription Amount # " + new Guid().GetHashCode().ToString("x");
+
+            //        Result = CC.ValidateCard();
+
+            //        if (!Result)
+            //        {
+            //            this.lblErrorMessage.Text = CC.ValidatedMessage +
+            //                "<hr>" +
+            //                CC.ErrorMessage;
+            //        }
+            //        else
+            //        {
+            //            // *** Should be APPROVED
+            //            this.lblErrorMessage.Text = CC.ValidatedMessage;
+            //        }
+
+
+            //        // *** Always write out the raw response
+            //        if (wwUtils.Empty(CC.RawProcessorResult))
+            //        {
+            //            this.lblErrorMessage.Text += "<hr>" + "Raw Results:<br>" +
+            //                                         CC.RawProcessorResult;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //        this.lblErrorMessage.Text = "FAILED<hr>" +
+            //                                    "Processing Error: " + ex.Message;
+
+            return false;
+            //    }
+
+            //    return Result;
+        }
+        protected void SubmitToPaypal(string replaced_str)
+        {
+            //////////// creating session for storing details
+
+            //SavePromotion_session();
+
+            ///////////////
+            Session["OrderAmounts"] = replaced_str; //willl come from submit button
+
+            // decimal OrderAmount;
+            //  decimal OrderAmount;
+            // *** Our simplistic 'order validation'
+            try
+            {
+                //amount comming form subcription form
+                OrderAmount = Convert.ToDecimal(Session["OrderAmounts"]);
+            }
+            catch
+            {
+                this.ShowError("Invalid Order Amount. Get a grip.");
+                return;
+            }
+
+
+            // *** Dumb ass data simulation - this should only be set once the order is Validated!
+            this.Session["OrderAmount"] = Session["OrderAmounts"];
+
+
+            // *** Handle PayPal Processing seperately from ProcessCard() since it requires
+            // *** passing off to another page on the PayPal Site.
+            // *** This request will return to this page Cancel or Success querystring
+            if (!this.PayPalReturnRequest)//PP
+                this.HandlePayPalRedirection(); // this will end this request!
+            else
+            {
+                // *** CC Processing
+                if (!this.ProcessCreditCard())
+                    return;    // failure - display error
+
+                // *** Write the order amount (and enything else you might need into session)
+                // *** Normally you'd probably write a PK for the final invoice so you 
+                // *** can reload it on the Confirmation.aspx page
+
+                Session["PayPal_OrderAmount"] = OrderAmount;
+            }
+            // *** TODO:  Save your order etc.
+            // *** Show the confirmation page - don't transfer so they can refresh without error
+            // Response.Redirect("Confirmation.aspx");
+            ///
+            /////////////////
+
+        }
+
+
+
+
+
+        protected void paypal1_Click(object sender, EventArgs e)
+        {
+            Session.Remove("3dpaymentSeeker");
+            Utils.Mails mail = new Utils.Mails();
+            mail.payNow_Click_Mail(Session["country_sk"].ToString(), Session["massage_partner_sk"].ToString());
+            if (Session["pay_partner"] != null)
+            {
+                DataSet ds = new DataSet();
+                int? Banksk = null;
+                int? cardsk = null;
+                ds = objBusinessLogin.Insert_payment_bridge(Convert.ToInt32(Session["pay_partner"].ToString()), "sp", Banksk, cardsk, "");
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows[0]["payment_gateway_name"] != null)
+                        {
+                            if (ds.Tables[0].Rows[0]["payment_gateway_name"].ToString() == "CCAvenue")
+                            {
+                                Session["ccAvanue"] = "Y";
+                            }
+                            else
+                            {
+                                {
+                                    Session["ccAvanue"] = null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            Session["StripepaymentGatway"] = null;
+            //Session["CurrentURL"] = HttpContext.Current.Request.Url.AbsoluteUri;
+            Response.Redirect(Constants__.WEB_ROOT + "/partner-subscription_", false);
+            //Session["Seeker_payment"] = price1.InnerText + "|" + (checkboxOneYear.Checked ? "1" : (checkboxTwoYear.Checked ? "2" : "3"));
+            return;
+
+        }
+
+        protected void CreditCard_Payment_Click(object sender, EventArgs e)
+        {
+
+            Session.Remove("3dpaymentSeeker");
+            Utils.Mails mail = new Utils.Mails();
+            mail.payNow_Click_Mail(Session["country_sk"].ToString(), Session["massage_partner_sk"].ToString());
+            lblddlCreditCartBankNamesSeeker.Text = lblddlCreditCartTypesseeker.Text = "";
+
+            if (ddlCreditCartTypes.SelectedValue == "0" || ddlCreditCartBankNames.SelectedValue == "0")
+            {
+                if (ddlCreditCartTypes.SelectedValue == "0")
+                {
+                    lblddlCreditCartTypesseeker.Text = "Select Card Type";
+                }
+
+                if (ddlCreditCartBankNames.SelectedValue == "0")
+                {
+                    lblddlCreditCartBankNamesSeeker.Text = "Select Bank Name";
+                }
+
+                return;
+            }
+
+            if (Session["massage_partner_sk"] != null)
+            {
+                DataSet ds = new DataSet();
+                int Banksk = Convert.ToInt32(ddlCreditCartBankNames.SelectedValue);
+                int cardsk = Convert.ToInt32(ddlCreditCartTypes.SelectedValue);
+                ds = objBusinessLogin.Insert_payment_bridge(Convert.ToInt32(Session["pay_partner"].ToString()), "ss", cardsk, Banksk, "Credit Card");
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows[0]["payment_gateway_name"] != null)
+                        {
+                            if (ds.Tables[0].Rows[0]["payment_gateway_name"].ToString() == "CCAvenue")
+                            {
+                                Session["ccAvanue"] = "Y";
+                            }
+                            else
+                            {
+                                {
+                                    Session["ccAvanue"] = null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //Session["CurrentURL"] = HttpContext.Current.Request.Url.AbsoluteUri;
+            Response.Redirect(Constants__.WEB_ROOT + "/partner-subscription_", false);
+            //Session["Seeker_payment"] = price1.InnerText + "|" + (checkboxOneYear.Checked ? "1" : (checkboxTwoYear.Checked ? "2" : "3"));
+            return;
+        }
+
+        protected void DebitCard_Payment_Click(object sender, EventArgs e)
+        {
+            Session.Remove("3dpaymentSeeker");
+            Utils.Mails mail = new Utils.Mails();
+            mail.payNow_Click_Mail(Session["country_sk"].ToString(), Session["massage_partner_sk"].ToString());
+            lblddlDebitCartBankNames.Text = lblddlDebitCartTypes.Text = "";
+
+            if (ddlDebitCartBankNames.SelectedValue == "0" || ddlDebitCartTypes.SelectedValue == "0")
+            {
+                if (ddlDebitCartBankNames.SelectedValue == "0")
+                {
+                    lblddlDebitCartBankNames.Text = "Select Bank Name";
+                }
+
+                if (ddlDebitCartTypes.SelectedValue == "0")
+                {
+                    lblddlDebitCartTypes.Text = "Select Card Type";
+                }
+
+                return;
+            }
+
+
+            if (Session["massage_partner_sk"] != null)
+            {
+                DataSet ds = new DataSet();
+
+                int Banksk = Convert.ToInt32(ddlDebitCartBankNames.SelectedValue);
+                int cardsk = Convert.ToInt32(ddlDebitCartTypes.SelectedValue);
+                ds = objBusinessLogin.Insert_payment_bridge(Convert.ToInt32(Session["pay_partner"].ToString()), "ss", cardsk, Banksk, "Debit Card");
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows[0]["payment_gateway_name"] != null)
+                        {
+                            if (ds.Tables[0].Rows[0]["payment_gateway_name"].ToString() == "CCAvenue")
+                            {
+                                Session["ccAvanue"] = "Y";
+                            }
+                            else
+                            {
+                                {
+                                    Session["ccAvanue"] = null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Session["CurrentURL"] = HttpContext.Current.Request.Url.AbsoluteUri;
+            Response.Redirect(Constants__.WEB_ROOT + "/partner-subscription_", false);
+            //Session["Seeker_payment"] = price1.InnerText + "|" + (checkboxOneYear.Checked ? "1" : (checkboxTwoYear.Checked ? "2" : "3"));
+            return;
+
+
+        }
+
+        protected void paypal_Click_CCAVANUE_Netbanking(object sender, EventArgs e)
+        {
+            Session.Remove("3dpaymentSeeker");
+            Utils.Mails mail = new Utils.Mails();
+            mail.payNow_Click_Mail(Session["country_sk"].ToString(), Session["massage_partner_sk"].ToString());
+            if (Session["massage_partner_sk"] != null)
+            {
+                DataSet ds = new DataSet();
+                ds = objBusinessLogin.Insert_payment_bridge(Convert.ToInt32(Session["pay_partner"].ToString()), "ss", null, null, "Internet Banking");
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows[0]["payment_gateway_name"] != null)
+                        {
+                            if (ds.Tables[0].Rows[0]["payment_gateway_name"].ToString() == "CCAvenue")
+                            {
+                                Session["ccAvanue"] = "Y";
+                            }
+                            else
+                            {
+                                {
+                                    Session["ccAvanue"] = null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            //Session["CurrentURL"] = HttpContext.Current.Request.Url.AbsoluteUri;
+            Response.Redirect(Constants__.WEB_ROOT + "/partner-subscription_", false);
+            //Session["Seeker_payment"] = price1.InnerText + "|" + (checkboxOneYear.Checked ? "1" : (checkboxTwoYear.Checked ? "2" : "3"));
+            return;
+
+        }
+
+        protected void paypal_Click_CCAVANUE_other(object sender, EventArgs e)
+        {
+            Session.Remove("3dpaymentSeeker");
+            Utils.Mails mail = new Utils.Mails();
+            mail.payNow_Click_Mail(Session["country_sk"].ToString(), Session["massage_partner_sk"].ToString());
+            if (Session["massage_partner_sk"] != null)
+            {
+                DataSet ds = new DataSet();
+                ds = objBusinessLogin.Insert_payment_bridge(Convert.ToInt32(Session["pay_partner"].ToString()), "ss", null, null, "Other Payment Methods");
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows[0]["payment_gateway_name"] != null)
+                        {
+                            if (ds.Tables[0].Rows[0]["payment_gateway_name"].ToString() == "CCAvenue")
+                            {
+                                Session["ccAvanue"] = "Y";
+                            }
+                            else
+                            {
+                                {
+                                    Session["ccAvanue"] = null;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            //Session["CurrentURL"] = HttpContext.Current.Request.Url.AbsoluteUri;
+            Response.Redirect(Constants__.WEB_ROOT + "/partner-subscription_", false);
+            //Session["Seeker_payment"] = price1.InnerText + "|" + (checkboxOneYear.Checked ? "1" : (checkboxTwoYear.Checked ? "2" : "3"));
+            return;
+
+        }
+
+        protected void SubmitStripe_Click(object sender, EventArgs e)
+        {
+            Session.Remove("3dpaymentSeeker");
+            Utils.Mails mail = new Utils.Mails();
+            mail.payNow_Click_Mail(Session["country_sk"].ToString(), Session["massage_partner_sk"].ToString());
+            try
+            {
+
+                //Session["CurrentURL"] = HttpContext.Current.Request.Url.AbsoluteUri;
+                Response.Redirect(Constants__.WEB_ROOT + "/partner-subscription_", false);
+                //Session["Seeker_payment"] = price1.InnerText + "|" + (checkboxOneYear.Checked ? "1" : (checkboxTwoYear.Checked ? "2" : "3"));
+
+                Session["StripepaymentGatway"] = txtCardNumber.Text.Trim() + "|"
+                    + txtCardExpirationMonth.Text.Trim() + "|"
+                    + txtCardExpirationYear.Text.Trim() + "|"
+                    + txtCardName.Text.Trim();
+                return;
+
+
+
+
+                //StripeCustomer current = GetCustomer();
+                //int chargetotal = Convert.ToInt32(price1.InnerText) * 100;//Convert.ToInt32((3.33*Convert.ToInt32(days)*100));
+                //var mycharge = new StripeChargeCreateOptions();
+                //mycharge.AmountInCents = chargetotal;
+                //mycharge.Currency = (HiddenFieldSeekerCurrency.Value).Trim();
+                //mycharge.CustomerId = current.Id;
+                //string key = ConfigurationManager.AppSettings["StripeApiKey"].ToString();
+                //var chargeservice = new StripeChargeService(key);
+                //StripeCharge currentcharge = chargeservice.Create(mycharge);
+                //lblmassage.Text = "Done";
+                //lblmassage.ForeColor = System.Drawing.Color.Green;
+            }
+            catch (Exception ex)
+            {
+                lblmassage.Text = ex.Message;
+                lblmassage.ForeColor = System.Drawing.Color.Red;
+            }
+            //}
+        }
+
+        protected void btnsendtransection_Click(object sender, EventArgs e)
+        {
+            BussinessSendMail objmail = new BussinessSendMail();
+
+            string pagedetails = "Massage partner sk - " + Session["massage_partner_sk"].ToString() + ",Pay for Partner : " + Session["pay_partner"].ToString() + "  Email Id - " + txtregisteredmail_id.Text.Trim() + "       Paytm transaction iD " + ctxttransaction.Text.Trim();
+
+            int i = objmail.SendMail("info@cubek.com", "info@cubek.com", "Paytm transection ID " + ctxttransaction.Text.Trim(), pagedetails, null);
+
+            if (i == -1)
+            {
+                lblpaytmmsg.Visible = true;
+                lblpaytmmsg.Text = "Details sent successfully. Your membership will be activated in next moment.";
+            }
+
+
+        }
+    }
+}

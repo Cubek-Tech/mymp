@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="home" title="Home"  >
+    
+    <siteMapNode url="parlor-list/India/Madhya-Pradesh/Indore" title="Parlor-List-Indore"  description="Parlor List In Indore" />
+    
+    <siteMapNode url="parlor-list/India/Delhi" title="Parlor-List-Delhi"  description="Parlor List In Delhi" />
+    
+    <siteMapNode url="parlor-list/India" title="Parlor-List-India"  description="Parlor List In India" />
+  
+    <siteMapNode url="parlor-list/Thailand/Bangkok/Bangkok" title="Parlor-List-Bangkok"  description="Parlor List In Thailand" />
+    
+    <siteMapNode url="parlor-list/Thailand/Bangkok" title="Parlor-List-Bangkok"  description="Parlor List In Bangkok" />
+
+    <siteMapNode url="parlor-list/Thailand" title="Parlor-List-Thailand"  description="Parlor List In Thailand" />
+
+
+
+    <siteMapNode url="spa-list/India/Madhya-Pradesh/Indore" title="Spa-Indore"  description="Spa List In Indore" />
+
+    <siteMapNode url="spa-list/India/Delhi" title="Spa-Delhi"  description="Spa List In Delhi" />
+
+    <siteMapNode url="spa-list/India" title="Spa-India"  description="Spa List In India" />
+
+    <siteMapNode url="spa-list/Thailand/Bangkok/Bangkok" title="Spa-Bangkok"  description="Spa List In Thailand" />
+
+    <siteMapNode url="spa-list/Thailand/Bangkok" title="Spa-Bangkok"  description="Spa List In Bangkok" />
+
+    <siteMapNode url="spa-list/Thailand" title="Spa-Thailand"  description="Spa List In Thailand" />
+    
+  </siteMapNode>
+</siteMap>

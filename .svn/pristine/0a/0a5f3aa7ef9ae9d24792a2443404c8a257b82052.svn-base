@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.ApplicationBlocks.Data;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace Factory
+{
+   public class FactoryMPAdmin
+    {
+        private System.Nullable<int> ncitysk
+        {
+            get { return null; }
+        }
+        private System.Nullable<int> nstatesk
+        {
+            get { return null; }
+        }
+        public DataTable get_no_of_registration(string date,int country_sk,int? state_sk,int? city_sk)
+        {
+            string Text = System.DateTime.Now.ToString();
+
+            SqlConnection con = new SqlConnection(Config.Crebas);
+            SqlCommand cmd = new SqlCommand();
+            SqlParameter param = new SqlParameter();
+
+            param = new SqlParameter();
+            param.ParameterName = "@date";
+            param.SqlDbType = SqlDbType.VarChar;
+            param.Value = date;
+            param.Direction = ParameterDirection.Input;
+            cmd.Parameters.Add(param);
+
+            param = new SqlParameter();
+            param.ParameterName = "@country_sk";
+            param.SqlDbType = SqlDbType.Int;
+            param.Value = country_sk;
+            param.Direction = ParameterDirection.Input;
+            cmd.Parameters.Add(param);
+
+            if (state_sk != null && state_sk != 0)
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@state_sk";
+                param.SqlDbType = SqlDbType.Int;
+                param.Value = state_sk == 0 ? nstatesk : state_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+            if (city_sk != null && city_sk != 0)
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@city_sk";
+                param.SqlDbType = SqlDbType.Int;
+                param.Value = city_sk == 0 ? ncitysk : city_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+            if (con.State != ConnectionState.Open) con.Open();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "[usp_check_no_registrations]";
+            DataTable dt = new DataTable();
+            //  Command time period  15 minute
+            cmd.CommandTimeout = 900;
+            dt.Load(cmd.ExecuteReader(CommandBehavior.CloseConnection));
+            return dt;
+        }
+
+        public DataSet check_membership(string email_id)
+        {
+            DataSet ds;
+            ds= SqlHelper.ExecuteDataset(Config.Crebas, "usp_check_membership", email_id);
+            return ds;
+        } 
+        public int insert_membership(string email_id,int year)
+        {
+            int i = 0;
+            SqlHelper.ExecuteNonQuery(Config.Crebas,"sp_insert_subscription",email_id,year);
+            return i;
+        }
+        public int Activate_membership(string email_id)
+        {
+            int i = 0;
+            SqlHelper.ExecuteNonQuery(Config.Crebas, "usp_activate_membership", email_id);
+            return i;
+        }
+    }
+}

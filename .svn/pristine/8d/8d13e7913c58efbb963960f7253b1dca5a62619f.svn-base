@@ -1,0 +1,54 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="RESTFulWCFService.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/Validate.js"></script>
+    <style>      
+    input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
+}
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#TextBox1').on('input', function () {
+                var input = $(this);
+                var is_name = input.val();
+                if (is_name) { input.removeClass("invalid").addClass("valid"); }
+                else { input.removeClass("valid").addClass("invalid"); }
+            })
+        })
+
+        $("#Button1").click(function (event) {
+            alert();
+            var form_data = $("#form1").serializeArray();
+            var error_free = true;
+            for (var input in form_data) {
+                var element = $("#" + form_data[input]['name']);
+               
+                var valid = element.hasClass("valid");
+                var error_element = $("span", element.parent());
+                if (!valid) { error_element.removeClass("error").addClass("error_show"); error_free = false; }
+                else { error_element.removeClass("error_show").addClass("error"); }
+            }
+            if (!error_free) {
+                event.preventDefault();
+            }
+            else {
+                alert('No errors: Form will be submitted');
+            }
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:TextBox ID="TextBox1" runat="server" ClientIDMode="Static"></asp:TextBox>
+    <asp:Button ID="Button1" runat="server" Text="Button" />
+        </form>
+</body>

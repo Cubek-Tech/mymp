@@ -1,0 +1,880 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using Business;
+using System.Configuration;
+using System.Diagnostics;
+
+namespace RESTFulWCFService
+{
+    public partial class signup : System.Web.UI.Page
+    {  
+        #region objects
+        GetSiteURL gestsiteurl = new GetSiteURL();
+        BussinessSendMail objNotification = new BussinessSendMail();
+        BussinessSendMail objmail = new BussinessSendMail();
+        RegistrationBusiness objRegistrationBusiness = new RegistrationBusiness();
+        Business.BusinessLogin objBusinessLogin = new BusinessLogin();
+        Business.BusinessSearch objBusinessSearch = new Business.BusinessSearch();
+        Business.BusinessMPartener objbusinessmpartener = new Business.BusinessMPartener();
+        DataSet ds = new DataSet();
+        DataTable dt;
+        private int seeker_sk { get; set; }
+        private string cities { get; set; }
+        private string countries { get; set; }
+        private string states { get; set; }
+        private string Uip { get; set; }
+        private string Ucountry { get; set; }
+        private string Ustate { get; set; }
+        private string Ucity { get; set; }
+        private string UArea { get; set; }
+        private string Lag { get; set; }
+        private string Lat { get; set; }
+        #endregion
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Response.AddHeader("Refresh", Convert.ToString((Session.Timeout * 60) - 120));
+            if (!IsPostBack)
+            {
+
+                if (Session["mp_login_sk"] != null)
+                {
+                    fill_drop_dob();
+                    GetIP();
+                    getCountryByGeoIP();
+                    fillDropdown();
+                    Response.Redirect(Constants__.WEB_ROOT + "/massage-partner" + search_url(), false);
+                    //return;
+                }
+                else
+                {
+                    fill_drop_dob();
+                    GetIP();
+                    getCountryByGeoIP();
+                    fillDropdown();
+                }
+
+            }
+
+        }
+        #region methods
+        public void GetIP()
+        {
+            try
+            {
+
+
+                DataTable table_gio_location = new DataTable();
+                table_gio_location = gestsiteurl.GetIP();
+                if (table_gio_location.Rows.Count > 0)
+                {
+                    //Assign reciving ip information to properties
+                    Uip = table_gio_location.Rows[0]["countryCode"].ToString();
+                    Ustate = table_gio_location.Rows[0]["regionName"].ToString();
+                    Ucity = table_gio_location.Rows[0]["city"].ToString();
+                    Ustate = Ustate.Replace("'", "''");
+                    Ucity = Ucity.Replace("'", "''");
+                    Lat = table_gio_location.Rows[0]["lat"].ToString();
+                    Lag = table_gio_location.Rows[0]["lon"].ToString();
+                }
+
+
+
+
+            }
+            catch
+            {
+                return;
+            }
+        }
+        public void getLocalTime(string lat, string log, string ip, int country_sk, int st_sk, int city_sk)
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                //get time zone for provider
+                ReadWriteWebservice obj = new ReadWriteWebservice();
+                //call webservice using class   
+                string xml = obj.getLotLong(lat, log);
+                System.IO.StringReader sr = new System.IO.StringReader(xml);
+                //Read XML File 
+                ds.ReadXml(sr);
+                if (ds != null)
+                {
+                    DateTime date;
+                    if (ds.Tables[0].TableName == "timezone")
+                        date = Convert.ToDateTime(ds.Tables[0].Rows[0]["time"].ToString());
+
+                    else
+                        date = System.DateTime.Now;
+                    //objBusinessSearch.InsertHiCounter(date, ip, country_sk, st_sk, city_sk);
+                    ViewState["state_sk"] = st_sk;
+                    ViewState["cntry_sk"] = country_sk;
+                    ViewState["city_sk"] = city_sk;
+                    //if (country_sk != null)
+                    //    top10Links_country(country_sk);
+
+                    //if (country_sk != null && st_sk != null && city_sk != null)
+                    //    top10Links(country_sk, st_sk, city_sk);
+                    //create session var for hit counter table used on master page.
+                    Session["local_date_hit"] = date;
+                    Session["local_date_ip"] = ip;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+
+                // Get stack trace for the exception with source file information
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(1);
+                BussinessEntity.ExceptionHandling._lineno = frame.GetFileLineNumber();
+                BussinessEntity.ExceptionHandling._methodname = Convert.ToString(frame.GetMethod());
+                BussinessEntity.ExceptionHandling._pagename = Convert.ToString(frame.GetFileName());
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+
+            }
+
+        }
+        private void getCountryByGeoIP()
+        {
+            DataSet ds = new DataSet();
+            ds = objRegistrationBusiness.getCountryCity();
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ddlcountry.DataSource = ds.Tables[0];
+                ddlcountry.DataValueField = "country_sk";
+                ddlcountry.DataTextField = "country_name";
+                ddlcountry.DataBind();
+                ddlcountry.Items.Insert(0, new ListItem("---Select---", "0"));
+                //  FillGeoLocation(ds);
+            }
+        }
+        //protected void FillGeoLocation(DataSet ds)
+        //{
+        //    //Set Geo location for the user who currently loggin
+
+        //    DataRow[] dr;
+
+        //    // dr = ds.Tables[0].Select("country_code='" + Uip + "'");
+        //    dr = ds.Tables[0].Select("country_code='IN'");
+        //    foreach (DataRow row in dr)
+        //    {
+        //        // ddlCountry.SelectedValue = row[0].ToString();
+        //        //Fill Cities for seeker
+        //        DataTable dt12 = new DataTable();
+        //        //Convert.ToInt32(ddlCountry.SelectedValue)
+        //        dt12 = objbusinessjob.getCityProvider1(Convert.ToInt32(row[0].ToString())).Tables[0];
+        //        //dt12 =objbusinessjob.getCityProvider1(100).Tables[0];
+        //        ViewState["cities"] = dt12;
+        //        ddlcity.DataSource = dt12;
+        //        ddlcity.DataValueField = "city_sk";
+        //        ddlcity.DataTextField = "city_name";
+        //        ddlcity.DataBind();
+        //        ddlcity.Enabled = true;
+        //        //   dvstate.Visible = true;
+        //        ddlcity.Items.Insert(0, new ListItem("---All Cities---", "0"));
+
+
+        //    }
+        //}
+        private void fillDropdown()
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                string mode = "M";
+
+                //Get massage types
+                ds = objBusinessSearch.getSpaType("M");
+                if (ds.Tables[1].Rows.Count > 0)
+                {
+                    ddlmassagetype.DataSource = ds.Tables[1];
+                    ViewState["Specilization"] = ds.Tables[1];
+                    ddlmassagetype.DataValueField = "sub_service_sk";
+                    ddlmassagetype.DataTextField = "sub_service_name";
+                    ddlmassagetype.DataBind();
+                    ddlmassagetype.Enabled = true;
+                    //ddlmassagetype.Items.Insert(0, new ListItem("Massage Type", "0"));
+                }
+
+
+                // get age groups
+                ds = objbusinessmpartener.get_agegroup();
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ddlpartage.DataSource = ds.Tables[0];
+                    ddlpartage.DataTextField = "age_group_name";
+                    ddlpartage.DataValueField = "age_group_sk";
+                    ddlpartage.DataBind();
+                    ddlpartage.Items[0].Selected = true;
+                }
+                ds = objBusinessSearch.getSpaType(mode);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+
+                    ddlcountry.DataSource = ds.Tables[0];
+                    ddlcountry.DataValueField = "country_sk";
+                    ddlcountry.DataTextField = "country_name";
+                    ddlcountry.DataBind();
+                }
+                // 224	9	157
+
+                DataRow[] dr;
+                dr = ds.Tables[0].Select("country_code='" + Uip + "'");
+                int cntry_sk = 0;
+                int stt_sk = 0;
+                int city_sk = 0;
+                ddlcity.Enabled = false;
+                //  ddlsArea.Enabled = false;
+                ddlstate.Enabled = false;
+                foreach (DataRow row in dr)
+                {
+
+                    ddlcountry.SelectedValue = row[0].ToString();
+                    ddlcountry.ToolTip = ddlcountry.SelectedItem.Text;
+
+
+                    //fill state                   
+                    ds = objRegistrationBusiness.getStateProvider(Convert.ToInt32(ddlcountry.SelectedValue));
+                    cntry_sk = Convert.ToInt32(ddlcountry.SelectedValue);
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        ddlstate.DataSource = ds.Tables[0];
+                        ddlstate.DataValueField = "state_sk";
+                        ddlstate.DataTextField = "state_name";
+                        ddlstate.DataBind();
+                        ddlstate.Enabled = true;
+                        //   dvstate.Visible = true;
+                        ddlstate.Items.Insert(0, new ListItem("---All States---", "0"));
+
+                        dr = ds.Tables[0].Select("state_name='" + Ustate + "'");
+                        foreach (DataRow sts in dr)
+                        {
+                            ddlstate.SelectedValue = sts[1].ToString();
+                            ddlstate.ToolTip = ddlstate.SelectedItem.Text;
+                            stt_sk = Convert.ToInt32(ddlstate.SelectedValue);
+
+                            //Fill City
+
+                            ds = objRegistrationBusiness.getCityProvider(Convert.ToInt32(ddlstate.SelectedValue), Convert.ToInt32(ddlcountry.SelectedValue));
+                            if (ds.Tables[0].Rows.Count > 0)
+                            {
+                                if (ddlcountry.SelectedIndex != 0)
+                                {
+                                    if (ddlstate.SelectedIndex != 0)
+                                    {
+                                        ddlcity.DataSource = ds.Tables[0];
+                                        ddlcity.DataValueField = "city_sk";
+                                        ddlcity.DataTextField = "city_name_display";
+                                        ddlcity.DataBind();
+                                        ddlcity.Items.Insert(0, new ListItem("---All Cities---", "0"));
+                                        ddlcity.Enabled = true;
+                                        if (Ucity.Contains("'"))
+                                            Ucity = Ucity.Replace("'", "''");
+
+                                        dr = ds.Tables[0].Select("city_name='" + Ucity + "'");
+                                        foreach (DataRow ct in dr)
+                                        {
+                                            ddlcity.SelectedValue = ct[2].ToString();
+                                            city_sk = Convert.ToInt32(ddlcity.SelectedValue);
+                                            ddlcity.ToolTip = ddlcity.SelectedItem.Text;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        //-------------------------------------------------------------------------
+
+                        getLocalTime(Lat, Lag, HttpContext.Current.Request.UserHostAddress.ToString(), cntry_sk, stt_sk, city_sk);
+
+
+                    }
+                    else
+                    {
+                        ddlstate.Items.Clear();
+                        ddlcity.Items.Clear();
+                        ddlstate.Enabled = false;
+                        ddlcity.Enabled = false;
+
+                    }
+                }
+                if (dr.Count() <= 0)
+                {
+                    Filldefaultstate_city();
+
+                }
+                ddlcity_SelectedIndexChanged(null, null);
+
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(1);
+                BussinessEntity.ExceptionHandling._lineno = frame.GetFileLineNumber();
+                BussinessEntity.ExceptionHandling._methodname = Convert.ToString(frame.GetMethod());
+                BussinessEntity.ExceptionHandling._pagename = Convert.ToString(frame.GetFileName());
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+
+
+        }
+        private void Filldefaultstate_city()
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                ds = objRegistrationBusiness.getStateProvider(Convert.ToInt32(ddlcountry.SelectedValue));
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ddlcountry.SelectedIndex >= 0)
+                    {
+                        ddlstate.DataSource = ds.Tables[0];
+                        ddlstate.DataValueField = "state_sk";
+                        ddlstate.DataTextField = "state_name";
+                        ddlstate.DataBind();
+                        ddlstate.Items.Insert(0, new ListItem("---All States---", "0"));
+                        // ddlCity.Enabled = true;
+                        ddlstate.Enabled = true;
+                        //dvstate.Visible = true;
+                        //dvArea.Visible = true;
+                        //dvcity.Visible = true;
+
+                        ds = objRegistrationBusiness.getCityProvider(Convert.ToInt32(ddlstate.SelectedValue), Convert.ToInt32(ddlcountry.SelectedValue));
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            if (ddlcountry.SelectedIndex != 0)
+                            {
+                                if (ddlstate.SelectedIndex != 0)
+                                {
+                                    ddlcity.DataSource = ds.Tables[0];
+                                    ddlcity.DataValueField = "city_sk";
+                                    ddlcity.DataTextField = "city_name_display";
+                                    ddlcity.DataBind();
+                                    ddlcity.Items.Insert(0, new ListItem("---All Cities---", "0"));
+                                    ddlcity.Enabled = true;
+                                    if (Ucity.Contains("'"))
+                                        Ucity = Ucity.Replace("'", "''");
+                                    DataRow[] dr = ds.Tables[0].Select("city_name='" + Ucity + "'");
+                                    foreach (DataRow ct in dr)
+                                    {
+                                        ddlcity.SelectedValue = ct[2].ToString();
+                                    }
+                                    if (ddlcity.SelectedIndex > 0)
+                                        ddlcity.ToolTip = ddlcity.SelectedItem.Text;
+                                    else
+                                        ddlcity.ToolTip = "";
+                                }
+                            }
+                        }
+                        ddlcountry.ToolTip = ddlcountry.SelectedItem.Text;
+                        if (ddlstate.SelectedIndex > 0)
+                            ddlstate.ToolTip = ddlstate.SelectedItem.Text;
+                        else
+                            ddlstate.ToolTip = "";
+                    }
+                    else
+                    {
+                        ddlstate.Items.Clear();
+                        ddlcity.Items.Clear();
+                        ddlstate.Enabled = false;
+                        ddlcity.Enabled = false;
+                    }
+                }
+                else
+                {
+                    ddlcity.Items.Clear();
+                    ddlstate.Items.Clear();
+                    ddlstate.Enabled = false;
+                    ddlcity.Enabled = false;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(1);
+                BussinessEntity.ExceptionHandling._lineno = frame.GetFileLineNumber();
+                BussinessEntity.ExceptionHandling._methodname = Convert.ToString(frame.GetMethod());
+                BussinessEntity.ExceptionHandling._pagename = Convert.ToString(frame.GetFileName());
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+        private void fill_drop_dob()
+        {
+            dt = new DataTable();
+            dt.Columns.Add("day", typeof(string));
+            for (int i = 0; i < 31; i++)
+            {
+                dt.Rows.Add(i + 1);
+            }
+            ddlday.DataSource = dt;
+            ddlday.DataTextField = "day";
+            ddlday.DataValueField = "day";
+            ddlday.DataBind();
+            ddlday.Items.Insert(0, new ListItem("Day", "0"));
+            dt = new DataTable();
+            dt.Columns.Add("year", typeof(string));
+            int today_year = Convert.ToInt32(DateTime.UtcNow.ToString("yyyy"));
+            today_year = today_year - 18;
+            for (int i = 1960; i <= today_year; i++)
+            {
+                dt.Rows.Add(i.ToString());
+            }
+            DataView dv = dt.DefaultView;
+            dv.Sort = "year desc";
+            ddlyear.DataSource = dv.ToTable();
+            ddlyear.DataTextField = "year";
+            ddlyear.DataValueField = "year";
+            ddlyear.DataBind();
+            ddlyear.Items.Insert(0, new ListItem("Year", "0"));
+
+        }
+        private void check_login(string email, string password)
+        {
+            DataSet ds;
+            ds = objbusinessmpartener.partner_login(email, password);
+            if (ds.Tables.Count > 0)
+            {
+                Session["mp_login_sk"] = ds.Tables[0].Rows[0]["login_sk"].ToString();
+                Session["massage_partner_sk"] = ds.Tables[0].Rows[0]["massage_partner_sk"].ToString();
+                Session["email_id"] = ds.Tables[0].Rows[0]["email_id"].ToString();
+                Session["country_sk"] = ds.Tables[0].Rows[0]["country_sk"].ToString();
+                if (ds.Tables[0].Rows[0]["is_subscribed"].ToString() == "")
+                    Session["seeker_subscribed"] = null;
+                else
+                    Session["seeker_subscribed"] = ds.Tables[0].Rows[0]["is_subscribed"].ToString();
+
+                if (Session["current_url"] != null)
+                {
+                    Response.Redirect(Session["current_url"].ToString());
+                    Session["current_url"] = null;
+                    return;
+                }
+                else
+                {
+                    Response.Redirect(Constants__.WEB_ROOT + "/massage-partner" + search_url());
+                    return;
+                }
+
+            }
+            else
+            {
+                //lblloginerror.Visible = true;
+                //lblloginerror.Text = "invalid email-id or password!";
+
+            }
+        }
+        private DataTable speciality_selection()
+        {
+            DataTable dt = (DataTable)ViewState["Specilization"];
+            int no = dt.Rows.Count;
+            DataTable dtnew = new DataTable();
+            dtnew.Columns.Add("sub_service_sk", typeof(int));
+
+            for (int i = 0; i < ddlmassagetype.Items.Count; i++)
+            {
+                if (ddlmassagetype.Items[i].Selected == true && dt != null)
+                {
+                    DataRow[] dr = dt.Select("sub_service_name = '" + ddlmassagetype.Items[i].Text + "'");
+                    dtnew.Rows.Add(Convert.ToInt32(dr[0]["sub_service_sk"]));
+
+                }
+            }
+            return dtnew;
+        }
+        private int sendmail(string mailid, string password, string name)
+        {
+            string Email = "";
+            int status = 0;
+            Email = mailid;
+            string pass = password;
+            string message = "Dear $Customer,<br/><br/>Welcome, we thank you for your registration at <a href='https://www.mymassagepartner.com' target='_blank'><span style='color:red'>My</span>MassagePartner.com.</a><br/><br/>Your login credentials are provided below for your convenience.<br/><br/>Your User ID: <span style='color:blue'><u>$email</u></span><br/>Your Password: $password<br/><br/>If you need any additional help then please email us at <span style='color:blue'><u>info@mymassagepartner.com</u></span> or use our Live chat support system.<br/><br/><br/><b>Best Regards<br/>Rose(customer support)<br/><span style='color:red'>My</span>MassagePartner.com Team</b>";
+            string myname = Convert.ToString(name);
+            message = message.Replace("$Customer", myname);
+            message = message.Replace("$email", Email);
+            message = message.Replace("$password", pass);
+            objmail.sender = ConfigurationManager.AppSettings["EmailTable2Book"].ToString();
+            objmail.Mrecipients = Email;
+            objmail.Mbody = message;
+            objmail.Msubject = "My Massage Partner Account Verification";
+            status = objmail.SendMail();
+            // int status = 1;
+
+
+            return status;
+        }
+
+        public string search_url()
+        {
+            string country = "";
+            string state = "";
+            string city = "";
+            string area = "";
+            country = ddlcountry.SelectedIndex > 0 ? ddlcountry.SelectedItem.Text : "z";
+            state = ddlstate.SelectedIndex > 0 ? ddlstate.SelectedItem.Text : "s";
+            city = ddlcity.SelectedIndex > 0 ? ddlcity.SelectedItem.Text : "c";
+            area = ddlArea.SelectedIndex > 0 ? ddlArea.SelectedItem.Text : "All-Area";
+
+            country = country.Trim().Replace(' ', '-');
+            state = state.Trim().Replace(' ', '-');
+            city = city.Trim().Replace(' ', '-');
+            area = area.Trim().Replace(' ', '-');
+
+            string url = "/" + country + "/" + state + "/" + city + "/" + area + "/" + "Any/all-types/all";
+            return url;
+
+        }
+
+        #endregion
+
+
+
+        #region Events
+
+        protected void ddlcountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ddlcity.ToolTip = "";
+                if (Convert.ToInt32(ddlcountry.SelectedValue) > 0)
+                {
+                    ViewState["cntry_sk"] = ddlcountry.SelectedValue;
+                    Session["selected_countryItem"] = ddlcountry.SelectedItem;
+                    Session["selected_stateItem"] = null;
+                    Session["selected_cityItem"] = null;
+
+                }
+
+                DataSet ds = new DataSet();
+                ds = objRegistrationBusiness.getStateProvider(Convert.ToInt32(ddlcountry.SelectedValue));
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    if (ddlcountry.SelectedIndex >= 0)
+                    {
+
+                        ddlstate.DataSource = ds.Tables[0];
+                        ddlstate.DataValueField = "state_sk";
+                        ddlstate.DataTextField = "state_name";
+                        ddlstate.DataBind();
+                        ddlstate.Items.Insert(0, new ListItem("---All States---", "0"));
+                        // ddlCity.Enabled = true;
+                        ddlstate.Enabled = true;
+                        ddlcity.Items.Clear();
+                        if (ddlstate.SelectedIndex > 0)
+                            ddlstate.ToolTip = ddlstate.SelectedItem.Text;
+                        else
+                            ddlstate.ToolTip = "";
+                    }
+                    else
+                    {
+                        ddlstate.Items.Clear();
+                        ddlcity.Items.Clear();
+                        ddlstate.Enabled = false;
+                        ddlcity.Enabled = false;
+                        ddlstate.ToolTip = "";
+                    }
+                }
+                else
+                {
+                    ViewState.Remove("state_sk");
+                    ViewState.Remove("city_sk");
+                    ddlcity.Items.Clear();
+                    ddlstate.Items.Clear();
+                    ddlstate.Enabled = false;
+                    ddlcity.Enabled = false;
+
+                    if (ddlstate.SelectedIndex > 0)
+                        ddlstate.ToolTip = ddlstate.SelectedItem.Text;
+                    else
+                        ddlstate.ToolTip = "";
+
+
+                }
+                ddlcountry.ToolTip = ddlcountry.SelectedItem.Text;
+                // BindMe();
+
+
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(1);
+                BussinessEntity.ExceptionHandling._lineno = frame.GetFileLineNumber();
+                BussinessEntity.ExceptionHandling._methodname = Convert.ToString(frame.GetMethod());
+                BussinessEntity.ExceptionHandling._pagename = Convert.ToString(frame.GetFileName());
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+
+        protected void ddlstate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ddlcity.ToolTip = "";
+                if (ddlstate.SelectedIndex != 0)
+                {
+                    Session["selected_countryItem"] = ddlcountry.SelectedItem;
+                    Session["selected_stateItem"] = ddlstate.SelectedItem;
+                    Session["selected_cityItem"] = null;
+                    //  link1.Visible = false;
+                    ViewState["state_sk"] = ddlstate.SelectedValue;
+                    DataSet ds = new DataSet();
+                    ds = objRegistrationBusiness.getCityProvider(Convert.ToInt32(ddlstate.SelectedValue), Convert.ToInt32(ddlcountry.SelectedValue));
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+
+                        if (ddlstate.SelectedIndex != 0)
+                        {
+                            ddlcity.DataSource = ds.Tables[0];
+                            ddlcity.DataValueField = "city_sk";
+                            ddlcity.DataTextField = "city_name_display";
+                            ddlcity.DataBind();
+                            ddlcity.Items.Insert(0, new ListItem("---All Cities---", "0"));
+                            ddlcity.Enabled = true;
+                        }
+                        else
+                        {
+                            ddlcity.SelectedIndex = 0;
+                            ddlcity.Enabled = false;
+                        }
+                    }
+                    else
+                    {
+                        ddlcity.Items.Clear();
+                        ddlcity.Enabled = false;
+
+                    }
+                    if (ddlcity.SelectedIndex > 0)
+                        ddlcity.ToolTip = ddlcity.SelectedItem.Text;
+                    else
+                        ddlcity.ToolTip = "";
+                }
+                else
+                {
+                    Session["selected_countryItem"] = ddlcountry.SelectedItem;
+                    Session["selected_stateItem"] = null;
+                    Session["selected_cityItem"] = null;
+                    ddlcity.Items.Clear();
+                    ddlcity.Enabled = false;
+
+                }
+                if (ddlstate.SelectedIndex > 0)
+                    ddlstate.ToolTip = ddlstate.SelectedItem.Text;
+
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                // Get the top stack frame
+                var frame = st.GetFrame(1);
+                BussinessEntity.ExceptionHandling._lineno = frame.GetFileLineNumber();
+                BussinessEntity.ExceptionHandling._methodname = Convert.ToString(frame.GetMethod());
+                BussinessEntity.ExceptionHandling._pagename = Convert.ToString(frame.GetFileName());
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+        #endregion
+
+        protected void btnsave_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            DataSet email_data = objbusinessmpartener.get_forgot_password(txtEmailID.Text.Trim());
+            if (email_data.Tables.Count > 0)
+            {
+                // Response.Redirect(Request.RawUrl);
+                if (email_data.Tables[0].Rows[0][0].ToString() != "0")
+                {
+                    if (email_data.Tables[0].Rows[0]["is_massage_partner"].ToString() == "Y")
+                    {
+                        ScriptManager.RegisterStartupScript(
+                this,
+                typeof(Page),
+                "Alert",
+                "<script>alert('You are already registered in massage-partner.Please login.');</script>",
+                false);
+                        //txtEmail.Text = email_data.Tables[0].Rows[0]["email_id"].ToString();
+                        //txtPassword.Focus();
+                    }
+                    else
+                    {
+                        registration();
+                    }
+                }
+                else
+                {
+                    registration();
+                }
+            }
+            else
+            {
+                registration();
+
+                //}
+                //catch (System.Exception ex)
+                //{
+                //    BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                //    var st = new System.Diagnostics.StackTrace(ex, true);
+                //    // Get the top stack frame
+                //    var frame = st.GetFrame(1);
+                //    BussinessEntity.ExceptionHandling._lineno = frame.GetFileLineNumber();
+                //    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(frame.GetMethod());
+                //    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(frame.GetFileName());
+                //    Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+                //}
+
+            }
+        }
+        private void registration()
+        {
+            char gender = ' ';
+            int? state_sk = null; ;
+            int? city_sk = null;
+            int? area_sk = null;
+
+            string email = txtEmailID.Text.Trim();
+            string password = txtPassword1.Text.Trim();
+            string name = txtname.Text.Trim();
+            string g = ddlgender.SelectedValue.ToString();
+            if (g == "M")
+                gender = 'M';
+            else
+                gender = 'F';
+            string dob = ddlday.SelectedItem.Text + "-" + ddlmonth.SelectedItem.Text + "-" + ddlyear.SelectedItem.Text;
+            string phone = txtcontact.Text.Trim();
+            string part_gen = ddlpartgen.SelectedItem.Value.ToString();
+            int part_age = Convert.ToInt32(ddlpartage.SelectedValue);
+            string postal = txtzip.Text.Trim();
+            int country_sk = Convert.ToInt32(ddlcountry.SelectedValue);
+            if (ddlstate.Enabled == true)
+                state_sk = Convert.ToInt32(ddlstate.SelectedValue);
+            if (ddlcity.Enabled == true)
+                city_sk = Convert.ToInt32(ddlcity.SelectedValue);
+            if (ddlArea.Enabled == true)
+                area_sk = Convert.ToInt32(ddlArea.SelectedIndex);
+            else
+                area_sk = 0;
+            string is_certified = "";
+            is_certified = ddlIam.SelectedValue.ToString();
+            int i = objbusinessmpartener.partener_signup(email, password, name, gender, dob, is_certified, phone, part_gen, part_age, postal, country_sk, state_sk, city_sk, area_sk, speciality_selection());
+            if (i != 0)
+            {
+                lblmsg.Visible = true;
+                int a = sendmail(email, password, name);
+                notification_sendMail(ddlcountry.SelectedValue.ToString(), txtEmailID.Text.Trim());
+                if (a != 0)
+                {
+                    lblmsg.Text = "Information saved successfully!";
+                    Session["Is_after_registration"] = "Y";
+                    check_login(email.Trim(), password.Trim());
+                }
+            }
+        }
+
+        private void notification_sendMail(string country, string mail_id)
+        {
+            try
+            {
+                string TempalteBody = "";
+                if (country == "100")
+                {
+                    TempalteBody = "Dear User,<br/><br/>This is Rose(customer support), and I am here to help you!.<br/><br/>Take MyMassagePartner membership and get ready for body massage service with your nearby body massage partner. After membership you will be able to see the contact details of female, male for all locations. You can call them also send messages directly and ask for more information like <b>location, availability and his/her preference</b> etc..<br/><br/>Please follow the below steps and take membership:<br/><br/>Step 1: Login to https://www.mymassagepartner.com <br/>Step 2: Click - 'Get Membership Now' button then click ‘<b>Pay Now</b>’ (use your debit or credit for payment)<br/>Step 3: Pay successfully and you are done.<br/><br/><span style='color:red'><u>Very Important:</u></span><br/><br/>If you are not able to pay via debit or credit card or if you don't want to use online payment option due some other reasons then you can pay fees to our company bank account via Net banking or cash bank transfer or Paytm.<br/><br/>Once payment done, send us transaction ID/No or receipt picture from your MyMassagePartner’s registered email ID(only) as soon as possible. We will check your email, verify and upgrade you as MyMassagePartner’s premium member in next 30 minutes (maximum).<br/><br/><u>If you like to transfer membership fees via bank account then please email to <span style='color:blue'><b>info@mymassagepartner.com</b></span> or <span style='color:blue'><b>simply reply to this email<b/></span> and ask for bank details for membership so that we can share our company bank details.</u><br/><br/><br/><b>Best Regards<br/>Rose(customer support)<br/><span style='color:red'>My</span>MassagePartner.com Team</b>";
+                }
+                else
+                {
+                    TempalteBody = "Dear User,<br/><br/>This is Rose(customer support), and I am here to help you!.<br/><br/>Take MyMassagePartner membership and get ready for body massage service with your nearby body massage partner. After membership you will be able to see the contact details of female, male for all locations. You can call them also send messages directly and ask for more information like <b>location, availability and his/her preference</b> etc..<br/><br/>Please follow the below steps and take membership:<br/><br/>Step 1: Login to https://www.mymassagepartner.com <br/>Step 2: Click - 'Get Membership Now' button then click ‘<b>Pay Now</b>’ (use your debit or credit for payment)<br/>Step 3: Pay successfully and you are done.<br/><br/><span style='color:red'><u>Note:</u></span><br/><br/>1)We will not save your Debit & Credit card details. Also, we  will not save and communicate to your billing address.<br/>2) You can Pay via Debit or Credit card directly. No need to create PayPal.<br/>3) On mobile devices, you will see only credit card option but you can use debit card as well.<br/><br/><br/><b>Best Regards<br/>Rose(customer support)<br/><span style='color:red'>My</span>MassagePartner.com Team</b>";
+                }
+                objmail.sender = ConfigurationManager.AppSettings["EmailTable2Book"].ToString();
+
+                objmail.Mrecipients = mail_id;
+                objmail.Mbody = TempalteBody;
+                objmail.Msubject = "Help for mymassagepartner membership";
+                int status = objmail.SendMail();
+
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+
+        }
+
+        protected void txtEmailID_TextChanged(object sender, EventArgs e)
+        {
+            DataSet ds = objbusinessmpartener.get_forgot_password(txtEmailID.Text.Trim());
+            if (ds.Tables.Count > 0)
+            {
+                // Response.Redirect(Request.RawUrl);
+                if (ds.Tables[0].Rows[0]["is_massage_partner"].ToString() == "Y")
+                {
+                    ScriptManager.RegisterStartupScript(
+            this,
+            typeof(Page),
+            "Alert",
+            "<script>alert('You are already registered in massage-partner.Please login.');</script>",
+            false);
+                    //txtEmail.Text = ds.Tables[0].Rows[0]["email_id"].ToString();
+                    //txtPassword.Focus();
+                    txtEmailID.Text = "";
+                    txtname.Text = "";
+                }
+                else
+                {
+                    txtPassword1.Focus();
+                }
+            }
+            else
+            {
+                txtPassword1.Focus();
+            }
+
+        }
+
+        protected void ddlcity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlcountry.SelectedIndex > 0 && ddlstate.SelectedIndex > 0 && ddlcity.SelectedIndex > 0)
+            {
+                DataSet ds = objRegistrationBusiness.getAreaProvider(Convert.ToInt32(ddlcity.SelectedValue), Convert.ToInt32(ddlstate.SelectedValue), Convert.ToInt32(ddlcountry.SelectedValue));
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    ddlArea.DataSource = ds.Tables[0];
+                    ddlArea.DataTextField = "area_name";
+                    ddlArea.DataValueField = "area_sk";
+                    ddlArea.DataBind();
+                    ddlArea.Items.Insert(0, new ListItem("All Area", "0"));
+                    ddlArea.Enabled = true;
+                }
+                else
+                {
+                    ddlArea.Enabled = false;
+                }
+            }
+            else { ddlArea.Enabled = false; }
+        }
+    }
+}

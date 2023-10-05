@@ -1,0 +1,183 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+
+namespace RESTFulWCFService.MassagePartener.user_control
+{
+    public partial class WebUserControl1 : System.Web.UI.UserControl
+    {
+        private DataList DList;
+        private Repeater Rep;
+
+        /// <summary>
+        /// set or get ObjectDataSource that's use to bind the control
+        /// Like(Repeater or Datalist)
+        /// </summary>
+        public DataTable Ods { get; set; }
+
+        /// <summary>
+        /// set or get Control Name EX. (Repeater1 or Datalist1)
+        /// </summary>
+        public object ObjectControl { get; set; }
+
+        /// <summary>
+        /// set or get count of pages
+        /// page size determine how many records will appears in every page
+        /// </summary>
+        public int PageSize { get; set; }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            GetItems();
+        }
+
+
+        /// <summary>
+        /// set or get the Current Page Number
+        /// </summary>
+        public int CurrentPage
+        {
+            get
+            {
+                //get current page number
+                object obj = this.ViewState["_CurrentPage"];
+
+                if (obj == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return (int)obj;
+                }
+            }
+            set
+            {
+                //set in viewstate the current page number
+                this.ViewState["_CurrentPage"] = value;
+            }
+        }
+
+        /// <summary>
+        /// bind controls with data
+        /// enable and disable controls depending on page number
+        /// check for object Control if it a Repeater or a DataList
+        /// </summary>
+        /// <returns>the count of pages</returns>
+        private int GetItems()
+        {
+            try
+            {
+                //create new instance of PagedDataSource
+                PagedDataSource objPds = new PagedDataSource();
+
+                //set number of pages will appear
+                objPds.PageSize = PageSize;
+
+                objPds.DataSource = Ods.DefaultView;
+                objPds.AllowPaging = true;
+                int count = objPds.PageCount;
+
+                if (CurrentPage < count)
+                {
+                    objPds.CurrentPageIndex = CurrentPage;
+                }
+                else
+                {
+                    objPds.CurrentPageIndex = 0;
+                    CurrentPage = 0;
+                }
+                if (objPds.Count > 0)
+                {
+                    //dispaly controls if there are pages
+                    btnPrevious.Visible = true;
+                    btnNext.Visible = true;
+                    btnLastRecord.Visible = true;
+                    btnFirstRecord.Visible = true;
+                    lblCurrentPage.Visible = true;
+                    lblCurrentPage.Text = "Page " + Convert.ToString(CurrentPage + 1) + " of " + Convert.ToString(objPds.PageCount);
+                    hdpage.Value = (CurrentPage + 1).ToString();
+                    hdntotalpages.Value = Convert.ToString(objPds.PageCount);
+                    //Session["_page"] = CurrentPage;
+
+                }
+                else
+                {
+                    //disable controls if there are no pages
+                    btnPrevious.Visible = false;
+                    btnNext.Visible = false;
+                    btnLastRecord.Visible = false;
+                    btnFirstRecord.Visible = false;
+                    lblCurrentPage.Visible = false;
+                }
+
+                btnPrevious.Enabled = !objPds.IsFirstPage;
+                btnNext.Enabled = !objPds.IsLastPage;
+                btnLastRecord.Enabled = !objPds.IsLastPage;
+                btnFirstRecord.Enabled = !objPds.IsFirstPage;
+
+                //check for object control if it a DataList
+                //we will use DList Variable
+
+                if (ObjectControl is DataList)
+                {
+                    DList = (DataList)ObjectControl;
+                    DList.DataSource = objPds;
+                    DList.DataBind();
+                }
+
+                //check for object control if it a Repeater
+                //we will use Rep Variable
+                else if (ObjectControl is Repeater)
+                {
+                    Rep = (Repeater)ObjectControl;
+                    Rep.DataSource = objPds;
+                    Rep.DataBind();
+                }
+
+                return count;
+            }
+            catch(Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        protected void btnPrevious_Click(object sender, EventArgs e)
+        {
+            //back to previous page
+            CurrentPage -= 1;
+            GetItems();
+        }
+
+        protected void btnNext_Click(object sender, EventArgs e)
+        {
+            //go to next page
+            CurrentPage += 1;
+            GetItems();
+        }
+
+        protected void btnLastRecord_Click(object sender, EventArgs e)
+        {
+            //go to last page
+            CurrentPage = GetItems() - 1;
+            GetItems();
+        }
+
+        protected void btnFirstRecord_Click(object sender, EventArgs e)
+        {
+            //go to first Page
+            CurrentPage = 0;
+            GetItems();
+        }
+    }
+}

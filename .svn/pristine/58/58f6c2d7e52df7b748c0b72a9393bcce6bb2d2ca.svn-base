@@ -1,0 +1,280 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Business;
+using System.Globalization;
+using System.Text.RegularExpressions;
+using System.IO;
+using System.Net;
+using System.Diagnostics;
+namespace RESTFulWCFService
+{
+    public partial class ReplayInvitation : System.Web.UI.Page
+    {
+
+
+        BussinessSendMail objmail = new BussinessSendMail();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!IsPostBack)
+                {
+                    FetchDataURL();
+                    ShowResultType();
+
+                }
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+
+
+        }
+        private void ShowResultType()
+        {
+            try
+            {
+                if (Request.QueryString["responceType"] != null)
+                {
+                    char responceType = Convert.ToChar(Request.QueryString["responceType"]);
+                    if (responceType == 'Y')
+                    {
+                        divYes.Visible = true;
+                        divMayBe.Visible = false;
+                        divNo.Visible = false;
+                        replyEmailIdYes.Text = Convert.ToString(ViewState["email_id"]);
+                    }
+                    else if (responceType == 'N')
+                    {
+                        divYes.Visible = false;
+                        divMayBe.Visible = false;
+                        divNo.Visible = true;
+                        replyEmailIdNo.Text = Convert.ToString(ViewState["email_id"]);
+                    }
+                    else if (responceType == 'M')
+                    {
+                        divYes.Visible = false;
+                        divMayBe.Visible = true;
+                        divNo.Visible = false;
+                        replyEmailIdMayBe.Text = Convert.ToString(ViewState["email_id"]);
+                    }
+                    else
+                    {
+                        divYes.Visible = false;
+                        divMayBe.Visible = false;
+                        divNo.Visible = false;
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+
+
+        }
+        protected void btnReplayYes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                GuestReplay(Convert.ToInt32(ViewState["sb_sk"]), Convert.ToString(ViewState["email_id"]), Convert.ToChar(ViewState["responceType"]), Convert.ToString(txt_yes_conmment.InnerHtml));
+                DivSucMsgYes.Visible = true;
+                DivSucMsgMayBe.Visible = false;
+                DivSucMsgNo.Visible = false;
+
+                btnReplayYes.Enabled = false;
+                btnReplayYes.Style.Add("opacity", ".4");
+                Response.Redirect(Constants__.WEB_ROOT + "/home", false);
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+        protected void btnReplayNo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                GuestReplay(Convert.ToInt32(ViewState["sb_sk"]), Convert.ToString(ViewState["email_id"]), Convert.ToChar(ViewState["responceType"]), Convert.ToString(txt_No_conmment.InnerHtml));
+
+                DivSucMsgYes.Visible = false;
+                DivSucMsgMayBe.Visible = false;
+                DivSucMsgNo.Visible = true;
+                btnReplayNo.Enabled = false;
+                btnReplayNo.Style.Add("opacity", ".4");
+                Response.Redirect(Constants__.WEB_ROOT + "/home", false);
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+        protected void btnReplayMayBe_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                GuestReplay(Convert.ToInt32(ViewState["sb_sk"]), Convert.ToString(ViewState["email_id"]), Convert.ToChar(ViewState["responceType"]), Convert.ToString(txt_MayBe_conmment.InnerHtml));
+
+                DivSucMsgYes.Visible = false;
+                DivSucMsgMayBe.Visible = true;
+                DivSucMsgNo.Visible = false;
+
+                btnReplayMayBe.Enabled = false;
+                btnReplayMayBe.Style.Add("opacity", ".4");
+                Response.Redirect(Constants__.WEB_ROOT + "/home", false);
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+
+        }
+        private void GuestReplay(int slot_booking_sk, string replayEmail, char ReplayType, string reply_text)
+        {
+            try
+            {
+                objmail.guest_invitation_replay(slot_booking_sk, replayEmail, ReplayType, reply_text);
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+        protected void Cancel_click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Response.Redirect(Constants__.WEB_ROOT + "/home", false);
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+        private void FetchDataURL()
+        {
+            try
+            {
+
+                if (Request.QueryString["sb_sk"] != null)
+                {
+                    ViewState["sb_sk"] = Convert.ToString(Request.QueryString["sb_sk"]);
+                }
+                if (Request.QueryString["responceType"] != null)
+                { ViewState["responceType"] = Convert.ToString(Request.QueryString["responceType"]); }
+                if (Request.QueryString["email_id"] != null)
+                { ViewState["email_id"] = Convert.ToString(Request.QueryString["email_id"]); }
+
+            }
+            catch (System.Exception ex)
+            {
+                BussinessEntity.ExceptionHandling.ErrorMessage = ex.Message;
+                var st = new System.Diagnostics.StackTrace(ex, true);
+                StackFrame[] stackFrames = st.GetFrames();
+                foreach (StackFrame stackFrame in stackFrames)
+                {
+                    Console.WriteLine(stackFrame.GetMethod().Name);   // write method name
+                    BussinessEntity.ExceptionHandling._lineno = stackFrame.GetFileLineNumber();
+                    BussinessEntity.ExceptionHandling._methodname = Convert.ToString(stackFrame.GetMethod().Name);
+                    BussinessEntity.ExceptionHandling._pagename = Convert.ToString(Request.Url.AbsoluteUri);
+
+                }
+
+                Response.Redirect(Constants__.WEB_ROOT + "/ErrorMessage.aspx", false);
+            }
+        }
+    }
+}

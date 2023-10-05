@@ -1,0 +1,20 @@
+Gacutil /if IKVM.AWT.WinForms.dll
+
+Gacutil /if IKVM.OpenJDK.Beans.dll
+Gacutil /if IKVM.OpenJDK.Charsets.dll
+Gacutil /if IKVM.OpenJDK.Corba.dll
+Gacutil /if IKVM.OpenJDK.Core.dll
+Gacutil /if IKVM.OpenJDK.Management.dll
+Gacutil /if IKVM.OpenJDK.Media.dll
+Gacutil /if IKVM.OpenJDK.Misc.dll
+Gacutil /if IKVM.OpenJDK.Naming.dll
+Gacutil /if IKVM.OpenJDK.Remoting.dll
+Gacutil /if IKVM.OpenJDK.Security.dll
+Gacutil /if IKVM.OpenJDK.SwingAWT.dll
+Gacutil /if IKVM.OpenJDK.Text.dll
+Gacutil /if IKVM.OpenJDK.Util.dll
+Gacutil /if IKVM.OpenJDK.XML.API.dll
+Gacutil /if IKVM.Runtime.dll
+Gacutil /if IKVM.Runtime.JNI.dll
+Gacutil /if ccavutil.dll
+Gacutil /if CCA.Util.dll

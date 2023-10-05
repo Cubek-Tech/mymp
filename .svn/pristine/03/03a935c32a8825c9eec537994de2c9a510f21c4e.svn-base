@@ -1,0 +1,451 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/CrebasMaster.master" AutoEventWireup="true" CodeBehind="ReplayInvitation.aspx.cs" Inherits="RESTFulWCFService.ReplayInvitation" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style>
+        .backimageofEvite
+        {
+            margin-left: 70px;
+            margin-top: 30px;
+            float: left;
+            width: 850px;
+            height: 800px;
+            background-image: url(images/Final_evite.jpg);
+            background-repeat: no-repeat;
+        }
+        .clearfix:after
+        {
+            clear: both;
+            content: " ";
+            display: block;
+            font-size: 0;
+            height: 0;
+            visibility: hidden;
+        }
+        #rsvp_flyout .user
+        {
+            background: none repeat scroll 0 0 #F9F9F9;
+            border: 1px solid #E3E3E3;
+            border-radius: 4px 4px 4px 4px;
+            margin: 10px 0;
+            overflow: hidden;
+            padding: 5px;
+        }
+        .secon_tab
+        {
+            background: none repeat scroll 0 0 #F9F9F9;
+            border: 1px solid #E3E3E3;
+            border-radius: 4px 4px 4px 4px;
+            height: 50px;
+            margin: 10px 0 0 14px;
+            overflow: hidden;
+            padding: 5px;
+            width: 340px;
+        }
+        #inp_texxt
+        {
+            font-size: 1.1em;
+            height: 65px;
+            margin-bottom: 10px;
+            width: 340px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+        }
+        #may_inp_texxt
+        {
+            font-size: 1.1em;
+            height: 65px;
+            margin-bottom: 10px;
+            width: 340px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+        }
+        #no_inp_texxt
+        {
+            font-size: 1.1em;
+            height: 65px;
+            margin-bottom: 10px;
+            width: 340px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+        }
+        .form_field
+        {
+            margin-top: 15px;
+            padding-left: 20px;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 12px;
+            font-weight: bold;
+            color: Gray;
+        }
+        #adults_count
+        {
+            display: inline;
+            font-size: 14px;
+            margin-left: 10px;
+            float: right;
+            width: 40px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+            font-family: inherit;
+            padding: 3px;
+        }
+        #adults_count_1
+        {
+            display: inline;
+            font-size: 14px;
+            margin-left: 10px;
+            float: right;
+            width: 40px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+            font-family: inherit;
+            padding: 3px;
+        }
+        #adults_count_2
+        {
+            display: inline;
+            font-size: 14px;
+            margin-left: 10px;
+            float: right;
+            width: 40px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+            font-family: inherit;
+            padding: 3px;
+        }
+        #adults_count_3
+        {
+            display: inline;
+            font-size: 14px;
+            margin-left: 10px;
+            float: right;
+            width: 40px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+            font-family: inherit;
+            padding: 3px;
+        }
+        #adults_count_4
+        {
+            display: inline;
+            font-size: 14px;
+            margin-left: 10px;
+            float: right;
+            width: 40px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+            font-family: inherit;
+            padding: 3px;
+        }
+        #adults_count_5
+        {
+            display: inline;
+            font-size: 14px;
+            margin-left: 10px;
+            float: right;
+            width: 40px;
+            border: 1px solid #CCCCCC;
+            border-radius: 2px 2px 2px 2px;
+            box-shadow: 0 2px 2px #E3E3E3 inset;
+            font-family: inherit;
+            padding: 3px;
+        }
+        .flyout_actions
+        {
+            background: none repeat scroll 0 0 #F7F7F7;
+            border-top: 1px solid #CCCCCC;
+            clear: both;
+            height: 48px;
+            margin-top: 38px;
+            padding: 2px 10px;
+            text-align: left;
+        }
+        .notify_me
+        {
+            float: left;
+            padding-top: 2px;
+            font-size: 10px;
+            color: #666666;
+            font-family: Arial,Helvetica,sans-serif;
+        }
+        .midd_clas
+        {
+            vertical-align: middle;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="index_img_main">
+        <div id="index_img_main">
+            <div class="index_bg_main">
+                <div id="index_bg_main">
+                    <div class="main1">
+                        <div id="main_menu_top">
+                            <div class="search">
+                                <div id="search">
+                                   Invitation Reply
+                                </div>
+                            </div>
+                            <div class="backimageofEvite">
+                                <%--Yes TAB--%>
+                                <div runat="server" id="divYes">
+                                    <div style="background-color: White; border: 1px solid rgb(204, 204, 204); border-radius: 5px 5px 0px 0px;
+                                        padding-top: 14px; height: 46px; padding-left: 36px; width: 80px; border-bottom: none;">
+                                        <span style="text-align: center; font-size: 20px; font-family: sans-serif; color: #666666;">
+                                            YES</span></div>
+                                    <div style="width: 380px; height: 272px; border-radius: 0 0 5px 5px; background-color: white;
+                                        border: 1px solid #cccccc;">
+                                        <div class="secon_tab">
+                                         
+                                            <div style="float: left; font-family: verdana; margin-top: 16px; margin-left: 10px;
+                                                color: #999999;">
+                                                Replying as:
+                                                <asp:Label ID="replyEmailIdYes" runat="server"></asp:Label></div>
+                                            <div style="float: left; font-family: verdana; margin-top: 16px; margin-left: 10px;
+                                                color: #0181BD">
+                                                <asp:Label ID="lalReplayEmailId" runat="server"></asp:Label>
+                                            </div>
+                                            <div style="float: right; font-size: 10px; font-family: verdana; margin-top: 16px;
+                                                margin-left: 10px; color: #999999">
+                                                <a style="font-family: verdana; margin-top: 16px; margin-left: 10px; margin-right: 4px;
+                                                    color: #999999" href="#"></a></div>
+                                        </div>
+                                        <div class="form_field">
+                                            <label style="vertical-align: top;">
+                                                Add a comment:</label>
+                                            <textarea id="txt_yes_conmment" runat="server" maxlength="140" name="comment_entry"
+                                                tabindex="0" CssClass="search_text__main" placeholder="Text type Here."></textarea>
+                                            <div style="display: none;" class="neo-field-error">
+                                            </div>
+                                            <%-- <div style="float: left; margin-left: 24px; width: 130px;">
+                                                <div style="float: left; padding-top: 4px;">
+                                                    Total adults:</div>
+                                                <input type="number" value="1" placeholder="" id="adults_count" name="adults_count"
+                                                    tabindex="0" min="0"><div style="display: none;" class="neo-field-error">
+                                                    </div>
+                                            </div>
+                                            <div style="float: left; margin-left: 20px; width: 120px;">
+                                                <div style="float: left; padding-top: 4px;">
+                                                    Total kids:</div>
+                                                <input type="number" value="1" placeholder="" id="adults_count_1" name="adults_count"
+                                                    tabindex="0" min="0"><div style="display: none;" class="neo-field-error">
+                                                    </div>
+                                            </div>--%>
+                                        </div>
+                                        <div class="flyout_actions">
+                                            <%--     <div class="notify_me">
+                                                <div class="form_field_1">
+                                                    <input type="checkbox" checked="checked" id="notify_me_on_comment" name="notify_me_on_comment"><label
+                                                        for="notify_me">
+                                                        Notify me when guests comment</label>
+                                                </div>
+                                                <div class="form_field_2">
+                                                    <input type="checkbox" id="notify_me_on_rsvp" name="notify_me_on_rsvp">
+                                                    <label for="notify_me">
+                                                        Notify me when guests RSVP</label></div>
+                                            </div>--%>
+                                            <div style="width: 186px; padding-left: 50px;">
+                                                <asp:Button ID="Button2" runat="server" CssClass="btn_cancel_invite_friend" OnClick="Cancel_click"
+                                                    Text="Cancel" />
+                                                <asp:Button CssClass="btn_replay_invite_friend" ID="btnReplayYes" OnClick="btnReplayYes_Click"
+                                                    runat="server" Text="Reply" />
+                                            </div>
+                                        </div>
+                                        <div id="DivSucMsgYes" visible="false" runat="server" style="font-weight: bold; color: Green;padding-left: 96px;">
+                                            Replay saved sucessfully.</div>
+                                    </div>
+                                </div>
+                                <%--May be TAB--%>
+                                <div id="divMayBe" runat="server" style="float: right;">
+                                    <div style="background-color: White; border-width: 1px 1px medium; border-style: solid solid none;
+                                        border-color: rgb(204, 204, 204) rgb(204, 204, 204) -moz-use-text-color; -moz-border-top-colors: none;
+                                        -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none;
+                                        -moz-border-image: none; border-radius: 5px 5px 0px 0px; padding-top: 14px; height: 46px;
+                                        padding-left: 26px; width: 96px; margin-left: 120px;">
+                                        <span style="text-align: center; font-size: 20px; font-family: sans-serif; color: #666666;">
+                                            MAY BE</span></div>
+                                    <div style="width: 380px; height: 272px; border-radius: 0 0 5px 5px; background-color: white;
+                                        border: 1px solid #cccccc;">
+                                        <div class="secon_tab">
+                                            
+                                            <div style="float: left; font-family: verdana; margin-top: 16px; margin-left: 10px;
+                                                color: #999999;">
+                                                Replying as:
+                                                <asp:Label ID="replyEmailIdMayBe" runat="server"></asp:Label></div>
+                                            <div style="float: left; font-family: verdana; margin-top: 16px; margin-left: 10px;
+                                                color: #0181BD">
+                                            </div>
+                                            <div style="float: right; font-size: 10px; font-family: verdana; margin-top: 16px;
+                                                margin-left: 10px; color: #999999">
+                                                <a style="font-family: verdana; margin-top: 16px; margin-left: 10px; margin-right: 4px;
+                                                    color: #999999" href="#"></a></div>
+                                        </div>
+                                        <div class="form_field">
+                                            <label style="vertical-align: top;">
+                                                Add a comment:</label>
+                                            <textarea id="txt_MayBe_conmment" runat="server" maxlength="140" name="comment_entry"
+                                                tabindex="0" CssClass="search_text__main" placeholder="Text type Here."></textarea>
+                                            <div style="display: none;" class="neo-field-error">
+                                            </div>
+                                            <%--<div style="float: left; margin-left: 24px; width: 130px;">
+                                                <div style="float: left; padding-top: 4px;">
+                                                    Total adults:</div>
+                                                <input type="number" value="1" placeholder="" id="adults_count_2" name="adults_count"
+                                                    tabindex="0" min="0"><div style="display: none;" class="neo-field-error">
+                                                    </div>
+                                            </div>
+                                            <div style="float: left; margin-left: 20px; width: 120px;">
+                                                <div style="float: left; padding-top: 4px;">
+                                                    Total kids:</div>
+                                                <input type="number" value="1" placeholder="" id="adults_count_3" name="adults_count"
+                                                    tabindex="0" min="0"><div style="display: none;" class="neo-field-error">
+                                                    </div>
+                                            </div>--%>
+                                        </div>
+                                        <div class="flyout_actions">
+                                            <%--  <div class="notify_me">
+                                                <div class="form_field_1">
+                                                    <input type="checkbox" checked="checked" id="Checkbox1" name="notify_me_on_comment"><label
+                                                        for="notify_me">
+                                                        Notify me when guests comment</label>
+                                                </div>
+                                                <div class="form_field_2">
+                                                    <input type="checkbox" id="Checkbox2" name="notify_me_on_rsvp">
+                                                    <label for="notify_me">
+                                                        Notify me when guests RSVP</label></div>
+                                            </div>--%>
+                                            <div style="width: 186px; padding-left: 50px;">
+                                                <asp:Button ID="Button1" runat="server" CssClass="btn_cancel_invite_friend" OnClick="Cancel_click"
+                                                    Text="Cancel" />
+                                                <asp:Button CssClass="btn_replay_invite_friend" OnClick="btnReplayMayBe_Click" ID="btnReplayMayBe"
+                                                    runat="server" Text="Reply" />
+                                            </div>
+                                        </div>
+                                        <div id="DivSucMsgMayBe" runat="server" visible="false" style="font-weight: bold; color: Green;padding-left: 96px;">
+                                            Replay saved sucessfully.</div>
+                                    </div>
+                                    <%--END OF MAY TAB--%>
+                                </div>
+                                <%--No TAB--%>
+                                <div id="divNo" runat="server" style="float: right;">
+                                    <div style="background-color: White; border-width: 1px 1px medium; border-style: solid solid none;
+                                        border-color: rgb(204, 204, 204) rgb(204, 204, 204) -moz-use-text-color; -moz-border-top-colors: none;
+                                        -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none;
+                                        -moz-border-image: none; border-radius: 5px 5px 0px 0px; padding-top: 14px; height: 46px;
+                                        padding-left: 40px; width: 70px; margin-left: 270px;">
+                                        <span style="text-align: center; font-size: 20px; font-family: sans-serif; color: #666666;">
+                                            NO</span></div>
+                                    <div style="width: 380px; height: 272px; border-radius: 0 0 5px 5px; background-color: white;
+                                        border: 1px solid #cccccc;">
+                                        <div class="secon_tab">
+                                           
+                                            <div style="float: left; font-family: verdana; margin-top: 16px; margin-left: 10px;
+                                                color: #999999;">
+                                                Replying as:<asp:Label ID="replyEmailIdNo" runat="server"></asp:Label></div>
+                                            <div style="float: left; font-family: verdana; margin-top: 16px; margin-left: 10px;
+                                                color: #0181BD">
+                                            </div>
+                                            <div style="float: right; font-size: 10px; font-family: verdana; margin-top: 16px;
+                                                margin-left: 10px; color: #999999">
+                                                <a style="font-family: verdana; margin-top: 16px; margin-left: 10px; margin-right: 4px;
+                                                    color: #999999" href="#"></a></div>
+                                        </div>
+                                        <div class="form_field">
+                                            <label style="vertical-align: top;">
+                                                Add a comment:</label>
+                                            <textarea id="txt_No_conmment" runat="server" maxlength="140" name="comment_entry"
+                                                tabindex="0" CssClass="search_text__main" placeholder="Text type Here."></textarea>
+                                            <div style="display: none;" class="neo-field-error">
+                                            </div>
+                                            <%--  <div style="float: left; margin-left: 24px; width: 130px;">
+                                                <div style="float: left; padding-top: 4px;">
+                                                    Total adults:</div>
+                                                <input type="number" value="1" placeholder="" id="adults_count_4" name="adults_count"
+                                                    tabindex="0" min="0"><div style="display: none;" class="neo-field-error">
+                                                    </div>
+                                            </div>
+                                            <div style="float: left; margin-left: 20px; width: 120px;">
+                                                <div style="float: left; padding-top: 4px;">
+                                                    Total kids:</div>
+                                                <input type="number" value="1" placeholder="" id="adults_count_5" name="adults_count"
+                                                    tabindex="0" min="0"><div style="display: none;" class="neo-field-error">
+                                                    </div>
+                                            </div>--%>
+                                        </div>
+                                        <div class="flyout_actions">
+                                            <%--   <div class="notify_me">
+                                                <div class="form_field_1">
+                                                    <input type="checkbox" checked="checked" id="Checkbox3" name="notify_me_on_comment"><label
+                                                        for="notify_me">
+                                                        Notify me when guests comment</label>
+                                                </div>
+                                                <div class="form_field_2">
+                                                    <input type="checkbox" id="Checkbox4" name="notify_me_on_rsvp">
+                                                    <label for="notify_me">
+                                                        Notify me when guests RSVP</label></div>
+                                            </div>--%>
+                                            <div style="width: 186px; padding-left: 50px;">
+                                                <asp:Button ID="beNocancel" runat="server" CssClass="btn_cancel_invite_friend" OnClick="Cancel_click"
+                                                    Text="Cancel" />
+                                                <asp:Button CssClass="btn_replay_invite_friend" OnClick="btnReplayNo_Click" ID="btnReplayNo"
+                                                    runat="server" Text="Reply" />
+                                            </div>
+                                        </div>
+                                        <div id="DivSucMsgNo" visible="false" runat="server" style="font-weight: bold; color: Green;padding-left: 96px;">
+                                            Replay saved sucessfully.</div>
+                                    </div>
+                                    <%--END OF MAY TAB--%>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style type="text/css">
+        .btn_replay_invite_friend
+        {
+            float: right;
+            background-color: #33cc00;
+            font-size: 14px;
+            border: 1px solid rgb(204, 204, 204);
+            height: 29px;
+            padding-top: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 8px;
+            width: 70px;
+            border-radius: 5px 5px 5px 5px;
+            color: White;
+            margin-left: 8px;
+        }
+        .btn_cancel_invite_friend
+        {
+            background-color: White;
+            border: 1px solid rgb(204, 204, 204);
+            height: 29px;
+            padding-top: 6px;
+            cursor: pointer;
+            width: 70px;
+            text-align: center;
+            border-radius: 5px 5px 5px 5px;
+            float: left;
+            margin-top: 8px;
+            margin-left: 30px;
+            font-weight: bold;
+            font-size: 14px;
+            color: Gray;
+        }
+    </style>
+</asp:Content>

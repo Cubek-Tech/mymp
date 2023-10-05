@@ -1,0 +1,704 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.ApplicationBlocks.Data;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace Factory
+{
+    public class FactoryMPartener
+    {
+        private System.Nullable<int> nfnbtypesk
+        {
+            get { return null; }
+        }
+        private System.Nullable<int> nfnbSubType
+        {
+            get { return null; }
+        }
+        private System.Nullable<int> ncitysk
+        {
+            get { return null; }
+        }
+        private System.Nullable<int> nstatesk
+        {
+            get { return null; }
+        }
+        private System.Nullable<int> nseekersk
+        {
+            get { return null; }
+        }
+        private System.Nullable<int> desired_age_group_sk
+        {
+            get { return null; }
+        }
+
+        public DataSet get_agegroup() 
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_getagegroup");
+            return ds;
+        }
+        public int partener_signup(string email_id,string password,string name,char gender,string dob,string is_certified,string phone,string desired_gender,int desired_age,string postal,int country_sk,int? state_sk,int? city_sk,int? area_sk,DataTable speciality)
+        {
+            SqlConnection con = new SqlConnection(Config.Crebas);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlParameter param = new SqlParameter();
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@email_id";
+                param.Value = email_id;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.NVarChar;
+                param.ParameterName = "@password";
+                param.Value = password;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Char;
+                param.ParameterName = "@is_massage_partner";
+                param.Value = 'Y';
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@massage_partner_name";
+                param.Value = name;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Char;
+                param.ParameterName = "@gender";
+                param.Value = gender;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@dob";
+                param.Value = dob;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Char;
+                param.ParameterName = "@is_certified";
+                param.Value = is_certified;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@phone_nos";
+                param.Value = phone;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.Size = 25;
+                param.ParameterName = "@desired_gender";
+                param.Value = desired_gender;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.SmallInt;
+                param.Size = 25;
+                param.ParameterName = "@desired_age_group_sk";
+                param.Value = desired_age;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.Size = 25;
+                param.ParameterName = "@postal_code";
+                param.Value = postal;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Int;
+                param.Size = 25;
+                param.ParameterName = "@country__sk";
+                param.Value = country_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.Size = 25;
+                param.ParameterName = "@state_sk";
+                param.Value = state_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.Size = 25;
+                param.ParameterName = "@city_sk";
+                param.Value = city_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+                
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.Size = 25;
+                param.ParameterName = "@area_sk";
+                param.Value = area_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@udtt_list_partener_therapies";
+                param.SqlDbType = SqlDbType.Structured;
+                param.Value = speciality;
+                param.TypeName = "udtt_list_partener_therapies";
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                if (con.State != ConnectionState.Open) con.Open();
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "p_i_quick_massagepartner_signup";
+                int result = cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { if (con.State != ConnectionState.Closed) con.Close(); }
+
+            //int i = SqlHelper.ExecuteNonQuery(Config.Crebas, "p_i_quick_Jobseeker_signup",email,password,"JS",job_type,experience,seeker_name,gender,contact,cities);
+              return 1;
+        }
+        public DataSet partner_login(string Email_id,string password)
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas,"p_g_checkLogin_massage_partner",Email_id,password,"W");
+            return ds;
+        }
+        public int partener_signup_update(int massage_partner_sk, string name, char gender, string dob, string is_certified, string phone, string desired_gender,string my_desription,string my_qualification,string my_experience,int desired_age, string postal, int country_sk, int? state_sk, int? city_sk,int? area_sk, DataTable speciality,DataTable images)
+        {
+            SqlConnection con = new SqlConnection(Config.Crebas);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlParameter param = new SqlParameter();
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Int;
+                param.ParameterName = "@m_partener_sk";
+                param.Value = massage_partner_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Char;
+                param.ParameterName = "@is_massage_partner";
+                param.Value = 'Y';
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@massage_partner_name";
+                param.Value = name;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Char;
+                param.ParameterName = "@gender";
+                param.Value = gender;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@dob";
+                param.Value = dob;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Char;
+                param.ParameterName = "@is_certified";
+                param.Value = is_certified;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@phone_nos";
+                param.Value = phone;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@desired_gender";
+                param.Value = desired_gender;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@my_description";
+                param.Value = my_desription;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@my_qualificatiom";
+                param.Value = my_qualification;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@my_experience";
+                param.Value = my_experience;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.SmallInt;
+                param.ParameterName = "@desired_age_group_sk";
+                param.Value = desired_age;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@postal_code";
+                param.Value = postal;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.Int;
+                param.ParameterName = "@country__sk";
+                param.Value = country_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@state_sk";
+                param.Value = state_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@city_sk";
+                param.Value = city_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.SqlDbType = SqlDbType.VarChar;
+                param.ParameterName = "@area_sk";
+                param.Value = area_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@udtt_list_partener_therapies";
+                param.SqlDbType = SqlDbType.Structured;
+                param.Value = speciality;
+                param.TypeName = "udtt_list_partener_therapies";
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                param = new SqlParameter();
+                param.ParameterName = "@udtt_list_mpartner_img_upload";
+                param.SqlDbType = SqlDbType.Structured;
+                param.Value = images;
+                param.TypeName = "udtt_list_job_img_upload";
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+
+                if (con.State != ConnectionState.Open) con.Open();
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "p_u_quick_massagepartner_details";
+                int result = cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { if (con.State != ConnectionState.Closed) con.Close(); }
+
+            //int i = SqlHelper.ExecuteNonQuery(Config.Crebas, "p_i_quick_Jobseeker_signup",email,password,"JS",job_type,experience,seeker_name,gender,contact,cities);
+            return 1;
+        }
+        public DataSet get_partner_details(int massage_partener_sk)
+        {
+            DataSet ds=new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_partner_details",massage_partener_sk);
+            return ds;
+        }
+        public DataSet Search_Partner(int country_sk, int? city_sk, int? desired_age_group_sk, int? state_sk,int? area_sk, string desired_gender, string gender_sk, int massage_type_sk)
+        {
+            DataSet ds = new DataSet();
+            //ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_search_jobseeker", country_sk, city_sk, state_sk, job_type_sk, experience_sk, gender_sk);
+            //return ds;
+            ds = new DataSet();
+            string Text = System.DateTime.Now.ToString();
+
+            SqlConnection con = new SqlConnection(Config.Crebas);
+            SqlCommand cmd = new SqlCommand();
+            SqlParameter param = new SqlParameter();
+
+            param = new SqlParameter();
+            param.ParameterName = "@country_sk";
+            param.SqlDbType = SqlDbType.Int;
+            param.Value = country_sk;
+            param.Direction = ParameterDirection.Input;
+            cmd.Parameters.Add(param);
+
+            if (state_sk != null && state_sk != 0)
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@state_sk";
+                param.SqlDbType = SqlDbType.Int;
+                param.Value = state_sk == 0 ? nstatesk : state_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+
+            if (area_sk != null && area_sk != 0)
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@area_sk";
+                param.SqlDbType = SqlDbType.Int;
+                param.Value = area_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+            if (desired_age_group_sk != null && desired_age_group_sk != 0)
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@desired_age_group_sk";
+                param.SqlDbType = SqlDbType.Int;
+                param.Value = desired_age_group_sk == 0 ? desired_age_group_sk : desired_age_group_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+            if (city_sk != null && city_sk != 0)
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@city_sk";
+                param.SqlDbType = SqlDbType.Int;
+                param.Value = city_sk == 0 ? ncitysk : city_sk; ;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+            if (gender_sk != string.Empty && gender_sk != "" && gender_sk != " " && gender_sk != null)
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@gender";
+                param.SqlDbType = SqlDbType.Char;
+                param.Value = gender_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+            if (desired_gender != " " && desired_gender.ToString() != "")
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@desired_gender";
+                param.SqlDbType = SqlDbType.Char;
+                param.Value = desired_gender == " " ? nfnbSubType.ToString() : desired_gender;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+            if (massage_type_sk != null && massage_type_sk != 0)
+            {
+                param = new SqlParameter();
+                param.ParameterName = "@massage_type_sk";
+                param.SqlDbType = SqlDbType.Int;
+                param.Value = massage_type_sk == 0 ? massage_type_sk : massage_type_sk;
+                param.Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(param);
+            }
+
+            if (con.State != ConnectionState.Open) con.Open();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "[p_g_search_partner]";
+
+            SqlDataReader dr;
+            DataTable dt = new DataTable();
+            //  Command time period  15 minute
+            cmd.CommandTimeout = 900;
+            dt.Load(cmd.ExecuteReader(CommandBehavior.CloseConnection));
+            //  dt.Load(dr);
+            DataTable dt1 = createTempSearchPartnerTable();
+            DataTable dt12 = dt.DefaultView.ToTable(true, "massage_partner_sk");
+            for (int i = 0; i < dt12.Rows.Count; i++)
+            {
+                int k = 0;
+                string specility = "";
+                string image_name = "";
+                string location="";
+                DataRow[] dr12 = dt.Select("massage_partner_sk=" + dt12.Rows[i]["massage_partner_sk"]);
+                foreach (DataRow dr1 in dr12)
+                {
+                    //dr1.Item
+                    specility = specility == "" ? dr1["speciality"].ToString() : specility + "," + dr1["speciality"].ToString();
+                    if (dr1["image"].ToString() != "")
+                    {
+                        image_name = image_name == "" ? dr1["image"].ToString() : image_name + "," + dr1["image"].ToString();
+                    }
+
+                    if (k == (dr12.Length - 1))
+                    {
+                        List<string> uniques = specility.Split(',').Distinct().ToList();
+                        List<string> uniques2 = image_name.Split(',').Distinct().ToList();
+                        image_name = "";
+                        specility = "";
+                        specility = string.Join(", ", uniques);
+                        image_name = string.Join(",", uniques2);
+                        if (dr1["area"].ToString() != "" && dr1["city"].ToString() != "" && dr1["state"].ToString() != "" && dr1["country"].ToString() != "")
+                        {
+                            location = dr1["area"].ToString()+", "+ dr1["city"].ToString() + ", " + dr1["state"].ToString() + ", " + dr1["country"].ToString();
+                        }
+                        else if (dr1["city"].ToString() != "" && dr1["state"].ToString() != "" && dr1["country"].ToString() != "")
+                        {
+                            location = dr1["city"].ToString() + ", " + dr1["state"].ToString() + ", " + dr1["country"].ToString();
+                        }
+                        else if (dr1["state"].ToString() != "" && dr1["country"].ToString() != "")
+                        { location = dr1["state"].ToString() + ", " + dr1["country"].ToString(); }
+                        else
+                        { location = dr1["country"].ToString(); }
+
+                        dt1.Rows.Add(dr1["massage_partner_sk"], dr1["massage_partner_name"],dr1["gender"], dr1["desired_gender"], specility, dr1["phone_nos"], image_name,location);
+                    }
+                    k++;
+                }
+
+            }
+            ds.Tables.Add(dt1);
+            return ds;
+
+        }
+        private DataTable createTempSearchPartnerTable()
+        {
+            DataTable myDataTable = new DataTable();
+            DataColumn myDataColumn;
+
+            myDataColumn = new DataColumn();
+            myDataColumn.DataType = Type.GetType("System.String");
+            myDataColumn.ColumnName = "massage_partner_sk";
+            myDataTable.Columns.Add(myDataColumn);
+            myDataColumn = new DataColumn();
+
+            myDataColumn.DataType = Type.GetType("System.String");
+            myDataColumn.ColumnName = "massage_partner_name";
+            myDataTable.Columns.Add(myDataColumn);
+
+            myDataColumn = new DataColumn();
+            myDataColumn.DataType = Type.GetType("System.String");
+            myDataColumn.ColumnName = "gender";
+            myDataTable.Columns.Add(myDataColumn);
+
+            myDataColumn = new DataColumn();
+            myDataColumn.DataType = Type.GetType("System.String");
+            myDataColumn.ColumnName = "desired_gender";
+            myDataTable.Columns.Add(myDataColumn);
+
+            myDataColumn = new DataColumn();
+            myDataColumn.DataType = Type.GetType("System.String");
+            myDataColumn.ColumnName = "specialty";
+            myDataTable.Columns.Add(myDataColumn);
+
+            myDataColumn = new DataColumn();
+            myDataColumn.DataType = Type.GetType("System.String");
+            myDataColumn.ColumnName = "phone_nos";
+            myDataTable.Columns.Add(myDataColumn);
+
+            myDataColumn = new DataColumn();
+            myDataColumn.DataType = Type.GetType("System.String");
+            myDataColumn.ColumnName = "image";
+            myDataTable.Columns.Add(myDataColumn);
+
+            myDataColumn = new DataColumn();
+            myDataColumn.DataType = Type.GetType("System.String");
+            myDataColumn.ColumnName = "location";
+            myDataTable.Columns.Add(myDataColumn);
+
+            return myDataTable;
+        }
+        public int insert_messages(int from_partner_sk, int to_partner_sk, string msg_text)
+        {
+            int i = 0;
+             i = SqlHelper.ExecuteNonQuery(Config.Crebas, "p_i_messages", from_partner_sk, to_partner_sk, msg_text);
+            return i;
+        }
+        public DataSet get_messages(int to_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_messages", to_sk);
+            return ds;
+        
+        }
+        public int addto_fav_block(char status,int massage_partner_sk,int connected_partner_sk,char favourite_block)
+        {
+            int i = 0;
+            i = SqlHelper.ExecuteNonQuery(Config.Crebas, "insert_favourite_or_blocked", massage_partner_sk, connected_partner_sk, favourite_block, status);
+            return i;
+        }
+        public DataSet get_fav_blck_list(int massage_partner_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_fav_block_list", massage_partner_sk);
+            return ds;
+
+        }
+        public DataSet get_fav_partner(string partner_sk)
+        {
+           DataSet ds = new DataSet();
+            string Text = System.DateTime.Now.ToString();
+
+            SqlConnection con = new SqlConnection(Config.Crebas);
+            SqlCommand cmd = new SqlCommand();
+            SqlParameter param = new SqlParameter();
+
+            param = new SqlParameter();
+            param.ParameterName = "@massage_partner_sk";
+            param.SqlDbType = SqlDbType.Int;
+            param.Value = partner_sk;
+            param.Direction = ParameterDirection.Input;
+            cmd.Parameters.Add(param);
+            
+            if (con.State != ConnectionState.Open) con.Open();
+            cmd.Connection = con;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "[p_g_search_Fav_partner]";
+
+            SqlDataReader dr;
+            DataTable dt = new DataTable();
+            //  Command time period  15 minute
+            cmd.CommandTimeout = 900;
+            dt.Load(cmd.ExecuteReader(CommandBehavior.CloseConnection));
+            //  dt.Load(dr);
+            DataTable dt1 = createTempSearchPartnerTable();
+            DataTable dt12 = dt.DefaultView.ToTable(true, "massage_partner_sk");
+            for (int i = 0; i < dt12.Rows.Count; i++)
+            {
+                int k = 0;
+                string specility = "";
+                string image_name = "";
+                string location = "";
+                DataRow[] dr12 = dt.Select("massage_partner_sk=" + dt12.Rows[i]["massage_partner_sk"]);
+                foreach (DataRow dr1 in dr12)
+                {
+                    //dr1.Item
+                    specility = specility == "" ? dr1["speciality"].ToString() : specility + "," + dr1["speciality"].ToString();
+                    if (dr1["image"].ToString() != "")
+                    {
+                        image_name = image_name == "" ? dr1["image"].ToString() : image_name + "," + dr1["image"].ToString();
+                    }
+
+                    if (k == (dr12.Length - 1))
+                    {
+                        List<string> uniques = specility.Split(',').Distinct().ToList();
+                        List<string> uniques2 = image_name.Split(',').Distinct().ToList();
+                        image_name = "";
+                        specility = "";
+                        specility = string.Join(", ", uniques);
+                        image_name = string.Join(",", uniques2);
+                        location = dr1["city"].ToString() + ", " + dr1["state"].ToString() + ", " + dr1["country"].ToString();
+                        dt1.Rows.Add(dr1["massage_partner_sk"], dr1["massage_partner_name"], dr1["gender"], dr1["desired_gender"], specility, dr1["phone_nos"], image_name, location);
+                    }
+                    k++;
+                }
+
+            }
+            ds.Tables.Add(dt1);
+            return ds;
+
+        }
+        public DataSet getPartnerSubsciption(int country_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_GetMassagePartnerData", country_sk, "W");
+            return ds;
+        }
+        public DataSet InsertmassagePartnerSubscriptionDetails(DataTable dt_subs)
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_iu_membership_subscription_partner",
+                                        dt_subs.Rows[0]["massage_partner_sk"].ToString(),
+                                        dt_subs.Rows[0]["country_sk"].ToString(),
+                                    dt_subs.Rows[0]["subscription_start_date"],
+                                     dt_subs.Rows[0]["subscription_end_date"],
+                                        dt_subs.Rows[0]["one_time_price"].ToString(),
+                                        dt_subs.Rows[0]["is_subscribed"].ToString(),
+                                         dt_subs.Rows[0]["is_paid"].ToString(),
+                                          dt_subs.Rows[0]["PaymentGateway"].ToString()
+                                        );
+
+            return ds;
+        }
+        public DataSet get_blocked(int partner_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_connect",partner_sk);
+            return ds;
+        }
+        public DataSet get_forgot_password(string email_id)
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_massage_partner_login_ForgetPassword",email_id);
+            return ds;
+        }
+        public DataSet getPartnerSubsciption_record(int massage_partner_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "p_g_Get_MASSAGE_PARTNER_Data", massage_partner_sk);
+            return ds;
+        }
+
+        public int insert_reviews(int country_sk, string name, int rating, string message)
+        {
+            int i = 0;
+            i= SqlHelper.ExecuteNonQuery(Config.Crebas, "sp_insert_reviews", country_sk, name, rating, message);
+            return 1;
+
+        }
+        public DataSet get_reviews(int country_sk,int start,int end)
+        {
+            DataSet ds;
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "sp_get_reviews", country_sk,start,end);
+            return ds;
+        }
+        public DataSet get_sk_by_email_id(string email_id)
+        {
+            DataSet ds;
+            ds = SqlHelper.ExecuteDataset(Config.Crebas, "sp_get_sk_by_email_id_paytm", email_id);
+            return ds;
+        }
+        
+    }
+}

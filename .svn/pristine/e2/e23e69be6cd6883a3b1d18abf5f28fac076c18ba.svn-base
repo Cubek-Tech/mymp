@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace RESTFulWCFService
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            string a="Massage Therapist / Professional";
+            a = a.Replace('/', ' ');
+            Response.Write(a+" \n");
+            a = a.Replace("   ", " ");
+            Response.Write(a + " \n");
+            a = a.Replace(' ', '-');
+            Response.Write(a + " \n");
+            a = a.Trim().Replace(' ', '-');
+            Response.Write(a + " \n");
+
+
+            string[] looks_for = a.Split('-');
+            a = looks_for[0] + " " + looks_for[1] + " / " + looks_for[2];
+
+            Response.Write(a);
+           
+        }
+    }
+}

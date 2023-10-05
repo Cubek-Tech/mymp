@@ -1,0 +1,89 @@
+D:\old data\WORKING PROJECT\m2b_rest\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\old data\WORKING PROJECT\m2b_rest\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\old data\WORKING PROJECT\m2b_rest\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\old data\WORKING PROJECT\m2b_rest\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\old data\WORKING PROJECT\m2b_rest_16-04-2014\m2b_rest\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\old data\WORKING PROJECT\m2b_rest_16-04-2014\m2b_rest\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\old data\WORKING PROJECT\m2b_rest_16-04-2014\m2b_rest\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\old data\WORKING PROJECT\m2b_rest_16-04-2014\m2b_rest\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\old data\WORKING PROJECT\m2b_rest_16-04-2014\m2b_rest\BussinessEntity\obj\Debug\BussinessEntity.csprojResolveAssemblyReference.cache
+D:\old data\WORKING PROJECT\back_up_m2b_07-05-2014\back_up_m2b_07-05-2014\m2b_rest\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\old data\WORKING PROJECT\back_up_m2b_07-05-2014\back_up_m2b_07-05-2014\m2b_rest\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\old data\WORKING PROJECT\back_up_m2b_07-05-2014\back_up_m2b_07-05-2014\m2b_rest\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\old data\WORKING PROJECT\back_up_m2b_07-05-2014\back_up_m2b_07-05-2014\m2b_rest\BussinessEntity\obj\Debug\BussinessEntity.pdb
+E:\working project\massage2book\new09-06m2b\BussinessEntity\bin\Debug\BussinessEntity.dll
+E:\working project\massage2book\new09-06m2b\BussinessEntity\bin\Debug\BussinessEntity.pdb
+E:\working project\massage2book\new09-06m2b\BussinessEntity\obj\Debug\BussinessEntity.dll
+E:\working project\massage2book\new09-06m2b\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\working project\massage2book\new09-06m2b\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\working project\massage2book\new09-06m2b\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\working project\massage2book\new09-06m2b\BussinessEntity\obj\Debug\ResolveAssemblyReference.cache
+D:\working project\massage2book\new09-06m2b\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\working project\massage2book\new09-06m2b\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\working project\massage2book\M2B\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\working project\massage2book\M2B\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\working project\massage2book\M2B\BussinessEntity\obj\Debug\ResolveAssemblyReference.cache
+D:\working project\massage2book\M2B\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\working project\massage2book\M2B\BussinessEntity\obj\Debug\BussinessEntity.pdb
+E:\Runing Work\BussinessEntity\bin\Debug\BussinessEntity.dll
+E:\Runing Work\BussinessEntity\bin\Debug\BussinessEntity.pdb
+E:\Runing Work\BussinessEntity\obj\Debug\BussinessEntity.dll
+E:\Runing Work\BussinessEntity\obj\Debug\BussinessEntity.pdb
+E:\Runing Work\BussinessEntity\obj\Debug\BussinessEntity.csprojResolveAssemblyReference.cache
+D:\m2b\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\m2b\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\m2b\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\m2b\BussinessEntity\obj\Debug\BussinessEntity.pdb
+C:\Users\Admin\Desktop\Pandey\M2b_updated\BussinessEntity\bin\Debug\BussinessEntity.dll
+C:\Users\Admin\Desktop\Pandey\M2b_updated\BussinessEntity\bin\Debug\BussinessEntity.pdb
+C:\Users\Admin\Desktop\Pandey\M2b_updated\BussinessEntity\obj\Debug\BussinessEntity.dll
+C:\Users\Admin\Desktop\Pandey\M2b_updated\BussinessEntity\obj\Debug\BussinessEntity.pdb
+C:\Users\Admin\Desktop\Pandey\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+C:\Users\Admin\Desktop\Pandey\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+C:\Users\Admin\Desktop\Pandey\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Pandey\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+C:\Users\Admin\Desktop\Pandey\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csprojResolveAssemblyReference.cache
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csprojResolveAssemblyReference.cache
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+E:\Harit Development\Prod Backups\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+E:\MassagePartner_27April2018\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+E:\MassagePartner_27April2018\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+E:\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csprojResolveAssemblyReference.cache
+E:\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+E:\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\work\MassagePartner_27April2018\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\work\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csprojAssemblyReference.cache
+D:\work\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\work\MassagePartner_27April2018\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.AssemblyReference.cache
+D:\work\MassagePartner_27April2018\mymassagepartner.com\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.CoreCompileInputs.cache
+D:\Production Sites\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\Production Sites\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\Production Sites\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.AssemblyReference.cache
+D:\Production Sites\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.CoreCompileInputs.cache
+D:\Production Sites\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\Production Sites\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+C:\Users\Cubek_2\Downloads\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.AssemblyReference.cache
+C:\Users\Cubek_2\Downloads\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.CoreCompileInputs.cache
+C:\Users\Cubek_2\Downloads\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+C:\Users\Cubek_2\Downloads\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\bin\Debug\BussinessEntity.pdb
+E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.AssemblyReference.cache
+E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.CoreCompileInputs.cache
+E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
+E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb

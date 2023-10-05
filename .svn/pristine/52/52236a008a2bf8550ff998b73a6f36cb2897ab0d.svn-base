@@ -1,0 +1,127 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using Factory;
+namespace Business
+{
+    public class BusinessMPartener
+    {
+        FactoryMPartener objfactorypartener = new FactoryMPartener();
+
+        public DataSet get_agegroup()
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.get_agegroup();
+            return ds;
+        }
+        public int partener_signup(string email_id, string password, string name, char gender, string dob, string is_certified, string phone, string desired_gender, int desired_age, string postal, int country_sk, int? state_sk, int? city_sk,int? area_sk,DataTable speciality)
+        {
+            int i;
+            i = objfactorypartener.partener_signup(email_id, password, name, gender, dob, is_certified, phone, desired_gender, desired_age, postal, country_sk, state_sk, city_sk,area_sk,speciality);
+            return i;
+        }
+        public DataSet partner_login(string Email_id, string password)
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.partner_login(Email_id,password);
+            return ds;
+        
+        }
+        public int partener_signup_update(int massage_partner_sk, string name, char gender, string dob, string is_certified, string phone, string desired_gender, string my_desription, string my_qualification, string my_experience, int desired_age, string postal, int country_sk, int? state_sk, int? city_sk,int? area_sk, DataTable speciality, DataTable images)
+        {
+            int i = objfactorypartener.partener_signup_update(massage_partner_sk, name, gender, dob, is_certified, phone, desired_gender, my_desription, my_qualification, my_experience, desired_age, postal, country_sk, state_sk, city_sk,area_sk,speciality, images);
+            return i;
+        }
+        public DataSet get_partner_details(int massage_partener_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.get_partner_details(massage_partener_sk);
+            return ds;
+        }
+        public DataSet Search_Partner(int country_sk, int? city_sk, int? desired_age_group_sk, int? state_sk, int? area_sk, string desired_gender, string gender_sk, int massage_type_sk,string from_to,string is_outcall)
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.Search_Partner(country_sk,city_sk,desired_age_group_sk,state_sk,area_sk,desired_gender,gender_sk,massage_type_sk,from_to,is_outcall);
+            return ds;
+        
+        }
+        public int insert_messages(int from_partner_sk, int to_partner_sk, string msg_text)
+        {
+            int i = objfactorypartener.insert_messages(from_partner_sk,to_partner_sk,msg_text);
+            return i;
+        }
+        public DataSet get_messages(int to_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.get_messages(to_sk);
+            return ds;
+        }
+        public int addto_fav_block(char status, int massage_partner_sk, int connected_partner_sk, char favourite_block)
+        {
+            int i = 0;
+            i = objfactorypartener.addto_fav_block(status,massage_partner_sk,connected_partner_sk,favourite_block);
+            return i;
+        
+        }
+        public DataSet get_fav_blck_list(int massage_partner_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.get_fav_blck_list(massage_partner_sk);
+            return ds;
+        
+        }
+        public DataSet get_fav_partner(string partner_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.get_fav_partner(partner_sk);
+            return ds;
+        
+        }
+        public DataSet getPartnerSubsciption(int country_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.getPartnerSubsciption(country_sk);
+            return ds;
+        }
+        public DataSet InsertmassagePartnerSubscriptionDetails(DataTable dt_subs)
+        {
+
+            return objfactorypartener.InsertmassagePartnerSubscriptionDetails(dt_subs);
+        }
+        public DataSet get_blocked(int partner_sk)
+        {
+            return objfactorypartener.get_blocked(partner_sk);
+        }
+        public DataSet get_forgot_password(string email_id)
+        {
+            return objfactorypartener.get_forgot_password(email_id);
+        }
+        public DataSet getPartnerSubsciption_record(int massage_partner_sk)
+        {
+            DataSet ds = new DataSet();
+            ds = objfactorypartener.getPartnerSubsciption_record(massage_partner_sk);
+            return ds;
+        }
+        public int insert_reviews(int country_sk, string name, int rating, string message)
+        {
+            int i = 0;
+            i = objfactorypartener.insert_reviews(country_sk,name,rating,message);
+            return i;
+        }
+        public DataSet get_reviews(int country_sk, int start, int end)
+        {
+            DataSet ds;
+            ds = objfactorypartener.get_reviews(country_sk,start,end);
+            return ds;
+        }
+        public DataSet get_sk_by_email_id(string email_id)
+        {
+            DataSet ds;
+            ds = objfactorypartener.get_sk_by_email_id(email_id);
+            return ds;
+        }
+    }
+}

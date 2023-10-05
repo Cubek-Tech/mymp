@@ -1,0 +1,5 @@
+E:\pavan_App\t2r2april\BussinessEntity\bin\Release\BussinessEntity.dll
+E:\pavan_App\t2r2april\BussinessEntity\bin\Release\BussinessEntity.pdb
+E:\pavan_App\t2r2april\BussinessEntity\obj\Release\ResolveAssemblyReference.cache
+E:\pavan_App\t2r2april\BussinessEntity\obj\Release\BussinessEntity.dll
+E:\pavan_App\t2r2april\BussinessEntity\obj\Release\BussinessEntity.pdb

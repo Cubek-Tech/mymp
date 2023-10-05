@@ -1,0 +1,85 @@
+-------------------START-------------22-Aug-17 4:09:47 PM
+
+URL: http://localhost:5052/Search-Job
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2886
+   at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 276
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------22-Aug-17 4:10:20 PM
+
+URL: http://localhost:5052/Search-Job
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2886
+   at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 276
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------22-Aug-17 4:15:04 PM
+
+URL: http://localhost:5052/Search-Job
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2886
+   at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 276
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------22-Aug-17 4:16:33 PM
+
+URL: http://localhost:5052/Search-Job
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2886
+   at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 276
+-------------------------------------------------------------------------------------------------------------
+-------------------START-------------22-Aug-17 4:19:55 PM
+
+URL: http://localhost:5052/Search-Job
+
+
+MethodName: Page_Load
+
+
+Exception Type: System.NullReferenceException
+
+
+Message: Object reference not set to an instance of an object.
+
+
+Stack Trace:    at RESTFulWCFService.JobSection.SearchJob.BindItemsList() in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 2886
+   at RESTFulWCFService.JobSection.SearchJob.Page_Load(Object sender, EventArgs e) in c:\Users\Admin\Desktop\Pandey\M2b_updated\RESTFulWCFService\JobSection\SearchJob.aspx.cs:line 276
+-------------------------------------------------------------------------------------------------------------

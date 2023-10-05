@@ -1,0 +1,176 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="RESTFulWCFService.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+     <script src="https://cdn.mymassagepartner.com/js/jquery.min.js"></script>
+    <script src="https://cdn.mymassagepartner.com/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <style>
+        .foot-azam
+        {
+            padding-top: 15px;
+            color: white;
+        }
+
+        a:hover
+        {
+            color: yellow;
+        }
+    </style>
+    <section style="background-color: #cb202d">
+        <div class="container">
+            <div class="row" style="padding: 10px">
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="#" class="foot-azam">Body Massage Partner in Adambakkam </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

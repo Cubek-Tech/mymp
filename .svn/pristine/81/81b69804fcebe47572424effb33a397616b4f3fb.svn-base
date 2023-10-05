@@ -1,0 +1,61 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SearchPartener.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="RESTFulWCFService.MassagePartener.index" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="~/Controls/DatePicker.ascx" TagName="uc" TagPrefix="asp" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   <title>Body Massage - Find your body massage partner nearby | My Massage Partner</title>
+   
+ <meta name="Description" content="Massage Partner feature providing you a platform where you can find massage partner, meet, contact, and chat in regards of body massage. On the basis of your interest and desires you can easily start body massage sessions with your selected partner in home and hotel.">
+<meta name="Keywords" content="body massage nearby | erotic massage near me | happy ending massage near me | need body massage | full body massage | female to male Massage | sensual Massage | body massage at home | body massage in hotel | want body massage | massage body pain | massage near me | female massager near me | free body massage | male to female body massage | cheap massage near me">
+<meta name="google-site-verification" content="KPPWcPQCyYM5KoobtF_3H93XlKt6P_ALNLSvJ6t4lKc" />
+<meta name="yandex-verification" content="e0da8e52927fc168" />
+<meta name="msvalidate.01" content="65D607D0E88D6FCFA3099C21B8BFD2E1" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="overlay">
+    </div>
+    <div class="home-top-section">
+        <div class="container">
+
+            <div class="row ">
+                <div class="col-sm-12">
+
+                    <div class="left-sidebar">
+
+                        <h1 class="text-center title">About MyMassagePartner
+	   
+                        </h1>
+                        <p class="text-justify">
+                           MyMassagePartner.com providing you a platform where you can find female and male body massage partner from our thousands of registered female and male members. You can select female to male body massage, male to male body massage, male to female body massage, and female to female body massage nearby you. Here, we have professionals as well as manual or enthusiast as members so that you can make body massage therapies and fun together.<br /><br />
+                            On the basis of your interests, requirements, and needs you can find and select body massage partner nearby you. And can meet personally, for body massage sessions. We do not appreciate paid body massage session here, so it's all about free body massage with partner and lots of fun. Find your body massage partner in your local place and start chatting. We are sure you can save lots of money with free body massage from your partner.<br /><br /> 
+                            You can start with MyMassagePartner.com easily, just fill up the basic registration form and start searching for body massage partner in your location. You can find your body massage buddies based on Area, city, state/region/country, age group, gender (female/girl, male/boys, others), manual massagers or professional massage therapists, and body massage type.<br /><br />
+                             MyMassagePartner.com know well that body massage is expensive and not easy to find nearby you so let's not wait in queue and get ready for friendly body massage session. You can chat with your female and male body massage partners, can select them favorite, and chat with them instantly. If you're traveler or love to travel then you can find body massage partner in many cities and have body massage fun. You can rub your massage partner's body and he or she can rub yours.<br /><br />
+                            Relaxation and refreshment is much required in stressed world. And MyMassagePartner here to give you facility to overcome from all stress. Your smile matters to us!
+		
+                        </p>
+                        <h3 class="text-center title">Benefits of <span font-weight:bold">My</span>MassagePartner Membership
+	   
+                        </h3>
+                        <ul class="list-inline-image">
+                            <li>You will be able to chat with female and male body massage partner.</li>
+                            <li>You will be able to see contact details of female or male body massage partner.</li>
+                            <li>You will find best female and male massage partner nearby you.</li>
+                            <li>You will get support from MyMassagePartner team members i.e. Rose, Jasmine, and others 24/7.</li>
+                            <li>You will get the female and male body massage partner details in premium way.</li>
+                            <li>You can find free body massage in your location.</li>
+                        </ul>
+
+                        <%-- <div class="text-center">
+                            <button type="button" class="btn btn-gradiant">Read More</button>
+                        </div>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+
+
+
+</asp:Content>

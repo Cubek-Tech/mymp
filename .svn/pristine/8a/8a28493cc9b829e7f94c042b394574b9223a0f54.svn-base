@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+using Factory;
+namespace Business
+{
+   public class BusinessMPAdmin
+    {
+        FactoryMPAdmin objadmin = new FactoryMPAdmin();
+        public DataTable get_no_of_registration(string date, int country_sk, int? state_sk, int? city_sk)
+        {
+            DataTable ds = new DataTable();
+            ds = objadmin.get_no_of_registration(date, country_sk, state_sk, city_sk);
+            return ds;
+        }
+        public DataSet check_membership(string email_id)
+        {
+            DataSet ds;
+            ds=objadmin.check_membership(email_id);
+            return ds;
+        }
+        public int insert_membership(string email_id, int year)
+        {
+            int i = 0;
+            i = objadmin.insert_membership(email_id,year);
+            return i;
+        }
+        public int Activate_membership(string email_id)
+        {
+            int i = 0;
+            i = objadmin.Activate_membership(email_id);
+            return i;
+        }
+    }
+}

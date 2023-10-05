@@ -1,0 +1,1591 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SearchPartener.master.cs" Inherits="RESTFulWCFService.MassagePartener.SearchPartener" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="Fup" %>
+<%@ Register Src="~/user control/WebUserControl1.ascx" TagName="UCPager" TagPrefix="uc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link id="bootstrapcss" runat="server" rel="stylesheet" type="text/css" />
+    <link id="bootstrap_min" runat="server" rel="stylesheet" type="text/css" />
+    <link id="bootstraptheme" runat="server" rel="stylesheet" type="text/css" />
+    <link id="bootstraptheme_min" runat="server" rel="stylesheet" type="text/css" />
+    <link id="style" runat="server" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.mymassagepartner.com/js/jquery.min.js"></script>
+    <script src="https://cdn.mymassagepartner.com/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link runat="server" id="lnk_favicon" rel="icon" type="image/ico" />
+
+    <script>
+        jQuery.noConflict();
+        $(function ($) { // DOM ready
+
+            // ::: TAGS BOXpopuppaypal
+
+            $("#ctl00_txtemail_friend").on({
+                focusout: function () {
+                    var txt = this.value.replace(' ', '');// allowed characters
+                    if (isEmail(txt)) {
+                        if (txt) $("<span/>", { text: txt.toLowerCase(), insertBefore: this });
+                        this.value = "";
+                        $('#ctl00_lblinvitemsg').hide();
+                        if ($('#ctl00_mailids').val() == '')
+                            $('#ctl00_mailids').val(txt);
+                        else {
+                            $('#ctl00_mailids').val($('#ctl00_mailids').val() + ',' + txt);
+                        }
+                    }
+                    else {
+                        //alert("Invalid Email ID");
+                        $('#ctl00_lblinvitemsg').show();
+                        document.getElementById('ctl00_lblinvitemsg').innerHTML = 'Invalid Email ID';
+                        document.getElementById('ctl00_lblinvitemsg').style.color = "red";
+                        this.value = "";
+                    }
+
+                },
+                keyup: function (ev) {
+                    // if: comma|enter (delimit more keyCodes with | pipe)
+                    if (/(188|13|32)/.test(ev.which)) {
+                        $(this).focusout();
+                    }
+
+                }
+            });
+            $('#multi-email').on('click', 'span', function () {
+                $(this).remove();
+            });
+
+        });
+
+        function isEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+        }
+
+        ////Click Invite Close
+        function click_close_invite() {
+            // $("#tags").innerHTML = '';
+            $('#multi-email').find('span').remove();
+            $("#ctl00_txtemail_user").val('');
+            $("#ctl00_lblinvitemsg").hide();
+        }
+        ////Click 
+      //  Close
+        function click_close_help() {
+            // $("#tags").innerHTML = '';
+            //$('.form-group').find('span').remove();
+            $("#ctl00_name").val('');
+            $("#ctl00_email").val('');
+            $("#ctl00_subject").val('');
+            $("#ctl00_comments").val('');
+            $("#ctl00_lblreportmsg").hide();
+        }
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+        #tags {
+            float: left;
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-family: Arial;
+        }
+
+        #multi-email > span {
+            cursor: pointer;
+            display: block;
+            float: left;
+            color: #fff;
+            background: #f36b22;
+            padding: 5px;
+            padding-right: 25px;
+            margin: 4px;
+        }
+
+        .modal {
+            overflow-y: auto;
+        }
+
+        body {
+            padding: 0 !important;
+        }
+
+        .modal-open {
+            overflow: auto;
+        }
+
+        #multi-email > span:hover {
+            opacity: 0.7;
+        }
+
+        #multi-email > span:after {
+            position: absolute;
+            content: "×";
+            border: 1px solid;
+            padding: 2px 5px;
+            margin-left: 3px;
+            font-size: 11px;
+        }
+
+        #multi-email > input {
+            /*background:#eee;
+  border:0;
+  margin:4px;
+  padding:7px;
+  width:auto;*/
+        }
+    </style>
+    <style>
+        .welcome_text_signuppage123 {
+            background-color: #FFF;
+            border-radius: 5px 5px 5px 5px;
+            color: #C33;
+            font-family: inherit MS;
+            font-size: 18px;
+            font-weight: 700;
+            height: 11px;
+            margin-top: 37px;
+            text-align: center;
+            width: 344px;
+            padding-bottom: 22px;
+        }
+    </style>
+    <style>
+        #main_popup1 {
+            border-radius: 5px 5px 5px 5px;
+            height: auto;
+            width: 100%;
+            margin: 35px auto auto;
+            max-width: 100% !important;
+        }
+
+        .welcome_text_signuppage123 {
+            background-color: #FFF;
+            border-radius: 5px 5px 5px 5px;
+            color: #C33;
+            font-family: inherit MS;
+            font-size: 18px;
+            font-weight: 700;
+            height: 11px;
+            margin-top: 37px;
+            text-align: center;
+            width: 344px;
+            padding-bottom: 22px;
+        }
+
+        .showno {
+            display: inline-block;
+            padding: 1px 6px;
+            margin-bottom: 0;
+            font-size: 12px;
+            font-weight: 100;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .box_Login2, .box_Login_wellcome_seek {
+            color: #888;
+            height: 425px;
+            left: 100%;
+            position: fixed;
+            display: none;
+            top: 1%;
+            width: 730px;
+            max-width: 100% !important;
+            z-index: 1001;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            opacity: 6;
+        }
+
+        .welcome_signup_page {
+            background-color: #FFF;
+            border-radius: 10px 10px 10px 10px;
+            float: right;
+            height: 164px;
+            margin-right: 0;
+            width: 424px;
+            max-width: 100% !important;
+            border: 12px solid #F0E68C;
+        }
+
+        .content_signup {
+            background-color: #FFF;
+            font-family: Arial,Helvetica,sans-serif;
+            height: 111px;
+            line-height: 18px;
+            margin-left: 2px;
+            margin-top: 20px;
+            text-align: center;
+            width: 400px;
+            max-width: 100% !important;
+            padding: 2px;
+        }
+
+        a.boxcanceel {
+            background: url(/Images/canceel.png) no-repeat scroll left top transparent;
+            cursor: pointer;
+            float: right;
+            height: 22px;
+            left: 0;
+            position: relative;
+            top: 0px;
+            width: 22px;
+        }
+
+        .UpdateProgress_style {
+            color: #FFFFFF;
+            left: 72%;
+            margin-left: -330px;
+            position: fixed;
+            top: 42%;
+            z-index: 9999;
+        }
+
+        .change_pasd124 {
+            height: auto !important;
+            font-size: 12px;
+            width: auto !important;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            max-height: 450px;
+        }
+
+        .yearcheckdiv {
+            width: 33%;
+            position: relative;
+            float: left;
+            text-align: center;
+            align-items: center;
+        }
+
+        .search_text__main566 {
+            padding: 3px 10px;
+            height: 27px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        $.noConflict();
+        // Code that uses other library's $ can follow here.
+    </script>
+    <script type="text/javascript" src="<%# Constants__.WEB_ROOT_CDN %>/Controls/jquery-1.4.4.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40791793-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-40791793-2');
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <asp:UpdateProgress ID="UpdateProgress2" runat="server">
+        <ProgressTemplate>
+            <div class="overlay">
+            </div>
+            <div class="UpdateProgress_style">
+                <img src="<%#Constants__.WEB_ROOT%>/Images/ajax-loader1.gif" alt="ajax" />
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:HiddenField ID="hdncountry" runat="server" />
+        <asp:HiddenField ID="hdnpartnersubscribed" runat="server" />
+        <asp:HiddenField ID="Merchant_Id" runat="server" />
+        <asp:HiddenField ID="encRequest" runat="server" />
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <marquee behavior="scroll" scrollamount="3" direction="left" class="scroll-text">Global platform for body massage partners</marquee>
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                <a href="https://www.mymassagepartner.com">
+                                    <img src="<%#Constants__.WEB_ROOT_CDN %>/image/mp_logo.png" class="img-responsive header-logo" />
+                                </a>
+                            </div>
+                            <div class="col-sm-6  text-right">
+                            </div>
+                            <div class="col-sm-3  col-xs-6 text-right ">
+                                <ul class="list-inline">
+                                    <li class="login-button" id="lnk_signin" runat="server"><a href="#" data-toggle="modal" data-target="#login-modal">Sign In</a>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <a data-toggle="modal" data-target="#help-modal" class="btn btn-gradiant">Get Help 24/7</a>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bottomNavbar">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="bottomNavbar">
+                                        <ul class="nav navbar-nav" id="paid_list" runat="server">
+                                            <li><a style="display: none" href="<%=Constants__.WEB_ROOT %>">Home</a></li>
+                                            <li id="SRP_link1" runat="server">
+                                                <asp:LinkButton ID="lnksearchpartner" runat="server" OnClick="lnksearchpartner_Click">Search Massage Partner</asp:LinkButton></li>
+                                            <li><a href="<%#Constants__.WEB_ROOT %>/messages">Messages</a></li>
+                                            <li><a href="<%#Constants__.WEB_ROOT %>/favourite-partner">My Favourite Partners</a></li>
+                                            <li><a href="#" style="display: none">Membership Plans</a></li>
+                                            <li id="lnkmembership" runat="server">
+                                                <asp:LinkButton ID="lnk_other_membership" CssClass="get-mbrship-btn" runat="server" OnClientClick="openpopuppaypal(); return false;">Get Membership Now!</asp:LinkButton>
+                                            </li>
+                                             <li id="lnkmembership1" runat="server">
+                                                 <a href="<%=Constants__.WEB_ROOT %>/membership" class="get-mbrship-btn">Get Membership Now!</a>
+                                            </li>
+                                            <li><a href="<%=Constants__.WEB_ROOT %>/faq">FAQs</a></li>
+                                            <li><a href="<%#Constants__.WEB_ROOT %>/edit-profile">Edit Profile</a></li>
+
+                                        </ul>
+                                        <ul class="nav navbar-nav" id="unpaid_list" runat="server">
+                                            <li><a style="display: none" href="<%=Constants__.WEB_ROOT %>">Home</a></li>
+                                            <li id="SRP_link" runat="server">
+                                                <asp:LinkButton ID="lnksearchpartner1" runat="server" OnClick="lnksearchpartner1_Click">Find Your Massage Partner</asp:LinkButton></li>
+                                            <li><a href="#" style="display: none">About Massage Partner</a></li>
+                                            <li><a href="#" style="display: none">Membership Plans</a></li>
+                                            <li><a href="<%=Constants__.WEB_ROOT %>/faq">FAQs</a></li>
+                                        </ul>
+
+
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li id="lnk_register" runat="server">
+                                                <a href="<%=Constants__.WEB_ROOT %>/signup">Register</a>
+                                            </li>
+                                            <li id="lnk_logout" runat="server">
+                                                <asp:LinkButton ID="lnkbtnlogout" runat="server" OnClick="lnkbtnlogout_Click">Logout</asp:LinkButton></li>
+                                            <li id="Li1" runat="server">
+                                                <a data-toggle="modal" data-target="#invite-modal" href="#">Invite Your Friend(s)</a></li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="list-inline text-center page-link">
+                                <li><a href="<%=Constants__.WEB_ROOT %>/privacy">Privacy Policy</a></li>
+                                <li><a href="<%=Constants__.WEB_ROOT %>/terms">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+           
+            <!----24/7 Help Popup------->
+            <div class="modal fade" id="help-modal" role="dialog">
+                <div class="modal-dialog ">
+
+                    <!-- Modal content-->
+                    <div class="modal-content ">
+                        <div class="modal-header model-header-orange">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-center ">24/7 Help</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label><span>*</span>Name: </label>
+                                        <input type="text" value="" runat="server" class="form-control" name="name" id="name"
+                                            maxlength="60" />
+                                        <asp:RequiredFieldValidator ValidationGroup="cnt" CssClass="ErrorMsg" ID="Rqname"
+                                            runat="server" ControlToValidate="name" InitialValue="" ErrorMessage="Required field"
+                                            Display="Dynamic" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label><span>*</span>Email: </label>
+                                        <input type="text" value="" runat="server" class="form-control" name="email" id="email"
+                                            autocompletetype="Disabled" autocomplete="off" maxlength="100" />
+                                        <asp:RequiredFieldValidator ValidationGroup="cnt" CssClass="ErrorMsg" ID="Rqemail"
+                                            runat="server" ControlToValidate="email" InitialValue="" ErrorMessage="Required field"
+                                            Display="Dynamic" />
+                                        <asp:RegularExpressionValidator ID="regVEmail" runat="server" ControlToValidate="email"
+                                            CssClass="ErrorMsg" ErrorMessage="Invalid" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Subject: </label>
+                                        <input type="text" value="" runat="server" class="form-control" id="subject" name="subject"
+                                            maxlength="150" />
+                                    </div>
+                                    <div class="form-group" style="display:none">
+                                        <label><span>*</span>User: </label>
+                                        <asp:UpdatePanel ID="update" runat="server">
+                                            <ContentTemplate>
+                                                <asp:DropDownList runat="server" CssClass="form-control" ID="ddluser"
+                                                    AutoPostBack="True">
+                                                    <asp:ListItem Text="User Type" Value="0"> </asp:ListItem>
+                                                    <asp:ListItem Text="I am Massage therapist" Value="MassageSeeker"> </asp:ListItem>
+                                                    <asp:ListItem Text="I am Manual Massager" Value="MassageOwner"></asp:ListItem>
+                                                </asp:DropDownList>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                       <%-- <asp:RequiredFieldValidator ID="rfvddluser" runat="server" ControlToValidate="ddluser"
+                                            ValidationGroup="cnt" Display="Dynamic" ErrorMessage="Required field" CssClass="ErrorMsg"
+                                            InitialValue="0">
+                                        </asp:RequiredFieldValidator>--%>
+                                    </div>
+                                    <div class="form-group">
+                                        <label><span>*</span>Comments: </label>
+                                        <textarea name="comments" runat="server" id="comments" class="form-control" onkeypress="CheckFieldLength();"></textarea>
+                                        <asp:RequiredFieldValidator ValidationGroup="cnt" CssClass="ErrorMsg" ID="Rqcomments"
+                                            runat="server" ControlToValidate="comments" InitialValue="" ErrorMessage="Required field"
+                                            Display="Dynamic" />
+                                    </div>
+                                    <asp:UpdatePanel ID="UpdatePanel8" runat="server">
+                                        <ContentTemplate>
+                                            <input type="button" onclick="resetcForm()" value="Reset" class="btn btn-gradiant" />
+                                            <asp:Button ID="BtnSubmit" ValidationGroup="cnt" runat="server" CssClass="btn btn-gradiant" OnClick="BtnSubmit_Click" Text="Submit" />
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="btnclose" runat="server" Text="Close" OnClientClick="click_close_help();" data-dismiss="modal" CssClass="btn btn-default" />
+                            <br />
+                            <asp:UpdatePanel ID="UpdatePanel9" runat="server">
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="BtnSubmit" />
+                                </Triggers>
+                                <ContentTemplate>
+                                    <asp:Label ID="lblreportmsg" runat="server" ForeColor="Green"></asp:Label>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!----24/7 Help Popup------->
+
+            <!----Invite friends Popup------->
+            <div class="modal fade" id="invite-modal" role="dialog">
+                <div class="modal-dialog ">
+
+                    <!-- Modal content-->
+                    <div class="modal-content ">
+                        <div class="modal-header model-header-orange">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-center ">Invite Your Friend(s)</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group" id="user_email" runat="server">
+                                        <label><span>*</span>Your Email: </label>
+                                        <input type="text" value="" runat="server" class="form-control" name="email" id="txtemail_user"
+                                            autocompletetype="Disabled" autocomplete="off" maxlength="100" />
+                                        <asp:RequiredFieldValidator ValidationGroup="invite" CssClass="ErrorMsg" ID="RequiredFieldValidator2"
+                                            runat="server" ControlToValidate="txtemail_user" InitialValue="" ErrorMessage="Required field"
+                                            Display="Dynamic" />
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtemail_user"
+                                            CssClass="ErrorMsg" ErrorMessage="Invalid" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                    </div>
+                                    <div class="form-group" id="multi-email">
+                                        <label>Friend's Email: </label>
+                                        <br />
+                                        <%--<div id="tags">--%>
+                                        <input type="text" value="" runat="server" class="form-control" name="email" id="txtemail_friend"
+                                            autocompletetype="Disabled" autocomplete="off" maxlength="100" />
+                                        <%--  </div>--%>
+                                        <%-- <asp:RequiredFieldValidator ValidationGroup="invite" CssClass="ErrorMsg" ID="RequiredFieldValidator1"
+                                        runat="server" ControlToValidate="txtemail_friend" InitialValue="" ErrorMessage="Required field"
+                                        Display="Dynamic" />
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtemail_friend"
+                                        CssClass="ErrorMsg" ErrorMessage="Invalid" Display="Dynamic" ValidationExpression="^((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*([,])*)*$"></asp:RegularExpressionValidator>--%>
+                                    </div>
+                                    <asp:HiddenField ID="mailids" runat="server" />
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <asp:Button ID="btninvite" ValidationGroup="invite" runat="server" CssClass="btn btn-gradiant" OnClick="btninvite_Click" Text="Invite" />
+                                    <asp:Button ID="Button2" runat="server" Text="Close" OnClientClick="click_close_invite();" data-dismiss="modal" CssClass="btn btn-default" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                            <br />
+                            <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="BtnSubmit" />
+                                </Triggers>
+                                <ContentTemplate>
+                                    <asp:Label ID="lblinvitemsg" runat="server" ForeColor="Green"></asp:Label>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!----Invite friends Popup------->
+            <script type="text/javascript">
+
+                function resetcForm() {
+
+                    document.getElementById('<%= name.ClientID%>').value = "";
+                document.getElementById('<%= email.ClientID%>').value = "";
+           <%-- document.getElementById('<%= country.ClientID%>').value = "";
+            document.getElementById('<%= phone.ClientID%>').value = "";
+            document.getElementById('<%= subject.ClientID%>').value = "";--%>
+                document.getElementById('<%= comments.ClientID%>').value = "";
+
+                document.getElementById('<%= Rqname.ClientID%>').style.display = "none";
+
+                document.getElementById('<%= Rqemail.ClientID%>').style.display = "none";
+
+                document.getElementById('<%= Rqcomments.ClientID%>').style.display = "none";
+                document.getElementById('<%= regVEmail.ClientID%>').style.display = "none";
+
+                document.getElementById('<%= BtnSubmit.ClientID%>').disabled = false;
+                document.getElementById('<%= BtnSubmit.ClientID%>').className = "button_contactus";
+                document.getElementById('<%= lblreportmsg.ClientID%>').value = "";
+
+                  
+
+         <%--   document.getElementById('<%= divSucessMSG.ClientID%>').style.display = "none";
+
+            document.getElementById('<%= regPhone.ClientID%>').style.display = "none";--%>
+
+            }
+
+
+                function CheckFieldLength() {
+
+
+                    var fn = document.getElementById('<%= comments.ClientID%>');
+                if (fn != null) {
+                    var len = fn.value.length;
+                    if (len >= 500) {
+                        fn.value = fn.value.substring(0, 500);
+                        len = 500;
+                    }
+
+                }
+            }
+
+
+
+
+
+
+
+            </script>
+
+            <!----Ends Popup--->
+            <!----Login Popup------->
+            <div id="login-modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header model-header-orange">
+                            <button type="button" id="login_close_cross" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-center ">Login</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-horizontal">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label col-sm-3">Email:</label>
+                                    <div class="col-sm-9">
+                                        <asp:UpdatePanel ID="UpdatePanel11" runat="server">
+                                            <ContentTemplate>
+                                                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" onblur="getPwd(this.value);"
+                                                    onchange="return checkval(this);" onkeypress="return searchKeyPress(event);"
+                                                    TabIndex="1" MaxLength="100"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="login" ForeColor="Red" ControlToValidate="txtEmail" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ValidationGroup="login" runat="server" ControlToValidate="txtEmail" ForeColor="Red" SetFocusOnError="true" ValidationExpression="\s*\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*\s*"></asp:RegularExpressionValidator>
+                                                <%--  <input type="email" class="form-control">--%>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label col-sm-3">Password:</label>
+                                    <div class="col-sm-9">
+                                        <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" CssClass="form-control" onkeypress="return searchKeyPress(event);"
+                                            TabIndex="2" MaxLength="20"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="login" runat="server" ForeColor="Red" ControlToValidate="txtPassword" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-sm">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <div class="checkbox">
+                                            <label><asp:CheckBox ID="chkremember" runat="server" Checked="true" />Remember me</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group form-group-sm">
+                                    <div class="col-sm-offset-3 col-sm-5">
+                                        <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+                                            <ContentTemplate>
+                                                <asp:Button ID="btnlogin" CssClass="btn btn-gradiant" runat="server" ValidationGroup="login" OnClick="btnlogin_Click" Text="Submit" OnClientClick="rememberPwd();" />
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                    <div class="col-sm-4 text-right">
+                                          <a href="<%=Constants__.WEB_ROOT %>/signup">Sign up!</a><br />
+                                        <asp:LinkButton ID="lnkforgot" runat="server" OnClientClick="close_login();" data-toggle="modal" data-target="#forgot-modal">Forgotten password?</asp:LinkButton>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                        <asp:UpdatePanel ID="UpdatePanel7" runat="server">
+                            <ContentTemplate>
+                                <asp:Label ID="lblloginerror" runat="server" Visible="false" ForeColor="Red"></asp:Label>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="btnlogin" />
+                            </Triggers>
+                        </asp:UpdatePanel>
+                    </div>
+
+                </div>
+            </div>
+            <script type="text/javascript">
+                function close_login() {
+                    $('#login_close_cross').click();
+                }
+
+                function searchKeyPress(e) {
+
+                    // look for window.event in case event isn't passed in
+                    e = e || window.event;
+                    if (e.keyCode == 13) {
+                        document.getElementById('<%= btnlogin.ClientID%>').click();
+                    return false;
+                }
+                return true;
+            }
+            function forgot_close_button() {
+                $('#ctl00_txtforgotemail').val('');
+                $('#ctl00_Label1').hide();
+                document.getElementById('ctl00_btnforgot').disabled = '';
+                document.getElementById("ctl00_txtforgotemail").disabled = '';
+            }
+            function checkval(th) {
+
+                document.getElementById('ctl00_txtEmail').value = document.getElementById('<%= txtEmail.ClientID%>').value.trim();
+
+            }
+            function getPwd(c_name) {
+
+                var i, x, y,
+
+                ARRcookies = document.cookie.split(";");
+                for (i = 0; i < ARRcookies.length; i++) {
+                    x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                    y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                    x = x.replace(/^\s+|\s+$/g, "");
+                    if (x == c_name) {
+                        document.getElementById('<%= txtPassword.ClientID%>').value = unescape(y);
+                          document.getElementById('<%= chkremember.ClientID %>').checked = true;
+                      }
+                  }
+              }
+              function rememberPwd() {
+
+                  var emailid = document.getElementById('<%= txtEmail.ClientID%>').value;
+                  var pwd = document.getElementById('<%= txtPassword.ClientID%>').value;
+                  if (document.getElementById('<%= chkremember.ClientID %>').checked == true) {
+
+                      var date = new Date();
+                      date.setTime(date.getTime() + (180 * 24 * 60 * 60 * 1000));
+                      var expires = "; expires=" + date.toGMTString();
+
+                      document.cookie = emailid + '=' + pwd + "; expires=" + expires + ";" + ";";
+                  }
+                  else {
+                      var d = new Date();
+                      document.cookie = emailid + '=' + pwd + "; expires=" + d.toGMTString() + ";" + ";";
+                  }
+              }
+
+              function getPwd(c_name) {
+
+                  var i, x, y,
+
+                  ARRcookies = document.cookie.split(";");
+                  for (i = 0; i < ARRcookies.length; i++) {
+                      x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                      y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                      x = x.replace(/^\s+|\s+$/g, "");
+                      if (x == c_name) {
+                          document.getElementById('<%= txtPassword.ClientID%>').value = unescape(y);
+                          document.getElementById('<%= chkremember.ClientID %>').checked = true;
+                      }
+                  }
+              }
+
+              function searchKeyPress(e) {
+
+                  // look for window.event in case event isn't passed in
+                  e = e || window.event;
+                  if (e.keyCode == 13) {
+                      document.getElementById('<%= btnlogin.ClientID%>').click();
+                      return false;
+                  }
+                  return true;
+              }
+              //function forgot_close_button() {
+              //    $('#ctl00_txtforgotemail').val('');
+              //    $('#ctl00_lblreportmsg').hide();
+              //    document.getElementById('ctl00_btnforgot').disabled = '';
+              //    document.getElementById("ctl00_txtforgotemail").disabled = '';
+              //}
+            </script>
+            <!----Login Popup end------->
+            <!-----Forgot Password---->
+            <div class="modal fade" id="forgot-modal" role="dialog">
+                <div class="modal-dialog ">
+
+                    <!-- Modal content-->
+                    <div class="modal-content ">
+                        <div class="modal-header model-header-orange">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title text-center ">Forgot Password</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        Please enter your Email-id:
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtforgotemail" ErrorMessage="Required" ForeColor="Red" ValidationGroup="forgot"></asp:RequiredFieldValidator>
+                                        <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="btnforgot" />
+                                            </Triggers>
+                                            <ContentTemplate>
+                                                <asp:TextBox ID="txtforgotemail" runat="server" class="form-control" Rows="2" placeholder="Enter Email Id"></asp:TextBox>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                        <ContentTemplate>
+                                            <asp:Button ID="btnforgot" runat="server" Text="Submit" ValidationGroup="forgot" class="btn btn-gradiant" OnClick="btnforgot_Click" />
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="Button1" runat="server" Text="Close" OnClientClick="forgot_close_button();" data-dismiss="modal" CssClass="btn btn-default" />
+                            <br />
+                            <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+                                <Triggers>
+                                    <asp:AsyncPostBackTrigger ControlID="btnforgot" />
+                                </Triggers>
+                                <ContentTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text="message sent successfully!!" ForeColor="Green" Visible="false"></asp:Label>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!---End Forgot Password-->
+            <!------Report Abuse Modal popup End ----->
+
+            <div id="main_popup" class="box_Login2" style="display: none; left: -15%">
+                <div style="width: 23px; height: 23px; float: right;">
+                    <a class="boxcanceel" onclick="closeOffersDialog('main_popup');" style="top: -6px; left: -20px;"></a>
+                </div>
+                <div class="welcome_signup_page">
+                    <div class="welcome_text_signuppage123" id="span_changtext1">
+                        <div id="divm2b1" runat="server" class="welcome_text_signuppage123">
+                            Welcome to MyMassagePartner!
+                        </div>
+                        <div class="content_signup123">
+                            <div class="css_search89">
+                                Payment Successfully Done!
+                            </div>
+                        </div>
+                    </div>
+                    <lable id="lblpaymentinfo" runat="server" style="display: none"></lable>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <%-- For Paypal subscription--%>
+            <div id="popuppaypal" class="change_pasd change_pasd124" style="left: 10% !important; right: 10%;">
+
+
+
+                <a class="boxclose" style="top: 0" onclick="closeDialogPaypal('popuppaypal');"></a>
+                <div class="head_up_ChangeEmailId head_up_ChangeEmailId122" style="width: 99% !important;">
+                    MyMassagePartner Membership
+                </div>
+                <div id="Div5" runat="server" style="padding-top: 22px; text-align: center; margin-left: 10px; width: 98%;">
+                    <div style="width: 100%; font-size: 14px; font-weight: bolder;">
+                        MyMassagePartner's <b>
+                            <lable runat="server" id="lblyearsub" class="lblyearsub">1 Year </lable>
+                        </b>Membership In Just <b>
+                            <lable runat="server" id="price" class="price_pr"></lable>
+                        </b>
+                    </div>
+                    <br>
+                    <br>
+                    <div style="width: 100%; font-size: 14px; font-weight: bolder;">
+                        <div class='yearcheckdiv'>
+                            <p class="">
+                                1 Year
+                            <asp:CheckBox CssClass="checkboxoucallCM_provider" runat="server" ID="checkboxOneYear_provider"
+                                Checked="True" Text="" />
+                            </p>
+                        </div>
+                        <div class='yearcheckdiv'>
+                            <p class="">
+                                2 Year
+                            <asp:CheckBox CssClass="checkboxoucallCM_provider" runat="server" ID="checkboxTwoYear_provider"
+                                Checked="false" Text="" />
+                            </p>
+                        </div>
+                        <div class='yearcheckdiv'>
+                            <p class="">
+                                3 Year
+                            <asp:CheckBox CssClass="checkboxoucallCM_provider" runat="server" ID="checkboxThreeYear_provider"
+                                Checked="false" Text="" />
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <asp:UpdatePanel ID="UpdatePanel24" runat="server">
+                        <ContentTemplate>
+                            <asp:Button ID="btnPayNow" CssClass="btn345 btn-lg btn-info fontsize_25px" OnClick="paypal_Click"
+                                Style="margin-right: 15px; padding: 7px 13px; margin-right: 15px;" runat="server"
+                                Text="Pay Now" CausesValidation="false" />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                    <script type="text/javascript">
+                        $(".checkboxoucallCM_provider input:checkbox").live('change', function () {
+                            var group = ".checkboxoucallCM_provider< :checkbox";
+                            if ($(this).is(':checked')) {
+                                $(group).not($(this)).attr("checked", false);
+
+                                $('.price_pr').text($(this).next().text());
+
+                                if ($("#ctl00_ContentPlaceHolder1_checkboxOneYear_provider").is(':checked'))
+                                { $('.lblyearsub').text("1 Year"); }
+                                else if ($("#ctl00_ContentPlaceHolder1_checkboxTwoYear_provider").is(':checked'))
+                                { $('.lblyearsub').text("2 Year"); }
+                                else if ($("#ctl00_ContentPlaceHolder1_checkboxThreeYear_provider").is(':checked'))
+                                { $('.lblyearsub').text("3 Year"); } else
+                                { $('.lblyearsub').text("1 Year"); }
+
+                            }
+
+                        }); </script>
+                </div>
+                <div id="divpaypalccavanue_1" runat="server" style="width: 700px; margin-top: 25px;">
+                    <table width="99%" align="center">
+                        <tr>
+                            <td>
+                                <a style="" id="Tab_1" class="Btn Clicked">Pay via Credit Card
+                                <p class="smallhinttext" style="color: white;">
+                                    temp
+                                </p>
+                                </a><a style="" id="Tab_2" class="Initial">Pay via Debit Card
+                                <p class="smallhinttext" style="color: white;">
+                                    temp
+                                </p>
+                                </a><a id="Tab_3" class="Initial">Pay via Internet Banking
+                                <p class="smallhinttext" style="color: white;">
+                                    (Except ICICI Bank)
+                                </p>
+                                </a><a style="" id="Tab_4" class="Initial">Pay via Other Methods
+                                <p class="smallhinttext">
+                                    (Wallet, Cash Card, UPI, Mobile Payment)
+                                </p>
+                                </a>
+                                <div id="MainView" class="MainViewcss">
+                                    <div id="View_1">
+                                        <table class="tabsdiv">
+                                            <tr>
+                                                <td style="height: 50px; vertical-align: TOP;">
+                                                    <asp:DropDownList ID="ddlCreditCartBankNames" runat="server" TabIndex="5" CssClass="Dropdown_main Dropdown_sub_width">
+                                                    </asp:DropDownList>
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel25">
+                                                        <ContentTemplate>
+                                                            <asp:Label ID="lblddlCreditCartBankNames" class="ErrorMsg" runat="server"></asp:Label>
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                                </td>
+                                                <td style="height: 50px; vertical-align: TOP;">
+                                                    <asp:DropDownList ID="ddlCreditCartTypes" runat="server" TabIndex="5" CssClass="Dropdown_main Dropdown_sub_width">
+                                                    </asp:DropDownList>
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel26">
+                                                        <ContentTemplate>
+                                                            <asp:Label ID="lblddlCreditCartTypes" class="ErrorMsg" runat="server"></asp:Label>
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                                </td>
+                                                <td style="height: 50px; vertical-align: TOP;">
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel30">
+                                                        <ContentTemplate>
+                                                            <asp:Button ID="PaymentCreditcard" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                                                Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="CreditCard_Payment_Click"
+                                                                runat="server" Text="Go to Payment Screen" CausesValidation="false" />
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="View_2" style="display: none;">
+                                        <table class="tabsdiv">
+                                            <tr>
+                                                <td style="height: 50px; vertical-align: TOP;">
+                                                    <asp:DropDownList ID="ddlDebitCartBankNames" runat="server" TabIndex="5" CssClass="Dropdown_main Dropdown_sub_width">
+                                                    </asp:DropDownList>
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel27">
+                                                        <ContentTemplate>
+                                                            <asp:Label ID="lblddlDebitCartBankNames" class="ErrorMsg" runat="server"></asp:Label>
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                                </td>
+                                                <td style="height: 50px; vertical-align: TOP;">
+                                                    <asp:DropDownList ID="ddlDebitCartTypes" runat="server" TabIndex="5" CssClass="Dropdown_main Dropdown_sub_width">
+                                                    </asp:DropDownList>
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel28">
+                                                        <ContentTemplate>
+                                                            <asp:Label ID="lblddlDebitCartTypes" class="ErrorMsg" runat="server"></asp:Label>
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                                </td>
+                                                <td style="height: 50px; vertical-align: TOP;">
+                                                    <asp:UpdatePanel runat="server" ID="UpdatePanel29">
+                                                        <ContentTemplate>
+                                                            <asp:Button ID="PaymentDebitcard" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                                                Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="DebitCard_Payment_Click"
+                                                                runat="server" Text="Go to Payment Screen" CausesValidation="false" />
+                                                        </ContentTemplate>
+                                                    </asp:UpdatePanel>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="View_3" style="display: none;">
+                                        <table class="tabsdiv">
+                                            <tr>
+                                                <td>
+                                                    <div style="margin-left: 34%; margin-top: 0px;">
+                                                        <asp:UpdatePanel runat="server" ID="UpdatePanel31">
+                                                            <ContentTemplate>
+                                                                <asp:Button ID="PaymentNetbanking" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                                                    Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="paypal_Click_CCAVANUE_Netbanking"
+                                                                    runat="server" Text="Go to Payment Screen" CausesValidation="false" />
+                                                            </ContentTemplate>
+                                                        </asp:UpdatePanel>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="View_4" style="display: none;">
+                                        <table class="tabsdiv">
+                                            <tr>
+                                                <td>
+                                                    <div style="margin-left: 34%; margin-top: 0px;">
+                                                        <asp:UpdatePanel runat="server" ID="UpdatePanel33">
+                                                            <ContentTemplate>
+                                                                <asp:Button ID="PaymentOtherPayment" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                                                    Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="paypal_Click_CCAVANUE_OtherPayment"
+                                                                    runat="server" Text="Go to Payment Screen" CausesValidation="false" />
+                                                            </ContentTemplate>
+                                                        </asp:UpdatePanel>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="divpaypalStripe_1" runat="server" style="width: 100%; margin-left: 10px;">
+            <div  class="stripe-logo-phone">
+                
+                <center><img src="<%# Constants__.WEB_ROOT_CDN%>/image/Stripelogo.png" style="width: 150px;" /></center> 
+                <br />
+                </div>
+            <table width="68%" align="center">
+
+                <tr>
+                    <td style="width: 222px;">Card Name</td>
+                    <td style="width: 88px;">
+                        <asp:TextBox runat="server" MaxLength="20" CssClass="search_text__main566 form-control"
+                            TabIndex="2" ID="txtCardName_1" placeholder="">
+                        </asp:TextBox>
+                    </td>
+                    <td style="width: 134px;">
+                        <asp:RequiredFieldValidator CssClass="ErrorMsg" ID="RequiredFieldValidator10_1" runat="server"
+                            ValidationGroup="regStripe_1" ControlToValidate="txtCardName_1" ErrorMessage="Required field"
+                            Display="Dynamic" />
+                    </td>
+                    <td rowspan="6" style="vertical-align: top;" class="stripe-logo">
+                            <img src="<%# Constants__.WEB_ROOT_CDN%>/image/Stripelogo.png" style="width: 150px;" />
+                        </td>
+                </tr>
+
+
+                <tr>
+                    <td>Card Number</td>
+                    <td>
+                        <asp:TextBox runat="server" MaxLength="20" CssClass="search_text__main566 form-control"
+                            TabIndex="2" ID="txtCardNumber_1" placeholder="XXXXXXXXXXXXXXXX">
+                        </asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator CssClass="ErrorMsg" ID="RequiredFieldValidator12_1" runat="server"
+                            ValidationGroup="regStripe_1" ControlToValidate="txtCardNumber_1" ErrorMessage="Required field"
+                            Display="Dynamic" />
+                        <Fup:FilteredTextBoxExtender ID="FilteredTextBoxExtendertxtCardNumber" TargetControlID="txtCardNumber_1"
+                            FilterMode="ValidChars" runat="server" FilterType="Numbers"></Fup:FilteredTextBoxExtender>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Card Exp. Month</td>
+                    <td>
+                        <asp:TextBox runat="server" MaxLength="20" CssClass="search_text__main566 form-control"
+                            TabIndex="2" ID="txtCardExpirationMonth_1" placeholder="MM">
+                        </asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator CssClass="ErrorMsg" ID="RequiredFieldValidator13_1" runat="server"
+                            ValidationGroup="regStripe_1" ControlToValidate="txtCardExpirationMonth_1" ErrorMessage="Required field"
+                            Display="Dynamic" />
+                        <Fup:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" TargetControlID="txtCardExpirationMonth_1"
+                            FilterMode="ValidChars" runat="server" FilterType="Numbers"></Fup:FilteredTextBoxExtender>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Card Exp. Year</td>
+                    <td>
+                        <asp:TextBox runat="server" MaxLength="20" CssClass="search_text__main566 form-control "
+                            TabIndex="2" ID="txtCardExpirationYear_1" placeholder="YYYY">
+                        </asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator CssClass="ErrorMsg" ID="RequiredFieldValidator14_1" runat="server"
+                            ValidationGroup="regStripe_1" ControlToValidate="txtCardExpirationYear_1" ErrorMessage="Required field" />
+                        <Fup:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" TargetControlID="txtCardExpirationYear_1"
+                            FilterMode="ValidChars" runat="server" FilterType="Numbers"></Fup:FilteredTextBoxExtender>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <%--   <asp:UpdatePanel runat="server" ID="UpdatePanel17">
+                                <ContentTemplate>
+                                    <asp:Button runat="server" ID="SubmitStripe" Style="margin-right: 15px; padding: 7px 13px;"
+                                        CssClass="btn345 btn-lg btn-info fontsize_25px" Text="Pay Now" OnClick="SubmitStripe_Click" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>--%>
+
+
+                        <asp:UpdatePanel runat="server" ID="UpdatePanel34">
+                            <ContentTemplate>
+                                <asp:Button ID="SubmitStripe_1" CssClass="btn345 btn-lg btn-info fontsize_25px"
+                                    Style="font-size: 18px !important; margin-right: 15px; height: 43px;" OnClick="SubmitStripe_1_Click"
+                                    runat="server" Text="Pay Now" ValidationGroup="regStripe_1" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </td>
+                    <td></td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td>
+
+                        <asp:UpdatePanel runat="server" ID="UpdatePanel35">
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="SubmitStripe_1" />
+                            </Triggers>
+                            <ContentTemplate>
+                                <asp:Label ID="lblmassage_1" runat="server" Text=""></asp:Label>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+
+
+                    </td>
+                    <td></td>
+                </tr>
+
+            </table>
+        </div>
+
+                <div style="padding: 15px;">
+                    Benefits of <b>MyMassagePartner's</b> Membership.
+                <ul style="margin-left: -22px">
+                    <li>You will be able to chat with female and male body massage partner.</li>
+                    <li>You will be able to see contact details of female or male body massage partner.</li>
+                    <li>You will find best female and male massage partner nearby you.</li>
+                    <li>You will get support from MyMassagePartner team members i.e. Rose, Jasmine, and others 24/7.</li>
+                    <li>You will get the female and male body massage partner details in premium way.</li>
+                    <li>You can find free body massage in your location.</li>
+                </ul>
+                </div>
+                <style type="text/css">
+                    .search_text__main566 {
+                        color: #424449;
+                        float: left;
+                        font-size: 12px;
+                        width: 141px;
+                        resize: none;
+                    }
+
+                    .change_pasd123 {
+                        height: auto !important;
+                        font-size: 12px;
+                        width: auto !important;
+                    }
+
+                    .Initial {
+                        display: block;
+                        float: left;
+                        background: white;
+                        color: Black;
+                        font-weight: bold;
+                        border: none;
+                        cursor: pointer;
+                        font-size: 13px;
+                        padding: 2px 12px;
+                    }
+
+                        .Initial:hover {
+                            color: black;
+                            background: white;
+                            border: none;
+                        }
+
+                    .Clicked {
+                        float: left;
+                        display: block;
+                        background: white;
+                        padding: 4px 10px 4px 10px;
+                        color: Black;
+                        font-weight: bold;
+                        color: #555;
+                        cursor: default;
+                        border: 1px solid #F4F1F1;
+                        border-bottom-color: transparent;
+                    }
+
+                    .Btn {
+                        margin-right: 2px;
+                        line-height: 1.428571429;
+                        border-radius: 10px 10px 0 0;
+                        position: relative;
+                        display: block;
+                        padding: 2px 13px;
+                        border: 4px solid #c1c1c1;
+                        border-bottom: transparent;
+                        padding-bottom: -1px;
+                        margin-bottom: -4px;
+                        font-size: 12px;
+                    }
+
+                    .tabsdiv {
+                        width: 100%;
+                        border: none;
+                        border-top: 4px solid #c1c1c1;
+                        padding-top: 25px;
+                        padding-bottom: 38px;
+                        border-bottom: 2px solid #bf7c07;
+                    }
+
+                    .MainViewcss {
+                        width: 100%;
+                    }
+
+                    .smallhinttext {
+                        font-size: 9px;
+                        margin-left: 10px;
+                        margin: 0px;
+                        width: auto;
+                        padding: 0px;
+                        margin: 0px;
+                        font-weight: 100;
+                    }
+
+                    .Dropdown_sub_width {
+                        cursor: pointer;
+                    }
+                </style>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+
+
+                        $('[id$=View_1]').css("display", "block");
+                        $('#Tab_1').removeClass("Initial");
+                        $('#Tab_1').addClass("Btn Clicked");
+                        ////////////////////
+                        $('[id$=View_2]').css("display", "none");
+                        $('#Tab_2').removeClass("Btn Clicked");
+                        $('#Tab_2').addClass("Initial");
+                        ///////////////////
+                        $('[id$=View_3]').css("display", "none");
+                        $('#Tab_3').removeClass("Btn Clicked");
+                        $('#Tab_3').addClass("Initial");
+                        $('[id$=View_4]').css("display", "none");
+                        $('#Tab_4').removeClass("Btn Clicked");
+                        $('#Tab_4').addClass("Initial");
+
+                        var variable = "101"
+                        // $("select option:contains('Value " + variable + "')").attr("disabled", "disabled");
+                        $("select option[value='" + variable + "']").attr('disabled', true);
+
+                        //////////////////////////////////
+                        $('#Tab_1').live('click', function () {
+
+                            $('[id$=View_1]').css("display", "block");
+                            $('#Tab_1').removeClass("Initial");
+                            $('#Tab_1').addClass("Btn Clicked");
+
+                            ////////////////////
+
+                            $('[id$=View_2]').css("display", "none");
+                            $('#Tab_2').removeClass("Btn Clicked");
+                            $('#Tab_2').addClass("Initial");
+
+                            ///////////////////
+
+                            $('[id$=View_3]').css("display", "none");
+                            $('#Tab_3').removeClass("Btn Clicked");
+                            $('#Tab_3').addClass("Initial");
+
+                            ///////////////////
+
+                            $('[id$=View_4]').css("display", "none");
+                            $('#Tab_4').removeClass("Btn Clicked");
+                            $('#Tab_4').addClass("Initial");
+
+
+                        });
+
+
+                        $('#Tab_2').live('click', function () {
+
+                            $('[id$=View_1]').css("display", "none");
+                            $('#Tab_1').removeClass("Btn Clicked");
+                            $('#Tab_1').addClass("Initial");
+
+
+                            ///////////////////
+
+                            $('[id$=View_2]').css("display", "block");
+                            $('#Tab_2').removeClass("Initial");
+                            $('#Tab_2').addClass("Btn Clicked");
+
+
+                            ///////////////////
+
+
+                            $('[id$=View_3]').css("display", "none");
+                            $('#Tab_3').removeClass("Btn Clicked");
+                            $('#Tab_3').addClass("Initial");
+
+                            ///////////////////
+
+                            $('[id$=View_4]').css("display", "none");
+                            $('#Tab_4').removeClass("Btn Clicked");
+                            $('#Tab_4').addClass("Initial");
+
+                        });
+
+
+                        $('#Tab_3').live('click', function () {
+
+                            $('[id$=View_1]').css("display", "none");
+                            $('#Tab_1').removeClass("Btn Clicked");
+                            $('#Tab_1').addClass("Initial");
+
+                            ///////////////////
+
+                            $('[id$=View_2]').css("display", "none");
+                            $('#Tab_2').removeClass("Btn Clicked");
+                            $('#Tab_2').addClass("Initial");
+
+                            ///////////////////
+
+                            $('[id$=View_3]').css("display", "block");
+                            $('#Tab_3').removeClass("Initial");
+                            $('#Tab_3').addClass("Btn Clicked");
+
+                            ///////////////////
+
+                            $('[id$=View_4]').css("display", "none");
+                            $('#Tab_4').removeClass("Btn Clicked");
+                            $('#Tab_4').addClass("Initial");
+
+                        });
+
+
+
+                        $('#Tab_4').live('click', function () {
+
+                            $('[id$=View_1]').css("display", "none");
+                            $('#Tab_1').removeClass("Btn Clicked");
+                            $('#Tab_1').addClass("Initial");
+
+                            ///////////////////
+
+                            $('[id$=View_2]').css("display", "none");
+                            $('#Tab_2').removeClass("Btn Clicked");
+                            $('#Tab_2').addClass("Initial");
+
+                            ///////////////////
+
+                            $('[id$=View_3]').css("display", "none");
+                            $('#Tab_3').removeClass("Btn Clicked");
+                            $('#Tab_3').addClass("Initial");
+
+                            ///////////////////
+
+                            $('[id$=View_4]').css("display", "block");
+                            $('#Tab_4').removeClass("Initial");
+                            $('#Tab_4').addClass("Btn Clicked");
+
+                        });
+
+
+                    });
+
+
+
+
+
+                </script>
+            </div>
+
+
+
+
+
+
+
+
+
+            <script type="text/javascript">
+
+
+                function closeDialogPaypal(prospectElementID) {
+
+                    $(function ($) {
+
+                        $(document).ready(function () {
+                            $('#' + prospectElementID).css('position', 'absolute');
+                            // $('#' + prospectElementID).animate({ 'left': '-100%' }, 1200, function() {
+                            $('#' + prospectElementID).css('position', 'fixed');
+                            $('#' + prospectElementID).css('display', 'none');
+                            $('#' + prospectElementID).css('left', '100%');
+                            $('#overlay').fadeOut('fast');
+                            // $('#overlay3').fadeOut('fast');
+
+                        });
+                        // });
+                    });
+                    //ResetChangePsw();
+                    // openOffersDialog();
+                }
+
+                function openpopuppaypal() {
+
+                    document.getElementById('overlay').className = 'overlay';
+                    $('#overlay').fadeIn('fast', function () {
+                        $('#popuppaypal').css('display', 'block');
+                        $('#popuppaypal').animate({ 'left': '10%' }, 500);
+                    });
+
+
+
+                    $('[id$=View_1]').css("display", "block");
+                    $('#Tab_1').removeClass("Initial");
+                    $('#Tab_1').addClass("Btn Clicked");
+                    ////////////////////
+                    $('[id$=View_2]').css("display", "none");
+                    $('#Tab_2').removeClass("Btn Clicked");
+                    $('#Tab_2').addClass("Initial");
+                    ///////////////////
+                    $('[id$=View_3]').css("display", "none");
+                    $('#Tab_3').removeClass("Btn Clicked");
+                    $('#Tab_3').addClass("Initial");
+                    $('[id$=View_4]').css("display", "none");
+                    $('#Tab_4').removeClass("Btn Clicked");
+                    $('#Tab_4').addClass("Initial");
+
+                    var variable = "101"
+                    // $("select option:contains('Value " + variable + "')").attr("disabled", "disabled");
+                    $("select option[value='" + variable + "']").attr('disabled', true);
+                }
+                function openOffersDialog() {
+                    document.getElementById('overlay').className = 'overlay';
+                    $('#overlay').fadeIn('fast', function () {
+                        $('#main_popup').css('display', 'block');
+                        $('#main_popup').animate({ 'left': '26%' }, 500);
+
+                    });
+                }
+
+                function open_already_exist_popup(msg) {
+                    document.getElementById('overlay2').className = 'overlay';
+                    document.getElementById('msg_container').innerHTML = msg;
+                    $('#overlay2').fadeIn('fast', function () {
+
+                        $('#box_email_id_exist_popup').css('display', 'block');
+                        $('#box_email_id_exist_popup').animate({ 'left': '50%', 'margin-left': '-250px' }, 100);
+                    });
+
+                }
+
+                function email_already_exist_container_multi(msg) {
+                    document.getElementById('overlay2').className = 'overlay';
+                    document.getElementById('msg_container_multi').innerHTML = msg;
+                    $('#overlay2').fadeIn('fast', function () {
+
+                        $('#email_already_exist_container_multi').css('display', 'block');
+                        $('#email_already_exist_container_multi').animate({ 'left': '50%', 'margin-left': '-250px' }, 100);
+                    });
+
+                }
+
+
+
+                function popup_success_multi(msg) {
+                    document.getElementById('overlay2').className = 'overlay';
+                    document.getElementById('popup_success_contain').innerHTML = msg;
+                    $('#overlay2').fadeIn('fast', function () {
+                        $('#popup_success_multi').css('display', 'block');
+                        $('#popup_success_multi').animate({ 'left': '50%', 'margin-left': '-250px' }, 100);
+                    });
+                }
+
+
+                function closeDialog(prospectElementID) {
+                    $(function ($) {
+                        $(document).ready(function () {
+                            $('#' + prospectElementID).css('position', 'absolute');
+                            $('#' + prospectElementID).css('display', 'none');
+                            $('#' + prospectElementID).css('position', 'fixed');
+                            $('#' + prospectElementID).css('left', '100%');
+                            $('#overlay2').fadeOut('fast');
+                        });
+
+                    });
+                }
+
+
+                function closeOffersDialog11(prospectElementID) {
+                    $(function ($) {
+                        $(document).ready(function () {
+                            window.close();
+                            window.opener.location.reload(true);
+                            window.opener.reload();
+
+                        });
+                    });
+                }
+
+
+                function closeOffersDialog(prospectElementID) {
+                    // clearData();
+                    $(function ($) {
+                        $(document).ready(function () {
+                            $('#main_popup').css('display', 'none');
+                            $('#' + prospectElementID).css('position', 'absolute');
+                            $('#' + prospectElementID).css('position', 'fixed');
+                            $('#' + prospectElementID).css('left', '100%');
+                            $('#overlay').fadeOut('fast');
+                            document.location.reload();
+
+                        });
+                        // });
+                    });
+                }
+
+            </script>
+    </form>
+</body>
+</html>

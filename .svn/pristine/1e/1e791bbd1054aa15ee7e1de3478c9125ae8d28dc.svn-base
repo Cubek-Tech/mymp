@@ -1,0 +1,84 @@
+﻿<%@ Page Title="Nothing found for 404-MyMassagePartner" Language="C#" AutoEventWireup="true"
+    Inherits="_404Error" CodeBehind="404Error.aspx.cs" %>
+
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <style>
+        body
+        {
+            background: none repeat scroll 0% 0% #ffe5e5;
+            margin: 0px;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: rgb(102, 102, 102);
+        }
+        .error_page
+        {
+            width: 600px;
+            padding: 50px;
+            margin: auto;
+        }
+        .error_page h1
+        {
+            margin: 20px 0px 0px;
+        }
+        .error_page p
+        {
+            margin: 10px 0px;
+            padding: 0px;
+        }
+        .error_text
+        {
+            font-size: 60px;
+            font-weight: bold;
+        }
+        a
+        {
+            color: rgb(156, 170, 109);
+            text-decoration: none;
+        }
+        a:hover
+        {
+            color: rgb(156, 170, 109);
+            text-decoration: underline;
+            color: #666666;
+        }
+    </style>
+</head>
+<body id="body" runat="server" class="login">
+    <div id="m2berror" runat="server">
+        <div id="main">
+            <div class="main">
+                <div class="marquuee_css_master">
+                    <marquee id="ctl00_mrq_gbltext" behavior="scroll" scrollamount="3" direction="left">Global platform for body massage partners                                                           </marquee>
+                </div>
+                <div class="logo">
+                    <a href="<%# Constants__.WEB_ROOT%>/home">
+                        <img src="<%= Constants__.WEB_ROOT_CDN %>/image/mp_logo.png" id="ctl00_imglogo_1" height="70"
+                            width="312" title="Massage Partners Directory" alt="MyMassagePartner - Massage Partners List, Images, Reviews, Address and Contact numbers for Massage partners">
+                    </a>
+                </div>
+                <div>
+                    <div id="ctl00_header_first_mainmenu">
+                        <span id="ctl00_bParlorOwner"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="error_page">
+            <img src="<%# Constants__.WEB_ROOT%>/img/404_icon.png" width="231" height="211">
+            <div class="error_text">
+                404</div>
+            <h1>
+                We're sorry...</h1>
+            <p>
+                The page cannot be found.</p>
+            <p>
+                <a href="<%=Constants__.WEB_ROOT %>">Return to MyMassagePartner homepage</a></p>
+        </div>
+    </div>
+</body>
+</html>
