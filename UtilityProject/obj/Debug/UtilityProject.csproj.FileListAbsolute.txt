@@ -112,3 +112,12 @@ E:\12_September_2023\MassagePartner (2)\MassagePartner\UtilityProject\obj\Debug\
 E:\12_September_2023\MassagePartner (2)\MassagePartner\UtilityProject\obj\Debug\UtilityProject.csproj.CopyComplete
 E:\12_September_2023\MassagePartner (2)\MassagePartner\UtilityProject\obj\Debug\UtilityProject.dll
 E:\12_September_2023\MassagePartner (2)\MassagePartner\UtilityProject\obj\Debug\UtilityProject.pdb
+D:\online-repo\mymp\UtilityProject\bin\Debug\UtilityProject.dll
+D:\online-repo\mymp\UtilityProject\bin\Debug\UtilityProject.pdb
+D:\online-repo\mymp\UtilityProject\bin\Debug\BussinessEntity.dll
+D:\online-repo\mymp\UtilityProject\bin\Debug\BussinessEntity.pdb
+D:\online-repo\mymp\UtilityProject\obj\Debug\UtilityProject.csproj.AssemblyReference.cache
+D:\online-repo\mymp\UtilityProject\obj\Debug\UtilityProject.csproj.CoreCompileInputs.cache
+D:\online-repo\mymp\UtilityProject\obj\Debug\UtilityProject.csproj.CopyComplete
+D:\online-repo\mymp\UtilityProject\obj\Debug\UtilityProject.dll
+D:\online-repo\mymp\UtilityProject\obj\Debug\UtilityProject.pdb

@@ -67,15 +67,15 @@ namespace RESTFulWCFService.MassagePartener
                 //ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "openOffersDialog();", true);
                 HtmlGenericControl Divid = (HtmlGenericControl)Page.Master.FindControl("SRP_link");
                 Divid.Visible = false;
-                
+
                 HtmlGenericControl Divid1 = (HtmlGenericControl)Page.Master.FindControl("SRP_link1");
                 Divid1.Visible = false;
 
-               
+
                 if (Session["mp_login_sk"] != null)
                 {
                     Response.AddHeader("Refresh", Convert.ToString((Session.Timeout * 60) - 120));
-                    DataSet  ds_check = objbusinessmpartener.getPartnerSubsciption_record(Convert.ToInt32(Session["massage_partner_sk"].ToString()));
+                    DataSet ds_check = objbusinessmpartener.getPartnerSubsciption_record(Convert.ToInt32(Session["massage_partner_sk"].ToString()));
                     if (ds_check.Tables[3].Rows.Count > 0)
                     {
                         hdnpartnersubscribed.Value = "Y";
@@ -83,7 +83,7 @@ namespace RESTFulWCFService.MassagePartener
                     else
                         hdnpartnersubscribed.Value = "";
 
-                 //   txtUserMailid.Text = Session["email_id"].ToString();
+                    //   txtUserMailid.Text = Session["email_id"].ToString();
 
                     //ViewState["massage_partner_sk"] = Session["massage_partner_sk"].ToString();
                     //Session["mp_login_sk"].ToString() = Session["mp_login_sk"].ToString();
@@ -175,7 +175,7 @@ namespace RESTFulWCFService.MassagePartener
                 }
                 if (Session["counter"] != null)
                 {
-                    int  c = Convert.ToInt32(Session["counter"].ToString());
+                    int c = Convert.ToInt32(Session["counter"].ToString());
                     if (c >= 5)
                     {
                         btnsend.Enabled = false;
@@ -611,7 +611,8 @@ namespace RESTFulWCFService.MassagePartener
                                     else
                                     {
                                         description = "At MyMassagePartner.com, find " + gender + " manual massage partner for " + mtypes + " in " + state + ". This page showing " + state + " based " + gender + " who looking for manual " + mtypes + " from her partner. Get registered with MyMassagePartner and ask for " + mtypes + " from your body massage partner. We have good number " + gender + " who looking for " + mtypes + " from male or female in " + state + ". Just choose and start conversation over phone or/and message. You can select different massage types which suits you best and check available " + gender + " massage partner for " + mtypes + " in " + state + ". Exchange " + mtypes + " with your " + gender + " partner anytime, anywhere in " + state + ". You can see massage partner name, contact number, desired massage types, location, gender as well as you can send message, add favourite, report abuse, also in worst condition you may block to massage partner. " + state + " is a good place to exchange " + mtypes + " from " + gender + " massage partner.";
-                                    } page_title.InnerHtml = gender + " partner for manual " + mtypes.Trim() + " in " + state;
+                                    }
+                                    page_title.InnerHtml = gender + " partner for manual " + mtypes.Trim() + " in " + state;
                                     title_page.InnerHtml = "Find " + gender + " partner for manual " + mtypes.Trim() + " in " + state + " | MyMassagePartner";
                                     Meta_ = "Here you can find manual " + gender + " massage partner for " + mtypes.Trim() + " in " + state + " with their contact number, you can chat in regards of free " + mtypes.Trim() + " so let’s start " + mtypes.Trim() + " sessions with your selected partner in home and hotel - MyMassagePartner - " + gender + " partner for manual " + mtypes.Trim() + ", " + state;
                                     keyword_ = gender + " partner " + mtypes.Trim() + " " + state + " | free " + mtypes.Trim() + " " + gender + " partner " + state + " | " + mtypes.Trim() + " " + gender + " in " + state + " | need " + gender + " for " + mtypes.Trim() + " | " + mtypes.Trim() + " " + gender + " partner in " + state + " | female to male " + mtypes.Trim() + " in " + state + " | " + mtypes.Trim() + " service by " + gender + " in " + state + " | " + mtypes.Trim() + " by " + gender + " at home in " + state + " | " + mtypes.Trim() + " by " + gender + " in hotel in " + state + " | want " + gender + " for " + mtypes.Trim() + " in " + state + " | massage in " + state + " by " + gender + " | " + mtypes.Trim() + " near me by " + gender + " | " + gender + " massager in " + state + " | free " + mtypes.Trim() + " in " + state + " | male to female " + mtypes.Trim() + " | cheap " + mtypes.Trim() + " " + state + " | " + gender + " to male massage";
@@ -762,7 +763,8 @@ namespace RESTFulWCFService.MassagePartener
                                     else
                                     {
                                         description = "At MyMassagePartner.com, find " + gender + " manual massage partner for " + mtypes + " in " + country + ". This page showing " + country + " based " + gender + " who looking for manual " + mtypes + " from her partner. Get registered with MyMassagePartner and ask for " + mtypes + " from your body massage partner. We have good number " + gender + " who looking for " + mtypes + " from male or female in " + country + ". Just choose and start conversation over phone or/and message. You can select different massage types which suits you best and check available " + gender + " massage partner for " + mtypes + " in " + country + ". Exchange " + mtypes + " with your " + gender + " partner anytime, anywhere in " + country + ". You can see massage partner name, contact number, desired massage types, location, gender as well as you can send message, add favourite, report abuse, also in worst condition you may block to massage partner. " + country + " is a good place to exchange " + mtypes + " from " + gender + " massage partner.";
-                                    } page_title.InnerHtml = gender + " partner for manual " + mtypes.Trim() + " in " + country;
+                                    }
+                                    page_title.InnerHtml = gender + " partner for manual " + mtypes.Trim() + " in " + country;
                                     title_page.InnerHtml = "Find " + gender + " partner for manual " + mtypes.Trim() + " in " + country + " | MyMassagePartner";
                                     Meta_ = "Here you can find manual " + gender + " massage partner for " + mtypes.Trim() + " in " + country + " with their contact number, you can chat in regards of free " + mtypes.Trim() + " so let’s start " + mtypes.Trim() + " sessions with your selected partner in home and hotel - MyMassagePartner - " + gender + " partner for manual " + mtypes.Trim() + ", " + country;
                                     keyword_ = gender + " partner " + mtypes.Trim() + " " + country + " | free " + mtypes.Trim() + " " + gender + " partner " + country + " | " + mtypes.Trim() + " " + gender + " in " + country + " | need " + gender + " for " + mtypes.Trim() + " | " + mtypes.Trim() + " " + gender + " partner in " + country + " | female to male " + mtypes.Trim() + " in " + country + " | " + mtypes.Trim() + " service by " + gender + " in " + country + " | " + mtypes.Trim() + " by " + gender + " at home in " + country + " | " + mtypes.Trim() + " by " + gender + " in hotel in " + country + " | want " + gender + " for " + mtypes.Trim() + " in " + country + " | massage in " + country + " by " + gender + " | " + mtypes.Trim() + " near me by " + gender + " | " + gender + " massager in " + country + " | free " + mtypes.Trim() + " in " + country + " | male to female " + mtypes.Trim() + " | cheap " + mtypes.Trim() + " " + country + " | " + gender + " to male massage";
@@ -899,9 +901,9 @@ namespace RESTFulWCFService.MassagePartener
                 }
 
 
-                page_title.InnerHtml = page_title.InnerHtml.Replace("  ", " ").Replace(" body "," ");
+                page_title.InnerHtml = page_title.InnerHtml.Replace("  ", " ").Replace(" body ", " ");
                 des.InnerHtml = description.Replace(" body ", " ");
-                page_title.InnerHtml = UppercaseFirstEach(page_title.InnerHtml.ToString()).Replace(" body ", " ").Replace("Body ","");
+                page_title.InnerHtml = UppercaseFirstEach(page_title.InnerHtml.ToString()).Replace(" body ", " ").Replace("Body ", "");
                 page_title.InnerHtml = page_title.InnerHtml.Replace("In", "in").Replace(" body ", " ");
                 page_title.InnerHtml = page_title.InnerHtml.Replace("And", "and").Replace(" body ", " ");
 
@@ -1659,7 +1661,10 @@ namespace RESTFulWCFService.MassagePartener
             if (looking != "all" && looking != "")
             {
                 string[] looks_for = looking.Split('-');
-                looking = looks_for[0] + " " + looks_for[1] + " / " + looks_for[2];
+                if (looks_for.Count() > 2)
+                    looking = looks_for[0] + " " + looks_for[1] + " / " + looks_for[2];
+                else
+                    Response.Redirect(Constants__.WEB_ROOT + "/404", false);
 
                 if (looking == "Massage Therapist / Professional")
                     ddllookingfor.SelectedIndex = ddllookingfor.Items.IndexOf(ddllookingfor.Items.FindByValue("T"));
@@ -1698,17 +1703,17 @@ namespace RESTFulWCFService.MassagePartener
                     }
                     else
                         if (ddlmassagetypes.SelectedItem.Text == "Lesbian Massage")
-                        {
-                            ddlgender.SelectedValue = "F";
-                            ddlPartner_Types.SelectedValue = "FF";
-                            // ddlgender.Enabled = false;
-                            //ddlPartner_Types.Enabled = false;
-                        }
-                        else
-                        {
-                            ddlgender.Enabled = true;
-                            ddlPartner_Types.Enabled = true;
-                        }
+                    {
+                        ddlgender.SelectedValue = "F";
+                        ddlPartner_Types.SelectedValue = "FF";
+                        // ddlgender.Enabled = false;
+                        //ddlPartner_Types.Enabled = false;
+                    }
+                    else
+                    {
+                        ddlgender.Enabled = true;
+                        ddlPartner_Types.Enabled = true;
+                    }
                 }
             }
 
@@ -2997,21 +3002,21 @@ namespace RESTFulWCFService.MassagePartener
             }
             else
                 if (pageIndex < pos)
-                {
-                    pos = (int)this.ViewState["vs"];
-                    pos -= 1;
-                    this.ViewState["vs"] = pos;
-                    btnsearch_Click(null, null);
-                }
-                else if (pageIndex > pos)
-                {
-                    pos = (int)this.ViewState["vs"];
-                    pos += 1;
-                    this.ViewState["vs"] = pos;
-                    btnsearch_Click(null, null);
-                }
-                else if (pageIndex == Convert.ToInt32(ViewState["pagecount"].ToString()))
-                { pos = adsource.PageCount - 1; btnsearch_Click(null, null); }
+            {
+                pos = (int)this.ViewState["vs"];
+                pos -= 1;
+                this.ViewState["vs"] = pos;
+                btnsearch_Click(null, null);
+            }
+            else if (pageIndex > pos)
+            {
+                pos = (int)this.ViewState["vs"];
+                pos += 1;
+                this.ViewState["vs"] = pos;
+                btnsearch_Click(null, null);
+            }
+            else if (pageIndex == Convert.ToInt32(ViewState["pagecount"].ToString()))
+            { pos = adsource.PageCount - 1; btnsearch_Click(null, null); }
 
         }
         #endregion Events
@@ -3119,6 +3124,7 @@ namespace RESTFulWCFService.MassagePartener
 
         protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
         {
+            int total_count = Convert.ToInt32(ConfigurationManager.AppSettings["total_count"].ToString());
             System.Web.UI.WebControls.Image provider_image = (System.Web.UI.WebControls.Image)e.Item.FindControl("img_partner");
             ImageButton imgNorated = e.Item.FindControl("imgNoratedreview") as ImageButton;
             LinkButton lnkfav = e.Item.FindControl("lnkfav") as LinkButton;
@@ -3140,6 +3146,7 @@ namespace RESTFulWCFService.MassagePartener
             LinkButton lnkbtnsendmsg = e.Item.FindControl("lnkbtnsendsms") as LinkButton;
             LinkButton lnkbtnsendmsg1 = e.Item.FindControl("lnkbtnsendsms1") as LinkButton;
             LinkButton lnkbtnsendmsg2 = e.Item.FindControl("lnkbtnsendsms2") as LinkButton;
+            HiddenField hdn_image_no = (HiddenField)e.Item.FindControl("hdn_image_id");
             Control objitem = e.Item.FindControl("tr_row") as Control;
 
             //Updating all massage types 
@@ -3296,7 +3303,7 @@ namespace RESTFulWCFService.MassagePartener
                 // lnkfav.CommandName = "";
                 //lnkblck.CommandName = "";
             }
-           
+
 
             string[] filesindirectory = Directory.GetFiles(Server.MapPath("~/user/Images"));
             List<String> image = new List<string>(filesindirectory.Count());
@@ -3305,9 +3312,13 @@ namespace RESTFulWCFService.MassagePartener
             //string path = Server.MapPath("~/User/Images/img_gender/");
             //DirectoryInfo directoryInfo = new DirectoryInfo(path);
             //FileInfo[] fileInfo = directoryInfo.GetFiles();
-            
-            if(Session["ServiceProvider_subscription"] == null && Session["mp_login_sk"] == null)
+            hdn_image_no.Value = img_id.ToString();
+            if (Session["mp_login_sk"] == null)
             {
+                if (img_id > total_count)
+                {
+                    img_id = img_id % total_count;
+                }
                 if (hdngender.Value == "Male")
                 {
                     //provider_image.ImageUrl = Constants__.WEB_ROOT + "/user/Images/img_gender/" + a;
@@ -3325,17 +3336,20 @@ namespace RESTFulWCFService.MassagePartener
                 string img = images[0].ToString();
                 if (images.Length > 0)
                 {
-                    if (images[0].ToString() != "")
+                    if (images[0].ToString() != "" && System.IO.File.Exists(Constants__.WEB_ROOT + "/User/Images/" + images[0].ToString()))
                         provider_image.ImageUrl = Constants__.WEB_ROOT + "/user/Images/" + images[0].ToString();
                     else
                     {
                         if (hdngender.Value == "Male")
                         {
-                            provider_image.ImageUrl = Constants__.WEB_ROOT + "/image/avator-male-1501786059.png";
+                            //provider_image.ImageUrl = Constants__.WEB_ROOT + "/user/Images/img_gender/" + a;
+                            provider_image.ImageUrl = Constants__.WEB_ROOT + "/user/Images/img_gender/" + "m_" + img_id + ".jpg";
+                            img_id++;
                         }
-                        else
+                        if (hdngender.Value == "Female")
                         {
-                            provider_image.ImageUrl = Constants__.WEB_ROOT + "/image/girl-256.png";
+                            provider_image.ImageUrl = Constants__.WEB_ROOT + "/user/Images/img_gender/" + "f_" + img_id + ".jpg";
+                            img_id++;
                         }
                     }
                 }
@@ -3343,15 +3357,18 @@ namespace RESTFulWCFService.MassagePartener
                 {
                     if (hdngender.Value == "Male")
                     {
-                        provider_image.ImageUrl = Constants__.WEB_ROOT + "/image/avator-male-1501786059.png";
+                        //provider_image.ImageUrl = Constants__.WEB_ROOT + "/user/Images/img_gender/" + a;
+                        provider_image.ImageUrl = Constants__.WEB_ROOT + "/user/Images/img_gender/" + "m_" + img_id + ".jpg";
+                        img_id++;
                     }
-                    else
+                    if (hdngender.Value == "Female")
                     {
-                        provider_image.ImageUrl = Constants__.WEB_ROOT + "/image/girl-256.png";
+                        provider_image.ImageUrl = Constants__.WEB_ROOT + "/user/Images/img_gender/" + "f_" + img_id + ".jpg";
+                        img_id++;
                     }
                 }
             }
-           
+
         }
 
 
@@ -3360,6 +3377,7 @@ namespace RESTFulWCFService.MassagePartener
             Label lblname = (Label)e.Item.FindControl("lblname");
             LinkButton lnkfav = (LinkButton)e.Item.FindControl("lnkfav");
             LinkButton lnkblck = (LinkButton)e.Item.FindControl("lnkblck");
+            HiddenField hdn_image_no = (HiddenField)e.Item.FindControl("hdn_image_id");
             Button btnshowcontact = (Button)e.Item.FindControl("btnshow");
 
             string name = lblname.Text.Replace(' ', '-');
@@ -3368,13 +3386,13 @@ namespace RESTFulWCFService.MassagePartener
                 case "image_details":
                     {
                         Session["Partner_sk"] = Convert.ToInt32(e.CommandArgument);
-                        Response.Redirect(Constants__.WEB_ROOT + "/user-profile/" + name);
+                        Response.Redirect(Constants__.WEB_ROOT + "/user-profile/" + name + "?mympid=" + hdn_image_no.Value + "_" + e.CommandArgument);
                         break;
                     }
                 case "name_details":
                     {
                         Session["Partner_sk"] = Convert.ToInt32(e.CommandArgument);
-                        Response.Redirect(Constants__.WEB_ROOT + "/user-profile/" + name);
+                        Response.Redirect(Constants__.WEB_ROOT + "/user-profile/" + name + "?mympid=" + hdn_image_no.Value + "_" + e.CommandArgument);
                         break;
                     }
                 case "Favourite":
@@ -3449,7 +3467,7 @@ namespace RESTFulWCFService.MassagePartener
         protected void btnsend_Click(object sender, EventArgs e)
         {
             int c = 0;
-            if(Session["counter"]!=null)
+            if (Session["counter"] != null)
             {
                 c = Convert.ToInt32(Session["counter"].ToString());
                 c += 1;
@@ -3538,7 +3556,7 @@ namespace RESTFulWCFService.MassagePartener
                 body = body.Replace("$password", ds1.Tables[1].Rows[0]["password"].ToString());
 
                 objmail.Mbody = body;// +senderDetail;
-                //objmail.UserType ="Massage-Partner";
+                                     //objmail.UserType ="Massage-Partner";
                 objmail.Mrecipients = ds1.Tables[1].Rows[0]["email_id"].ToString();
                 objmail.Msubject = "Massage partner selected you favourite";
                 int status = objmail.SendMail();
@@ -4207,18 +4225,18 @@ namespace RESTFulWCFService.MassagePartener
             }
             else
                 if (ddlmassagetypes.SelectedItem.Text == "Lesbian Massage")
-                {
-                    ddlgender.SelectedValue = "F";
-                    ddlPartner_Types.SelectedValue = "FF";
-                    // ddlgender.Enabled = false;
-                    //ddlPartner_Types.Enabled = false;
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "open_enable", "enable();", true);
-                    ddlgender.Enabled = true;
-                    ddlPartner_Types.Enabled = true;
-                }
+            {
+                ddlgender.SelectedValue = "F";
+                ddlPartner_Types.SelectedValue = "FF";
+                // ddlgender.Enabled = false;
+                //ddlPartner_Types.Enabled = false;
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "open_enable", "enable();", true);
+                ddlgender.Enabled = true;
+                ddlPartner_Types.Enabled = true;
+            }
         }
 
         protected void ddlgender_SelectedIndexChanged(object sender, EventArgs e)

@@ -194,3 +194,12 @@ E:\12_September_2023\MassagePartner (2)\MassagePartner\Factory\obj\Debug\Factory
 E:\12_September_2023\MassagePartner (2)\MassagePartner\Factory\obj\Debug\Factory.csproj.CopyComplete
 E:\12_September_2023\MassagePartner (2)\MassagePartner\Factory\obj\Debug\Factory.dll
 E:\12_September_2023\MassagePartner (2)\MassagePartner\Factory\obj\Debug\Factory.pdb
+D:\online-repo\mymp\Factory\obj\Debug\Factory.csproj.AssemblyReference.cache
+D:\online-repo\mymp\Factory\obj\Debug\Factory.csproj.CoreCompileInputs.cache
+D:\online-repo\mymp\Factory\bin\Debug\Factory.dll
+D:\online-repo\mymp\Factory\bin\Debug\Factory.pdb
+D:\online-repo\mymp\Factory\bin\Debug\BussinessEntity.dll
+D:\online-repo\mymp\Factory\bin\Debug\BussinessEntity.pdb
+D:\online-repo\mymp\Factory\obj\Debug\Factory.csproj.CopyComplete
+D:\online-repo\mymp\Factory\obj\Debug\Factory.dll
+D:\online-repo\mymp\Factory\obj\Debug\Factory.pdb

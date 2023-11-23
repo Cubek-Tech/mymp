@@ -1293,11 +1293,16 @@ display:block;
                                                                                                 <img src="<%=Constants__.WEB_ROOT_CDN%>/images/paytmrech30.jpg" alt="paytm-qr" class="image-responsive">
                                                                                                <p class="scan-the-qr">
                                                                                                     Scan the Paytm QR code and pay
-                                                                <br />
+                                                                <%--<br />
                                                                                                     Or<br />
-                                                                                                    Click the Paytm link below and pay
+                                                                                                    Click the Paytm link below and pay--%>
                                                                                                 </p>
-                                                                                                <p class="for-help"><asp:LinkButton ID="lnkPaymtn" runat="server" target="_blank"></asp:LinkButton></p>
+                                                                                                 <p class="for-help">Pay through UPI ID</p>
+<div class="copy-text1">
+				<input type="text" class="text1 pay-poup" value="servicembook@oksbi" />
+				<button onclick="return false;"><i class="fa fa-clone"></i> Copy UPI ID</button>
+</div>
+                                                                                                <p class="for-help"><asp:LinkButton ID="lnkPaymtn" runat="server" Visible="false" target="_blank"></asp:LinkButton></p>
 
                                                                                             </div>
                                                                                         </div>
@@ -1373,8 +1378,14 @@ display:block;
 
                                                                                             <div class="scan-forhelp-info-div">
                                                                                                 <p class="scan-the-qr">Scan UPI QR code through your mobile wallet(BHIM, Phonepe, Google Pay-Tez, Mobikwik or other) and pay membership fee.</p>
-                                                                                                <p class="for-help">for help please email us:</p>
-                                                                                                <a href="#">info@mymassagepartner.com</a>
+                                                                                              <%--  <p class="for-help">for help please email us:</p>
+                                                                                                <a href="#">info@mymassagepartner.com</a>--%>
+                                                                                                  <p class="for-help">Pay through UPI ID</p>
+
+<div class="copy-text">
+    <input type="text" class="text pay-poup" value="servicembook@oksbi" />
+    <button onclick="return false;"><i class="fa fa-clone"></i> Copy UPI ID</button>
+</div>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="col-sm-4 pay-via-paytm">
@@ -1562,15 +1573,182 @@ our company bank account via Net banking or cash bank transfer.
                                                     }
                                                 </style>
                                                 <script>
+                                                    document.querySelector(".copy-text1").querySelector("button").addEventListener("click", function () {
+                                                        let input = document.querySelector(".copy-text1").querySelector("input.text1");
+                                                        input.select();
+                                                        document.execCommand("copy");
+                                                        document.querySelector(".copy-text1").classList.add("active1");
+                                                        window.getSelection().removeAllRanges();
+                                                        setTimeout(function () {
+                                                            document.querySelector(".copy-text1").classList.remove("active1");
+                                                        }, 2500);
 
+                                                        //copyText1 = undefined; // unset
+                                                        //   delete(copyText1);
+                                                    });
+                                                    document.querySelector(".copy-text").querySelector("button").addEventListener("click", function () {
+                                                        let input = document.querySelector(".copy-text").querySelector("input.text");
+                                                        input.select();
+                                                        document.execCommand("copy");
+                                                        document.querySelector(".copy-text").classList.add("active");
+                                                        window.getSelection().removeAllRanges();
+                                                        setTimeout(function () {
+                                                            document.querySelector(".copy-text").classList.remove("active");
+                                                        }, 2500);
+                                                    });
 
 
                                                     $(".sexytabs").tabs({
                                                         show: { effect: "slide", direction: "left", duration: 200, easing: "easeOutBack" },
                                                         hide: { effect: "slide", direction: "right", duration: 200, easing: "easeInQuad" }
                                                     });
-
+                                                  
                                                 </script>
+                                                <style>
+    .copy-text {
+        position: relative;
+        text-align: center;
+    }
+
+
+        .copy-text input.text {
+            padding: 5px 0;
+            font-size: 18px;
+            color: #555;
+            border: none;
+            outline: none;
+            text-align: center;
+            color: black !important;
+            font-size: 14px !important;
+        }
+
+        .copy-text button {
+            margin-top: 6px;
+            padding: 6px;
+            background: unset;
+            color: #0970d5;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            border-radius: 38px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 11px !important;
+            border: 1px solid #ccc;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+            .copy-text button:active {
+                background: #fff;
+            }
+
+            .copy-text button:before {
+                content: "Copied";
+                position: absolute;
+                bottom: -20px;
+                right: 71px;
+                background: #ebebeb;
+                padding: 4px 10px;
+                border-radius: 3px;
+                font-size: 12px;
+                display: none;
+                font-weight: normal;
+                color: #000000dd;
+            }
+
+            .copy-text button:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 52%;
+                width: 10px;
+                height: 10px;
+                display: none;
+                background: #ebebeb;
+                transform: rotate(45deg);
+            }
+
+        .copy-text.active button:before,
+        .copy-text.active button:after {
+            display: block;
+        }
+
+        .copy-text input.text {
+            width: 100%;
+        }
+</style>
+             <style type="text/css">
+                 .copy-text1 {
+                     position: relative;
+                     text-align: center;
+                 }
+
+
+                     .copy-text1 input.text1 {
+                         padding: 5px 0;
+                         font-size: 18px;
+                         color: #555;
+                         border: none;
+                         outline: none;
+                         width: 100%;
+                         text-align: center;
+                         color: black !important;
+                         font-size: 14px !important;
+                     }
+
+                     .copy-text1 button {
+                         margin-top: 6px;
+                         padding: 6px;
+                         background: unset;
+                         color: #0970d5;
+                         font-size: 18px;
+                         border: none;
+                         outline: none;
+                         border-radius: 38px;
+                         cursor: pointer;
+                         text-align: center;
+                         font-size: 11px !important;
+                         border: 1px solid #ccc;
+                         font-weight: 600;
+                         margin-bottom: 10px;
+                     }
+
+                         .copy-text1 button:active1 {
+                             background: #fff;
+                         }
+
+                         .copy-text1 button:before {
+                             content: "Copied";
+                             position: absolute;
+                             bottom: -20px;
+                             right: 71px;
+                             background: #ebebeb;
+                             padding: 4px 10px;
+                             border-radius: 3px;
+                             font-size: 12px;
+                             display: none;
+                             font-weight: normal;
+                             color: #000000dd;
+                         }
+
+                         .copy-text1 button:after {
+                             content: "";
+                             position: absolute;
+                             bottom: 0;
+                             right: 52%;
+                             width: 10px;
+                             height: 10px;
+                             display: none;
+                             background: #ebebeb;
+                             transform: rotate(45deg);
+                         }
+
+                     .copy-text1.active1 button:before,
+                     .copy-text1.active1 button:after {
+                         display: block;
+                     }
+             </style>
                                             </div>
                                             <div class="row" style="text-align: CENTER;">
                                                 <div class="col-sm-12 at-bottom-link-design" style="margin-top: 20px;">

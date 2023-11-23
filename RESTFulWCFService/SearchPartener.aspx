@@ -516,6 +516,7 @@
                         <ItemStyle Width="100%" />
                         <ItemTemplate>
                             <div class="partner-search-details" id="tr_row" runat="server">
+                                <asp:HiddenField ID="hdn_image_id" runat="server" />
                                 <div class="row">
                                     <div class="col-sm-2">
                                         <div class="image-box">
@@ -523,7 +524,7 @@
 			    <%--<image src="image/askpicture.jpg"  class="img-responsive"/>--%>
                                                 <asp:LinkButton ID="img_details" runat="server" CommandArgument='<%#Eval("massage_partner_sk") %>' CommandName="image_details" />
                                                 <asp:Image id="img_partner" runat="server" CssClass="img-responsive"></asp:Image>
-                                                </asp:Link Button>
+                                                </asp:LinkButton>
 			</center>
                                         </div>
                                     </div>

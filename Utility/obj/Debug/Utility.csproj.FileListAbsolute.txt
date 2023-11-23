@@ -127,3 +127,11 @@ E:\12_September_2023\MassagePartner (2)\MassagePartner\Utility\obj\Debug\Utility
 E:\12_September_2023\MassagePartner (2)\MassagePartner\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
 E:\12_September_2023\MassagePartner (2)\MassagePartner\Utility\obj\Debug\Utility.exe
 E:\12_September_2023\MassagePartner (2)\MassagePartner\Utility\obj\Debug\Utility.pdb
+D:\online-repo\mymp\Utility\bin\Debug\Utility.exe.config
+D:\online-repo\mymp\Utility\bin\Debug\Utility.exe
+D:\online-repo\mymp\Utility\bin\Debug\Utility.pdb
+D:\online-repo\mymp\Utility\obj\Debug\Utility.Properties.Resources.resources
+D:\online-repo\mymp\Utility\obj\Debug\Utility.csproj.GenerateResource.cache
+D:\online-repo\mymp\Utility\obj\Debug\Utility.csproj.CoreCompileInputs.cache
+D:\online-repo\mymp\Utility\obj\Debug\Utility.exe
+D:\online-repo\mymp\Utility\obj\Debug\Utility.pdb

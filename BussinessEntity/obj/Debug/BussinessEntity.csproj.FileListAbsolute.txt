@@ -87,3 +87,9 @@ E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\obj\Debug
 E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.csproj.CoreCompileInputs.cache
 E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.dll
 E:\12_September_2023\MassagePartner (2)\MassagePartner\BussinessEntity\obj\Debug\BussinessEntity.pdb
+D:\online-repo\mymp\BussinessEntity\bin\Debug\BussinessEntity.dll
+D:\online-repo\mymp\BussinessEntity\bin\Debug\BussinessEntity.pdb
+D:\online-repo\mymp\BussinessEntity\obj\Debug\BussinessEntity.csproj.AssemblyReference.cache
+D:\online-repo\mymp\BussinessEntity\obj\Debug\BussinessEntity.csproj.CoreCompileInputs.cache
+D:\online-repo\mymp\BussinessEntity\obj\Debug\BussinessEntity.dll
+D:\online-repo\mymp\BussinessEntity\obj\Debug\BussinessEntity.pdb
