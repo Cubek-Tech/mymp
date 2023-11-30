@@ -579,7 +579,7 @@
                 color: #fff !important;
                 border-radius: 0px;
                 border: none;
-                width: 25%;
+                width: 33.33%;
             }
         }
 
@@ -1201,7 +1201,7 @@
                                                                                     <span class="mobile_title">
                                                                                         <img src="../img/icon3_upi.png" /><span>UPI</span></span>
                                                                                 </a></li>
-                                                                                <li><a href="#Rihanna1">
+                                                                                <li style="display:none !important"><a href="#Rihanna1">
                                                                                     <span class="desk_title">IMPS/Cash Bank transfer</span>
                                                                                     <span class="mobile_title">
                                                                                         <img src="../img/icon4_imps.png" /><span>Bank</span></span>
